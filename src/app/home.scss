@@ -49,25 +49,124 @@
       margin: 0 1rem;
     }
   }
+  &-slider {
+    &__info {
+      margin-top: 10rem;
 
-  .slider-info {
-    h2 {
-      font-weight: 500;
-      font-size: 40px;
-      margin: 10px 0;
-    }
-    h3 {
-      font-weight: 100;
+      h2 {
+        font-weight: 500;
+        font-size: 40px;
+        margin: 10px 0;
+      }
+
+      h3 {
+        font-weight: 100;
+      }
+
+      button {
+        color: white;
+        background-color: #d20000;
+        border-radius: 15px;
+        padding: 5px 20px;
+        font-weight: 100;
+        border: none;
+        margin-top: 10px;
+      }
     }
 
-    button {
-      color: white;
-      background-color: #d20000;
-      border-radius: 15px;
-      padding: 5px 20px;
-      font-weight: 100;
-      border: none;
-      margin-top: 10px;
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      .btn {
+        border: solid 1px white;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 5px;
+        font-weight: 100;
+
+        p {
+          font-size: 14px;
+        }
+        .sign {
+          font-size: 22px;
+          margin-bottom: 3px;
+        }
+      }
+      .btn:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &-welcome {
+    background-color: #f3eeee;
+    padding: 4rem 0;
+
+    &__container {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .step-one {
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+          font-size: 28px;
+          font-weight: 300;
+          max-width: 400px;
+        }
+
+        h3 {
+          margin-top: 3rem;
+          margin-bottom: 1rem;
+          font-size: 15px;
+          font-style: italic;
+        }
+
+        p {
+          font-size: 14px;
+          font-weight: 200;
+        }
+
+        .underline {
+          text-decoration: underline;
+          margin-top: 2rem;
+        }
+
+        img {
+          max-width: 357px;
+        }
+      }
+
+      .cards-container {
+        display: flex;
+        justify-content: space-between;
+
+        .card {
+          color: white;
+          background-color: black;
+          text-align: center;
+          width: 260px;
+          height: 130px;
+          padding: 15px;
+
+          .text {
+            font-size: 15px;
+            font-weight: 200;
+          }
+
+          .number {
+            margin-top: 13px;
+            font-size: 50px;
+          }
+        }
+      }
     }
   }
 }
