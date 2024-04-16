@@ -4,6 +4,10 @@ import Image from "next/image";
 // import styles from "./page.module.css";
 import './home.scss'
 import { useState } from "react";
+import Nav from "@/components/Nav/Nav";
+import Social from "@/components/Social";
+import Footer from "@/components/Footer/Footer";
+
 
 export default function Home() {
 
@@ -34,25 +38,13 @@ export default function Home() {
               <p>EMAIL: INFO@ASDEVGROUP.COM</p>
               <p>PHONE: <span style={{ textDecoration: 'underline' }}>(305)-974-2418</span></p>
             </div>
-            <div className="social-logos">
-              <img src="/facebook-logo.png" atl="facebook logo"/>
-              <img src="/instagram-logo.png" atl="instagram logo"/>
-              <img src="/linkedin-logo.png" atl="linkedin logo"/>
-              <img src="/x-logo.png" atl="x logo"/>
-            </div>
+            <Social />
           </div>
         </div>
       ) : (
         <>
           <section className="home">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <img src="/agador-logo.png" atl="Agador logo"/>
-              <nav>
-                <p>Portfolio</p>
-                <p>Contact</p>
-                <p>Hamburger</p>
-              </nav>
-            </div>
+            <Nav />
 
             <div className="home-slider__info">
               <h3>Palm Bay, FL</h3>
@@ -110,6 +102,93 @@ export default function Home() {
               >Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader.  Spartacus meaning "from the city of Sparta" in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding real estate development company with a portfolio that includes a wealth of:</p>
             </div>
           </section>
+
+          <section className="home-benefits">
+            <div className="home-benefits__column">
+              <h4>Multi-family</h4>
+            </div>
+            <div className="home-benefits__column">
+              <h4>Industrial</h4>
+            </div>
+            <div className="home-benefits__column">
+              <h4>Hospitality</h4>
+            </div>
+            <div className="home-benefits__column">
+              <h4>Residential</h4>
+            </div>
+            <div className="home-benefits__column">
+              <h4>Commercial or Mixed Use</h4>
+            </div>
+          </section>
+
+          <section className="home-featured">
+            <div className="home-featured__content">
+              <h3><strong>Featured</strong> Projects</h3>
+
+              <p>Our portfolio currently exceeds 5 million square feet, both domestic and international of commercial, multi-family, hospitality and retail assets —with another million square feet in our development pipeline—all concentrated in attractive submarkets in Florida.</p>
+              <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
+            </div>
+
+            <div className="home-featured__grid">
+              <div className="grid-item">
+                <img src="/home/grid-01.jpg" alt="House" />
+                <div className="view">
+                  <p>VIEW</p>
+                </div>
+                <div className="info">
+                  <div>
+                    <h4>Solamar Palm Bay</h4>
+                    <p className="type">Multifamily</p>
+                  </div>
+                  <p className="location">Melbourne, FL</p>
+                </div>
+              </div>
+
+              <div className="grid-item">
+                <img src="/home/grid-01.jpg" alt="House" />
+                <div className="view">
+                  <p>VIEW</p>
+                </div>
+                <div className="info">
+                  <div>
+                    <h4>Solamar Palm Bay</h4>
+                    <p className="type">Multifamily</p>
+                  </div>
+                  <p className="location">Melbourne, FL</p>
+                </div>
+              </div>
+
+              <div className="grid-item">
+                <img src="/home/grid-01.jpg" alt="House" />
+                <div className="view">
+                  <p>VIEW</p>
+                </div>
+                <div className="info">
+                  <div>
+                    <h4>Solamar Palm Bay</h4>
+                    <p className="type">Multifamily</p>
+                  </div>
+                  <p className="location">Melbourne, FL</p>
+                </div>
+              </div>
+
+              <div className="grid-item">
+                <img src="/home/grid-01.jpg" alt="House" />
+                <div className="view">
+                  <p>VIEW</p>
+                </div>
+                <div className="info">
+                  <div>
+                    <h4>Solamar Palm Bay</h4>
+                    <p className="type">Multifamily</p>
+                  </div>
+                  <p className="location">Melbourne, FL</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <Footer />
         </>
       )}
     </>

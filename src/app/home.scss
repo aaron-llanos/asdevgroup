@@ -20,13 +20,6 @@
       }
     }
   }
-
-  .social-logos {
-    img {
-      max-width: 40px;
-      margin: 0 5px;
-    }
-  }
 }
 
 .home {
@@ -41,14 +34,6 @@
   justify-content: space-between;
   color: white;
 
-  nav {
-    display: flex;
-    font-weight: 200;
-
-    p {
-      margin: 0 1rem;
-    }
-  }
   &-slider {
     &__info {
       margin-top: 10rem;
@@ -165,6 +150,129 @@
             margin-top: 13px;
             font-size: 50px;
           }
+        }
+      }
+    }
+  }
+
+  &-benefits {
+    background-image: url('/home/wc-02.jpg');
+    height: 770px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    display: flex;
+    justify-content: space-between;
+
+    &__column {
+      position: relative;
+      align-items: end;
+      border-right: solid 1px white;
+      width: 100%;
+      color: white;
+
+      h4 {
+        position: absolute;
+        max-width: 133px;
+        font-weight: 200;
+        font-size: 20px;
+        top: 78%;
+        left: 10%;
+      }
+    }
+
+    &__column:last-of-type {
+      border-right: none;
+    }
+  }
+
+  &-featured {
+    background-color: #f3eeee;
+
+    &__content {
+      margin: 0 auto;
+      max-width: 800px;
+
+      h3 {
+        font-weight: 300;
+        padding-top: 6rem;
+        font-size: 28px;
+        margin-bottom: 4rem;
+      }
+
+      p {
+        font-weight: 200;
+        margin-top: 2rem;
+      }
+    }
+
+    &__grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-bottom: 8rem;
+    }
+
+    .grid-item {
+      width: 545px;
+      position: relative;
+      margin-bottom: 8px;
+
+      img {
+        position: relative;
+        width: 100%;
+      }
+
+      .view {
+        position: absolute;
+        top: 35%;
+        right: 40%;
+        color: white;
+        font-weight: 100;
+        border-radius: 50%;
+        border: solid 1px white;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info {
+        position: absolute;
+        bottom: 5%;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: end;
+
+        h4 {
+          font-weight: 300;
+          font-size: 18px;
+        }
+
+        .type {
+          background-color: #d20000;
+          width: 130px;
+          text-align: center;
+          font-weight: 100;
+          border-radius: 15px;
+          padding: 4px 0;
+          margin-top: 18px;
+        }
+
+        .location {
+          border-radius: 15px;
+          border: solid 1px white;
+          font-weight: 100;
+          padding: 3px 8px;
+          font-size: 14px;
         }
       }
     }

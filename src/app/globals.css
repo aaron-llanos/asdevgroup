@@ -106,3 +106,10 @@ a {
     color-scheme: dark;
   }
 } */
+
+.social-logos {
+  img {
+    max-width: 40px;
+    margin: 0 5px;
+  }
+}
