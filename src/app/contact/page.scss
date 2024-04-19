@@ -42,7 +42,7 @@ body {
   h2 {
     font-size: 28px;
     font-weight: 300;
-    max-width: 400px;
+    text-align: center;
   }
 
   h3 {
@@ -102,4 +102,63 @@ footer .container {
 footer {
   border-top: solid 1px white;
   margin-top: 7rem;
+}
+
+.contact-info {
+  margin: 3rem auto;
+  max-width: 500px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    max-width: 175px;
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 48%;
+      }
+    }
+
+    input {
+      margin-top: 2rem;
+      background-color: #212121;
+      border: none;
+      padding: 10px;
+      color: white;
+    }
+
+    .input::placeholder {
+      color: white;
+    }
+    .input::-webkit-input-placeholder {
+      font-weight: lighter;
+    }
+
+    button {
+      background-color: #d0ced1;
+      border: none;
+      border-radius: 15px;
+      width: 200px;
+      margin: 0 auto;
+      margin-top: 3rem;
+      padding: 8px;
+      font-weight: 100;
+    }
+  }
 }

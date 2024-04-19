@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+
+.home {
+  background-image: url('/home/s-01.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 15%;
+  height: 100%;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}

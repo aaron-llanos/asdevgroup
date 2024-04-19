@@ -1,0 +1,57 @@
+import './page.scss'
+
+import Image from "next/image";
+import Nav from "@/components/Nav/Nav";
+import Footer from '@/components/Footer/Footer';
+import Social from '@/components/Social';
+
+export default function Home() {
+
+  return (
+    <>
+      <section className="home">
+        <Nav />
+
+        <div className="home-slider__info">
+          <h2>Contact</h2>
+          <h3>GET IN TOUCH</h3>
+        </div>
+      </section>
+
+      <section className="container">
+        <h2>SOCIAL MEDIA</h2>
+        <Social contact />
+        <h2>CONTACT</h2>
+
+        <div className="contact-info">
+          <div className="contact-info__container">
+            <div className="contact-info__item">
+              <p><strong>Office Adress</strong></p>
+              <p>2875 NE 191st Street, Suite 305, Aventura, FL 33180</p>
+            </div>
+            <div className="contact-info__item">
+              <p><strong>Main Office Line</strong></p>
+              <p>(305)974-2418</p>
+            </div>
+            <div className="contact-info__item">
+              <p><strong> info@asdevgroup.com</strong></p>
+              <p>info@asdevgroup.com</p>
+            </div>
+          </div>
+
+          <form>
+            <div className="row">
+              <input placeholder="First Name" className="input" />
+              <input placeholder="Last Name" className="input" />
+            </div>
+            <input placeholder="Email" className="input" />
+            <input placeholder="Subject" className="input" />
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
+}
