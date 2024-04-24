@@ -48,7 +48,7 @@ export default function Home() {
             <p><strong>90 units</strong></p>
           </div>
           <div className="character">
-            <h5>START DATE</h5>
+            <h5>DATE</h5>
             <p><strong>March 2024</strong></p>
           </div>
         </div>

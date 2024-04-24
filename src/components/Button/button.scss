@@ -7,4 +7,10 @@ button {
   margin-top: 3rem;
   padding: 8px;
   font-weight: 100;
+  transition: ease-out 0.3s;
+}
+
+button:hover {
+  background-color: #d30200;
+  color: white;
 }
