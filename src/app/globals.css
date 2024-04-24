@@ -113,3 +113,50 @@ a {
     margin: 0 5px;
   }
 }
+
+@font-face {
+  font-family: 'Archia';
+  src: url(/font/archia-regular-webfont.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(/font/satoshi/Satoshi-Regular.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(/font/satoshi/Satoshi-Light.otf);
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(/font/satoshi/Satoshi-Medium.otf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url(/font/satoshi/Satoshi-Black.otf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url(/font/satoshi/Satoshi-Black.otf);
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Satoshi' !important;
+}

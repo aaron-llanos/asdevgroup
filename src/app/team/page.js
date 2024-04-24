@@ -9,16 +9,36 @@ export default function Home() {
 
   return (
     <>
-      <section className="home">
+      <section className="team">
         <Nav />
 
-        <div className="home-slider__info">
-          <h2>Contact</h2>
-          <h3>GET IN TOUCH</h3>
+        <div className="team-content">
+          <h1><strong>The Driving Forces Behind Our Success</strong></h1>
+          <h2>MEET THE TEAM</h2>
         </div>
-      </section>
 
-      <section className="container">
+        <div className="team-slider">
+          <img src="/team/01.png" atl="facebook logo"/>
+
+          <div className="little">
+            <img src="/team/01.png" atl="facebook logo"/>
+            <img src="/team/01.png" atl="facebook logo"/>
+            <img src="/team/01.png" atl="facebook logo"/>
+          </div>
+        </div>
+
+        <div className="team-content">
+          <div className="light">
+            <p><strong>Alan Benenson</strong>, co-founder and principal of A.S. Development, has a rich background in real estate investment and land entitlements. A University of Florida alumnus with a B.S. in Building Construction, he excels in land acquisition, project valuation, and development across various asset classes.</p>
+            <br />
+            <p>Alan’s career includes co-founding Universal Storage Group and founding Futurex Construction, showcasing his versatility in commercial and residential projects. A licensed general contractor and real estate developer, he has been pivotal in acquiring and developing over 3 million square feet of real estate.</p>
+          </div>
+          <div className="strong">
+            <p>Agador Spartacus Development is a regional, professionally-run, privately-owned company that has been doing business in the U.S. and Mexico.</p>
+            <br />
+            <p>Since its beginnings, Agador Spartacus has distinguished itself through innovation and excellence in property investment.</p>
+          </div>
+        </div>
       </section>
       <Footer />
     </>

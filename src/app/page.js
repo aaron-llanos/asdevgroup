@@ -32,9 +32,9 @@ export default function Home() {
             <li><h2>Contact</h2></li>
           </ul>
 
-          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4rem'}}>
+          <div className="details">
             <div>
-              <h3 style={{ marginBottom: '1.5rem' }}>CONTACT DETAILS</h3>
+              <h3>CONTACT DETAILS</h3>
               <p>EMAIL: INFO@ASDEVGROUP.COM</p>
               <p>PHONE: <span style={{ textDecoration: 'underline' }}>(305)-974-2418</span></p>
             </div>
@@ -49,7 +49,7 @@ export default function Home() {
             <div className="home-slider__info">
               <h3>Palm Bay, FL</h3>
               <h2>Solamar Palm Bay</h2>
-              <h3>UNDER CONSTRUCTION</h3>
+              <h3 style={{ letterSpacing: '2px', fontSize: '18px' }} >UNDER CONSTRUCTION</h3>
               <button>Multifamily</button>
             </div>
 
@@ -67,7 +67,7 @@ export default function Home() {
             <div className="home-welcome__container">
               <div className="step-one">
                 <div style={{ marginRight: '3rem' }}>
-                  <h2><strong>Welcome to</strong> Agador Spartacus Development</h2>
+                  <h2>Welcome to <strong>Agador Spartacus Development</strong></h2>
 
                   <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
                   <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
@@ -85,15 +85,15 @@ export default function Home() {
               <div className="cards-container">
                 <div className="card">
                   <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
-                  <p className="number">10</p>
+                  <p className="number mt">09</p>
+                </div>
+                <div className="card">
+                  <p className="number">15</p>
+                  <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p>
                 </div>
                 <div className="card">
                   <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
-                  <p className="number">10</p>
-                </div>
-                <div className="card">
-                  <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
-                  <p className="number">10</p>
+                  <p className="number mt">35</p>
                 </div>
               </div>
 

@@ -1,10 +1,10 @@
 import './nav.scss'
 
-export default function Nav() {
+export default function Nav({ light }) {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <img src="/agador-logo.png" atl="Agador logo"/>
+      <img atl="Agador logo" src={light ? '/agador-logo-b.png' : 'agador-logo.png'} />
       <nav>
         <p>Portfolio</p>
         <p>Contact</p>

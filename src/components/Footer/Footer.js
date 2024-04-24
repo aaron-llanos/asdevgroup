@@ -12,7 +12,7 @@ export default function Footer() {
           <img src="/agador-logo.png" atl="Agador logo"/>
 
           <div className="social">
-            <p>Where Vision Meets Excellence in Florida Real Estate</p>
+            <p><strong>Where Vision Meets Excellence in Florida Real Estate</strong></p>
             <Social />
           </div>
         </div>
@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="container">
         <div className="content info">
           <div className="contact">
-            <h4>CONTACT DETAILS </h4>
+            <h4><strong>CONTACT DETAILS</strong></h4>
             <p>Email: info@asdevgroup.com</p>
             <p>Phone: (305)-974-2418</p>
           </div>

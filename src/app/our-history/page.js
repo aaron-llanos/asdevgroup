@@ -12,30 +12,30 @@ export default function Home() {
         <Nav />
 
         <div className="home-slider__info">
-          <h2>Our History</h2>
+          <h2><strong>Our History</strong></h2>
           <h3>PILLARS THAT SHAPE US UP</h3>
         </div>
       </section>
 
-      <section className="container">
+      <section className="container-h">
         <h2><strong>Welcome to</strong> Agador Spartacus Development</h2>
-        <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
+        <h3><strong>Where Vision Meets Excellence in Florida Real Estate</strong></h3>
         <p>At <strong>Agador Spartacus Development</strong> , we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
         <h2 style={{ margin: '3rem auto', textAlign: 'center' }}><strong>Our </strong>expertise</h2>
 
         <div className="card-container">
           <div className="card">
-            <p>Land Acquisition</p>
+            <p><strong>Land acquisition</strong></p>
           </div>
           <div className="card">
-            <p>site development</p>
+            <p>Site development</p>
           </div>
           <div className="card">
-            <p>project management & oversight</p>
+            <p>Project management & oversight</p>
           </div>
           <div className="card">
-            <p>LENDER FINANCING & CONSTRUCTION LOAN MANAGEMENT</p>
+            <p>Lender fiancing & construction loan management</p>
           </div>
         </div>
 
@@ -50,13 +50,13 @@ export default function Home() {
             <p>project management & oversight</p>
           </div>
           <div className="card">
-            <p>LENDER FINANCING & CONSTRUCTION LOAN MANAGEMENT</p>
+            <p>Lender financing & construction loan management</p>
           </div>
         </div>
 
         <p>Join us in redefining the South Florida skyline. Explore our projects, learn about our methods, and discover opportunities to invest in the future of real estate development!</p>
 
-        <p className="margin why">Why choose Agador Spartacus Development?</p>
+        <p className="margin why"><strong>Why choose Agador Spartacus Development?</strong></p>
         <p className="margin">Top 5 reasons to choose <strong>Agador Spartacus Development</strong> for your Real Estate Ventures in Florida.</p>
 
         <div className="list">

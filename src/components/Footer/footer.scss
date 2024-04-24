@@ -32,6 +32,8 @@ footer {
     padding: 1rem;
 
     .contact {
+      letter-spacing: 2px;
+
       h4 {
         font-size: 14px;
         font-weight: 500;
@@ -46,8 +48,9 @@ footer {
 
     .menu {
       text-align: end;
-      font-size: 22px;
+      font-size: 22px !important;
       font-weight: 300;
+      font-family: 'Archia';
 
       p {
         margin: 0.5rem;

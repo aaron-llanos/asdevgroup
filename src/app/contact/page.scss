@@ -40,9 +40,10 @@ body {
   color: white;
 
   h2 {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 300;
     text-align: center;
+    letter-spacing: 22px;
   }
 
   h3 {
@@ -117,6 +118,7 @@ footer {
     max-width: 175px;
 
     p {
+      font-size: 14px;
       margin-top: 1rem;
     }
   }
@@ -148,17 +150,6 @@ footer {
     }
     .input::-webkit-input-placeholder {
       font-weight: lighter;
-    }
-
-    button {
-      background-color: #d0ced1;
-      border: none;
-      border-radius: 15px;
-      width: 200px;
-      margin: 0 auto;
-      margin-top: 3rem;
-      padding: 8px;
-      font-weight: 100;
     }
   }
 }

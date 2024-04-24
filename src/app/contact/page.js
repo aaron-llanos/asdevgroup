@@ -1,9 +1,9 @@
 import './page.scss'
 
-import Image from "next/image";
 import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
 import Social from '@/components/Social';
+import Button from '@/components/Button/Button';
 
 export default function Home() {
 
@@ -47,7 +47,7 @@ export default function Home() {
             <input placeholder="Email" className="input" />
             <input placeholder="Subject" className="input" />
 
-            <button type="submit">Submit</button>
+            <Button text="Submit" />
           </form>
         </div>
       </section>

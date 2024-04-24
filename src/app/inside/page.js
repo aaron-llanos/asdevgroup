@@ -41,15 +41,15 @@ export default function Home() {
         <div className="character-container">
           <div className="character">
             <h5>LOCATION</h5>
-            <p>Palm Bay, FL</p>
+            <p><strong>Palm Bay, FL</strong></p>
           </div>
           <div className="character">
             <h5>PROJECT SIZE</h5>
-            <p>90 units</p>
+            <p><strong>90 units</strong></p>
           </div>
           <div className="character">
             <h5>START DATE</h5>
-            <p>March 2024</p>
+            <p><strong>March 2024</strong></p>
           </div>
         </div>
       </section>

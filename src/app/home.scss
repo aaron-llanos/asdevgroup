@@ -8,6 +8,8 @@
   background-repeat: no-repeat;
   background-size: 55%;
   background-position: 15%;
+  display: flex;
+  flex-direction: column;
 
   ul {
     margin-top: 4rem;
@@ -16,8 +18,29 @@
       list-style: none;
 
       h2 {
-        font-weight: 300;
+        font-family: "Archia";
+        font-size: 24px;
       }
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+
+    h3 {
+      margin-bottom: 1.5rem;
+      letter-spacing: 3px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    p {
+      font-weight: lighter;
+      font-size: 14px;
+      letter-spacing: 2px;
     }
   }
 }
@@ -45,7 +68,8 @@
       }
 
       h3 {
-        font-weight: 100;
+        font-weight: inherit;
+        font-size: 20px;
       }
 
       button {
@@ -55,7 +79,7 @@
         padding: 5px 20px;
         font-weight: 100;
         border: none;
-        margin-top: 10px;
+        margin-top: 20px;
       }
     }
 
@@ -103,8 +127,8 @@
 
         h2 {
           font-size: 28px;
-          font-weight: 300;
-          max-width: 400px;
+          font-weight: 900;
+          max-width: 390px;
         }
 
         h3 {
@@ -115,13 +139,14 @@
         }
 
         p {
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 200;
         }
 
         .underline {
           text-decoration: underline;
           margin-top: 2rem;
+          letter-spacing: 2px;
         }
 
         img {
@@ -144,11 +169,19 @@
           .text {
             font-size: 15px;
             font-weight: 200;
+            letter-spacing: 2px;
+
+            strong {
+              letter-spacing: 0px;
+            }
           }
 
           .number {
-            margin-top: 13px;
             font-size: 50px;
+          }
+
+          .mt {
+            margin-top: 13px;
           }
         }
       }
