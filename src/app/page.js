@@ -7,6 +7,8 @@ import { useState } from "react";
 import Nav from "@/components/Nav/Nav";
 import Social from "@/components/Social";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
+import portfolio from "./portfolio/page";
 
 
 export default function Home() {
@@ -19,17 +21,21 @@ export default function Home() {
         <div className="home-modal">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <img src="/agador-white-logo.png" atl="Agador logo"/>
-            <p
+            {/* <p
               style={{ fontSize: '24px', fontWeight: '500' }}
               onClick={() => setShowModal(false)}
-            >X</p>
+            >X</p> */}
+
+            <img src="https://www.latentview.com/wp-content/uploads/2023/12/closeicon.png" width="50px" onClick={() => setShowModal(false)} />
           </div>
           <ul>
-            <li><h2>About Us</h2></li>
-            <li><h2>Portfolio</h2></li>
-            <li><h2>Investors</h2></li>
+            <li><h2><Link href="/our-history"> About Us</Link></h2></li>
+            <li><h2><Link href="/portfolio"> Portfolio</Link></h2></li>
+            <li><h2><Link href="/investors">Investors</Link></h2></li>
+            <li><h2><Link href="/team">Team</Link></h2></li>
             <li><h2>News</h2></li>
-            <li><h2>Contact</h2></li>
+            <li><h2><Link href="/contact">Contact</Link></h2>
+            </li>
           </ul>
 
           <div className="details">
@@ -46,10 +52,10 @@ export default function Home() {
           <section className="home">
             <Nav />
 
-            <div className="home-slider__info">
+            <div className="home-slider__info" style={{ paddingTop: '4rem' }}>
               <h3>Palm Bay, FL</h3>
               <h2>Solamar Palm Bay</h2>
-              <h3 style={{ letterSpacing: '2px', fontSize: '18px' }} >UNDER CONSTRUCTION</h3>
+              <h3 style={{ letterSpacing: '4px', fontSize: '18px' }} >UNDER CONSTRUCTION</h3>
               <button>Multifamily</button>
             </div>
 
