@@ -4,16 +4,19 @@ import Image from "next/image";
 import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
 
-export default function Home() {
+export default function History() {
 
   return (
     <>
-      <section className="home">
-        <Nav />
+      <section className="history">
+        <img src="/border.jpg" alt="house" width="100%" />
+        <div className="home">
+          <Nav />
 
-        <div className="home-slider__info">
-          <h2><strong>Our History</strong></h2>
-          <h3>PILLARS THAT SHAPE US UP</h3>
+          <div className="home-slider__info">
+            <h2><strong>Our History</strong></h2>
+            <h3>PILLARS THAT SHAPE US UP</h3>
+          </div>
         </div>
       </section>
 

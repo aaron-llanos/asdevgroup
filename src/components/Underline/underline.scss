@@ -1,0 +1,18 @@
+
+.underline-container {
+  max-width: fit-content;
+
+  .text {
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    width: 100%;
+    padding-bottom: 2px;
+    border-width: 80%;
+    font-size: 18px;
+  }
+
+  .line {
+    height: 1px;
+    background-color: black;
+  }
+}

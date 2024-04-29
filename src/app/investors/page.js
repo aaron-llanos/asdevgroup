@@ -8,14 +8,16 @@ export default function Home() {
 
   return (
     <>
-      <section className="investors">
-        <Nav light />
+      <section className="home">
+        <Nav />
 
-        <div className="investors-container">
-          <h1>Quick access to the Juniper Square portal</h1>
-          <h2>Juniper Square</h2>
-
+        <div className="home-slider__info">
+          <h2>Quick access to the Juniper Square portal:</h2>
           <Button text="Go to Juniper Square Portal" />
+        </div>
+      </section>
+      <section className="investors">
+        <div className="investors-container">
           <h3>Want to change your contact information?</h3>
           <h4>Fill the form below</h4>
 
@@ -39,7 +41,6 @@ export default function Home() {
           </form>
         </div>
       </section>
-      <img src="/investors.jpg" alt="investors" />
       <Footer />
     </>
   );

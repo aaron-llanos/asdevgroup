@@ -9,12 +9,15 @@ export default function Home() {
 
   return (
     <>
-      <section className="home">
-        <Nav />
+      <section className="contact">
+        <img src="/border.jpg" alt="house" width="100%" />
+        <div className="home">
+          <Nav />
 
-        <div className="home-slider__info">
-          <h2>Contact</h2>
-          <h3>GET IN TOUCH</h3>
+          <div className="home-slider__info">
+            <h2>Contact</h2>
+            <h3>GET IN TOUCH</h3>
+          </div>
         </div>
       </section>
 

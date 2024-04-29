@@ -1,0 +1,175 @@
+.news {
+  position: relative;
+  .home {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &-slider__info {
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+  }
+}
+
+.home {
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+
+  &-slider {
+    &__info {
+      color: white;
+      max-width: 800px;
+      margin: 0 auto 18rem;
+      width: 100%;
+
+      h2 {
+        font-weight: 600;
+        font-size: 62px;
+        margin: 10px 0;
+      }
+
+      h3 {
+        font-weight: 100;
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 26px;
+  }
+
+  h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 200;
+  }
+
+  .card {
+    background-color: #d9d9d9;
+    color: black;
+    font-weight: 500;
+    width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+
+    p {
+      font-weight: 600;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+footer .container {
+  max-width: 100%;
+}
+
+footer {
+  border-top: solid 1px white;
+  margin-top: 7rem;
+}
+
+.principal {
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+
+  .grid-item {
+    margin-right: 2rem;
+  }
+
+  .content {
+    margin-top: 5%;
+    .date {
+      color: #a5a2a2;
+      font-size: 18px;
+    }
+
+    h3 {
+      font-style: inherit;
+      font-size: 24px;
+      max-width: 380px;
+      margin: 0.5rem 0;
+    }
+
+    .text {
+      font-size: 18px;
+    }
+  }
+}
+
+.underline-container {
+  margin-top: 1rem !important;
+}
+
+.underline-container .text {
+  margin-top: 0 !important;
+}
+
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-item {
+  width: 100%;
+  position: relative;
+  margin-bottom: 26px;
+  max-width: 300px;
+  margin-top: 5rem;
+
+  img {
+    position: relative;
+    width: 100%;
+  }
+
+  .info {
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 300;
+      font-size: 20px;
+      margin: 0;
+      font-style: inherit;
+      max-width: 240px;
+    }
+
+    .date {
+      font-weight: 100;
+      font-size: 16px;
+      color: #a5a2a2;
+    }
+  }
+}

@@ -2,12 +2,21 @@ body {
   background-color: black;
 }
 
+.contact {
+  position: relative;
+  .home {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &-slider__info {
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+  }
+}
+
 .home {
-  background-image: url('/home/s-01.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 15%;
-  height: 100%;
   padding: 4rem 6rem;
   display: flex;
   flex-direction: column;
@@ -16,19 +25,18 @@ body {
 
   &-slider {
     &__info {
-      max-width: 800px;
-      margin: 0 auto 18rem;
-      width: 100%;
+      color: white;
 
       h2 {
         font-weight: 500;
-        font-size: 40px;
+        font-size: 60px;
         margin: 10px 0;
       }
 
       h3 {
         font-weight: 100;
-        font-size: 16px;
+        font-size: 20px;
+        margin-left: -8px;
       }
     }
   }
@@ -40,10 +48,10 @@ body {
   color: white;
 
   h2 {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 300;
     text-align: center;
-    letter-spacing: 22px;
+    letter-spacing: 26px;
   }
 
   h3 {
@@ -118,7 +126,7 @@ footer {
     max-width: 175px;
 
     p {
-      font-size: 14px;
+      font-size: 16px;
       margin-top: 1rem;
     }
   }

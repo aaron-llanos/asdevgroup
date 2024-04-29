@@ -20,7 +20,7 @@ export default function portfolio() {
             <Button text="Residential" />
             <Button text="Industrial" />
           </div>
-          <div className="filter-row" style={{ maxWidth: '300px' }}>
+          <div className="filter-row" style={{ maxWidth: '462px' }}>
             <Button text="In Progress" />
             <Button text="Completed" />
             <Button text="All" />
@@ -33,7 +33,7 @@ export default function portfolio() {
               <p className="title">Lorem ipsum dolor sit amet</p>
               <p className="city">Nunc non euismod</p>
             </div>
-            <div className="card">
+            <div className="card red">
               <p className="title">Lorem ipsum dolor sit amet</p>
               <p className="city">Nunc non euismod</p>
             </div>

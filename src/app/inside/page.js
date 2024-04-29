@@ -3,6 +3,8 @@ import './page.scss'
 import Image from "next/image";
 import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
+import Underline from '@/components/Underline/Underline';
+import Button from '@/components/Button/Button';
 
 export default function Home() {
 
@@ -17,8 +19,8 @@ export default function Home() {
             <h3>OVERVIEW</h3>
           </div>
           <h2>Solamar Palm Bay</h2>
-          <h3>UNDER CONSTRUCTION</h3>
-          <button>Multifamily</button>
+          {/* <h3>UNDER CONSTRUCTION</h3>
+          <button>Multifamily</button> */}
         </div>
       </section>
 
@@ -103,9 +105,9 @@ export default function Home() {
         </div>
       </section>
 
-      <p className="return">RETURN TO PROJECTS</p>
+      <Underline text="RETURN TO PROJECTS" />
 
-      <p className="more-info">Request more information</p>
+      <Button text="Request more information" />
 
       <Footer />
     </>

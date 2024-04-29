@@ -1,9 +1,47 @@
-.investors {
+.home {
+  background-image: url('/home/s-01.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 15%;
+  height: 100%;
   padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;
+
+  &-slider {
+    &__info {
+      margin-top: 16%;
+
+      h2 {
+        font-weight: 600;
+        font-size: 40px;
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      h3 {
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+        width: 262px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.investors {
+  padding: 4rem 6rem 0rem;
 
   &-container {
     max-width: 1000px;
-    margin: 6rem auto;
+    margin: 1rem auto 6rem;
     text-align: center;
 
     h1, h2 {
@@ -16,16 +54,17 @@
       margin-top: 3rem;
     }
 
+    h3 {
+      font-size: 26px;
+    }
+
     h3, h4 {
       font-weight: 400;
     }
 
-    h3 {
-      margin-top: 8rem;
-    }
-
     h4 {
       margin-bottom: 2rem;
+      font-size: 20px;
     }
 
     button {

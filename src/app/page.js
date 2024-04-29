@@ -7,7 +7,7 @@ import { useState } from "react";
 import Nav from "@/components/Nav/Nav";
 import Social from "@/components/Social";
 import Footer from "@/components/Footer/Footer";
-
+import Underline from "@/components/Underline/Underline";
 
 export default function Home() {
 
@@ -18,11 +18,8 @@ export default function Home() {
       {showModal ? (
         <div className="home-modal">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <img src="/agador-white-logo.png" atl="Agador logo"/>
-            <p
-              style={{ fontSize: '24px', fontWeight: '500' }}
-              onClick={() => setShowModal(false)}
-            >X</p>
+            <img src="/agador-white-logo.png" atl="Agador logo" style={{ 'width': '250px' }} />
+            <img src="/close.png" alt="close" width="30" onClick={() => setShowModal(false)} />
           </div>
           <ul>
             <li><h2>About Us</h2></li>
@@ -49,17 +46,25 @@ export default function Home() {
             <div className="home-slider__info">
               <h3>Palm Bay, FL</h3>
               <h2>Solamar Palm Bay</h2>
-              <h3 style={{ letterSpacing: '2px', fontSize: '18px' }} >UNDER CONSTRUCTION</h3>
+              <h3 style={{ letterSpacing: '2px', fontSize: '20px' }} >UNDER CONSTRUCTION</h3>
               <button>Multifamily</button>
             </div>
 
             <div className="home-slider__buttons">
               <div className="btn">
-                <p>NEXT</p><p className="sign">&#62;</p>
+                <p>NEXT</p>
+                <img src="/arrow-left.png" alt="arrow" width="10px" />
               </div>
               <div className="btn">
-                <p className="sign">&#60;</p><p>PREV</p>
+                <img src="/arrow-right.png" alt="arrow" width="10px" />
+                <p>PREV</p>
               </div>
+            </div>
+
+            <div className="home-slider__count">
+              <p>01</p>
+              <div className="line"></div>
+              <p>10</p>
             </div>
           </section>
 
@@ -72,14 +77,14 @@ export default function Home() {
                   <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
                   <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
-                  <p className="underline">PORTFOLIO</p>
+                  <Underline text="PORTFOLIO" width="90%" />
                 </div>
 
                 <img src="/home/wc-01.jpg" atl="Agador logo"/>
               </div>
 
               <h3 style={{
-                margin: '5rem 0', fontSize: '28px', textAlign: 'center', fontWeight: '300'
+                margin: '5rem 0', fontSize: '34px', textAlign: 'center', fontWeight: '300'
               }}><strong>Our</strong> highlights</h3>
 
               <div className="cards-container">
@@ -88,7 +93,7 @@ export default function Home() {
                   <p className="number mt">09</p>
                 </div>
                 <div className="card">
-                  <p className="number">15</p>
+                  <p className="number" style={{ fontSize: '70px', marginBottom: '-8px' }} >15</p>
                   <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p>
                 </div>
                 <div className="card">
@@ -98,7 +103,7 @@ export default function Home() {
               </div>
 
               <p
-                style={{ marginTop: '6rem', fontWeight: '300' }}
+                style={{ marginTop: '6rem', fontWeight: '300', fontSize: '18px' }}
               >Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader.  Spartacus meaning "from the city of Sparta" in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding real estate development company with a portfolio that includes a wealth of:</p>
             </div>
           </section>

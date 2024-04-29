@@ -9,7 +9,7 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="content">
-          <img src="/agador-logo.png" atl="Agador logo"/>
+          <img src="/agador-logo.png" atl="Agador logo" width="200px" />
 
           <div className="social">
             <p><strong>Where Vision Meets Excellence in Florida Real Estate</strong></p>

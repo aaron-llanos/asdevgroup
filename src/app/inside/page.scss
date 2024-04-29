@@ -12,23 +12,24 @@
 
   &-slider {
     &__info {
-      margin-top: 10rem;
+      margin-top: 16%;
 
       h2 {
-        font-weight: 500;
-        font-size: 40px;
+        font-weight: 600;
+        font-size: 54px;
         margin: 10px 0;
       }
 
       h3 {
         font-weight: 100;
+        letter-spacing: 2px;
       }
 
       button {
         color: white;
         background-color: #d20000;
         border-radius: 15px;
-        padding: 5px 20px;
+        padding: 8px 30px;
         font-weight: 100;
         border: none;
         margin-top: 10px;
@@ -50,11 +51,12 @@
 }
 
 .topics {
-  max-width: 925px;
+  max-width: 1000px;
   margin: 0 auto;
-  margin-top: -5rem;
+  margin-top: -21%;
   background-color: white;
   padding: 1rem 4rem;
+  padding-bottom: 10%;
 
   .arrow {
     display: flex;
@@ -74,6 +76,8 @@
   h4 {
     font-weight: 300;
     margin-top: 2rem;
+    font-size: 18px;
+    letter-spacing: 2px;
   }
 
   .buttons {
@@ -82,12 +86,13 @@
 
     .black {
       border: solid 1px black;
-      width: 210px;
+      width: 234px;
       border-radius: 15px;
       text-align: center;
       padding: 2px 0;
       font-weight: 300;
       margin-right: 15px;
+      letter-spacing: 2px;
     }
 
     .red {
@@ -104,20 +109,20 @@
     margin-top: 4rem;
 
     h5 {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: 300;
       margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 500;
     }
 
     &-container {
       display: flex;
       justify-content: space-between;
-      max-width: 722px;
+      max-width: 800px;
       margin: 0 auto;
     }
   }
@@ -135,14 +140,14 @@
 
   p {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
 .about,
 .gallery {
   h4 {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 300;
     margin-bottom: 3rem;
   }
@@ -150,7 +155,7 @@
 
 .gallery {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1120px;
 
   h4 {
     text-align: center;
@@ -163,29 +168,18 @@
     flex-wrap: wrap;
 
     img {
-      margin-bottom: 8px;
+      margin-bottom: 26px;
     }
   }
 }
 
-.return {
-  text-align: center;
-  margin: 5rem auto;
-  font-size: 16px;
-  font-weight: 300;
-  border-bottom: solid 1px black;
-  width: 204px;
-  padding-bottom: 5px;
-  letter-spacing: 2px;
+.underline-container {
+  margin: 0 auto;
 }
 
-.more-info {
-  font-weight: 200;
-  text-align: center;
-  margin: 5rem auto 7rem;
-  background-color: #d0ced1;
-  width: 210px;
-  padding: 10px 12px;
-  border-radius: 15px;
-  font-size: 13px;
+button {
+  display: flex;
+  justify-content: center;
+  width: 270px !important;
+  margin: 5rem auto 7rem !important;
 }

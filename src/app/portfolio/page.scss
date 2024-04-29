@@ -12,18 +12,19 @@
 
   h1 {
     text-align: center;
-    max-width: 600px;
+    max-width: 800px;
     margin: 4rem auto 1rem;
-    font-size: 30px;
+    font-size: 44px;
   }
 
   .filter {
-    width: 520px;
+    width: 800px;
     margin: 0 auto;
 
     &-row {
       display: flex;
       margin: 1.5rem auto 0;
+      align-items: center;
 
       p {
         letter-spacing: 2px;
@@ -32,7 +33,7 @@
       button {
         width: inherit;
         margin-top: 0;
-        padding: 4px 18px;
+        padding: 4px 28px;
       }
     }
   }
@@ -49,8 +50,8 @@
   }
 
   .card {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border: solid 1px white;
     display: flex;
     flex-direction: column;
@@ -59,17 +60,17 @@
 
     .title {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 20px;
       max-width: 135px;
     }
 
     .city {
-      font-size: 12px;
+      font-size: 18px;
     }
   }
 
   .red {
-    background-color: #d30200;
-    border: solid 1px #d30200;
+    background-color: rgb(211 2 0 / 83%);
+    border: solid 1px rgb(211 2 0 / 83%);
   }
 }
