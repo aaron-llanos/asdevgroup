@@ -22,11 +22,13 @@ export default function Home() {
             <img src="/close.png" alt="close" width="30" onClick={() => setShowModal(false)} />
           </div>
           <ul>
-            <li><h2>About Us</h2></li>
-            <li><h2>Portfolio</h2></li>
-            <li><h2>Investors</h2></li>
+            <li><h2><Link href="/our-history"> About Us</Link></h2></li>
+            <li><h2><Link href="/portfolio"> Portfolio</Link></h2></li>
+            <li><h2><Link href="/investors">Investors</Link></h2></li>
+            <li><h2><Link href="/team">Team</Link></h2></li>
             <li><h2>News</h2></li>
-            <li><h2>Contact</h2></li>
+            <li><h2><Link href="/contact">Contact</Link></h2>
+            </li>
           </ul>
 
           <div className="details">
@@ -43,7 +45,7 @@ export default function Home() {
           <section className="home">
             <Nav />
 
-            <div className="home-slider__info">
+            <div className="home-slider__info" style={{ paddingTop: '4rem' }}>
               <h3>Palm Bay, FL</h3>
               <h2>Solamar Palm Bay</h2>
               <h3 style={{ letterSpacing: '2px', fontSize: '20px' }} >UNDER CONSTRUCTION</h3>
