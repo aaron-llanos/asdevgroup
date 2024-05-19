@@ -48,7 +48,7 @@ body {
   color: white;
 
   h2 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 300;
     text-align: center;
     letter-spacing: 26px;
@@ -86,6 +86,12 @@ body {
       margin-bottom: 6rem;
     }
   }
+
+  .social-logos {
+    p {
+      font-size: 20px !important;
+    }
+  }
 }
 
 .why {
@@ -115,7 +121,7 @@ footer {
 
 .contact-info {
   margin: 3rem auto;
-  max-width: 500px;
+  max-width: 550px;
 
   &__container {
     display: flex;
@@ -126,7 +132,7 @@ footer {
     max-width: 175px;
 
     p {
-      font-size: 16px;
+      font-size: 18px;
       margin-top: 1rem;
     }
   }

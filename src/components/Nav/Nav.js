@@ -1,14 +1,22 @@
 import './nav.scss'
 
-export default function Nav({ light }) {
+import Link from 'next/link'
+
+export default function Nav({ light, openMenu }) {
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <img atl="Agador logo" src={light ? '/agador-logo-b.png' : 'agador-logo.png'} style={{ 'width': '250px' }} />
+    <div className="nav-container">
+      <Link href="/">
+        <img
+          atl="Agador logo"
+          style={{ 'width': '250px' }}
+          src={light ? '/agador-logo-b.png' : '/agador-logo.png'}
+        />
+      </Link>
       <nav>
         <p>Portfolio</p>
         <p>Contact</p>
-        <img atl="Hamburger" src="/hamburger.png" height="26px" />
+        <img atl="Hamburger" src="/hamburger.png" height="26px" onClick={openMenu} />
       </nav>
     </div>
   );

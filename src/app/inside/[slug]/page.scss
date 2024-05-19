@@ -1,3 +1,7 @@
+.not-scroll {
+  overflow-y: hidden;
+}
+
 .home {
   background-image: url('/home/s-01.jpg');
   background-repeat: no-repeat;
@@ -17,12 +21,12 @@
       h2 {
         font-weight: 600;
         font-size: 54px;
-        margin: 10px 0;
       }
 
       h3 {
         font-weight: 100;
         letter-spacing: 2px;
+        margin: 1rem 0;
       }
 
       button {
@@ -51,12 +55,14 @@
 }
 
 .topics {
-  max-width: 1000px;
-  margin: 0 auto;
   margin-top: -21%;
+  max-width: 1000px;
+  margin: -23% auto 0;
   background-color: white;
   padding: 1rem 4rem;
-  padding-bottom: 10%;
+  padding-bottom: 3%;
+  height: 370px;
+  transition: all 0.6s ease-in-out;
 
   .arrow {
     display: flex;
@@ -75,7 +81,7 @@
 
   h4 {
     font-weight: 300;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 18px;
     letter-spacing: 2px;
   }
@@ -93,15 +99,6 @@
       font-weight: 300;
       margin-right: 15px;
       letter-spacing: 2px;
-    }
-
-    .red {
-      border-radius: 15px;
-      background-color: #d20000;
-      color: white;
-      width: 130px;
-      text-align: center;
-      padding: 2px 0;
     }
   }
 
@@ -128,26 +125,58 @@
   }
 }
 
+.translation {
+  margin: -5% auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background: rgba(255, 255, 255, 0.30);
+  height: 80px;
+  padding: 0 4rem;
+
+  h3 {
+    font-weight: 100;
+    letter-spacing: 2px;
+  }
+
+  .arrow {
+    border-color: white;
+
+    img {
+      transform: rotate(180deg);
+      filter: invert(100%);
+    }
+  }
+}
+
 .about {
   max-width: 800px;
-  margin: 9rem auto 3rem;
+  margin: 8rem auto 3rem;
 
   h4 {
-    font-size: 22px;
     font-weight: 300;
     margin-bottom: 3rem;
   }
 
   p {
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  ul {
+    margin-left: 1rem;
+
+    li {
+      font-size: 20px;
+    }
   }
 }
 
 .about,
 .gallery {
   h4 {
-    font-size: 34px;
+    font-size: 36px;
     font-weight: 300;
     margin-bottom: 3rem;
   }
@@ -182,4 +211,13 @@ button {
   justify-content: center;
   width: 270px !important;
   margin: 5rem auto 7rem !important;
+}
+
+.btn-red {
+  border-radius: 15px;
+  background-color: #d20000;
+  color: white;
+  width: 130px;
+  text-align: center;
+  padding: 2px 0;
 }

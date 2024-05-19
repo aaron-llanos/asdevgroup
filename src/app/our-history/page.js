@@ -1,10 +1,16 @@
-import './page.scss'
+"use client";
 
-import Image from "next/image";
+import './page.scss'
+import 'animate.css';
+
+import { useInView } from "react-intersection-observer";
+
 import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
 
 export default function History() {
+  // Texts animations
+  const { ref: ref01, inView: inView01 } = useInView();
 
   return (
     <>
@@ -21,7 +27,11 @@ export default function History() {
       </section>
 
       <section className="container-h">
-        <h2><strong>Welcome to</strong> Agador Spartacus Development</h2>
+        <h2
+          className={inView01 && 'animate__animated animate__fadeInLeft'}
+          style={{ opacity: `${inView01 ? '1' : '0'}` }}
+          ref={ref01}
+        ><strong>Welcome to</strong> Agador Spartacus Development</h2>
         <h3><strong>Where Vision Meets Excellence in Florida Real Estate</strong></h3>
         <p>At <strong>Agador Spartacus Development</strong> , we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
