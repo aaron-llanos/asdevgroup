@@ -10,7 +10,6 @@
 }
 
 .home-modal {
-  // display: none !important;
   color: #fefefe;
   padding: 4rem 6rem;
   height: 100vh;
@@ -63,7 +62,7 @@
 
 .home {
   &-welcome {
-    background-color: #f3eeee;
+    background-color: #ffffff;
     padding: 4rem 0;
 
     &__container {
@@ -164,7 +163,7 @@
   }
 
   &-featured {
-    background-color: #f3eeee;
+    background-color: #ffffff;;
 
     &__content {
       margin: 0 auto;

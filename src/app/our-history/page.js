@@ -39,35 +39,43 @@ export default function History() {
 
         <div className="card-container">
           <div className="card">
-            <p><strong>Land acquisition</strong></p>
+            <p className="initial">Land acquisition</p>
+            <p className="on-hover">we navigate the complex landscape of South Florida real estate to secure prime locations for development.</p>
           </div>
           <div className="card">
-            <p>Site development</p>
+            <p className="initial">Site development</p>
+            <p className="on-hover">from untouched land to groundbreaking, we manage every detail with precision.</p>
           </div>
           <div className="card">
-            <p>Project management & oversight</p>
+            <p className="initial">Project management & oversight</p>
+            <p className="on-hover">our meticulous approach ensures that every projectis delivered on time and to the highest standards.</p>
           </div>
           <div className="card">
-            <p>Lender fiancing & construction loan management</p>
+            <p className="initial">Lender financing & Construction loan management</p>
+            <p className="on-hover">our meticulous approach  ensures that every project is delivered on time and  to the highest standards.</p>
           </div>
         </div>
 
         <div className="card-container">
           <div className="card">
-            <p>Land Acquisition</p>
+            <p className="initial">Project budget controls</p>
+            <p className="on-hover">keeping a tight rein on finances, we deliver value without compromise.</p>
           </div>
           <div className="card">
-            <p>site development</p>
+            <p className="initial">Investor relation</p>
+            <p className="on-hover">building trust through transparent partnerships and consistent returns.</p>
           </div>
           <div className="card">
-            <p>project management & oversight</p>
+            <p className="initial">Project equity management</p>
+            <p className="on-hover">ensuring a balanced investment approach for long-term success.</p>
           </div>
           <div className="card">
-            <p>Lender financing & construction loan management</p>
+            <p className="initial">Financial reporting & oversight</p>
+            <p className="on-hover">With rigorous oversight, we maintain financial integrity at every stage.</p>
           </div>
         </div>
 
-        <p>Join us in redefining the South Florida skyline. Explore our projects, learn about our methods, and discover opportunities to invest in the future of real estate development!</p>
+        <p style={{ marginTop: '2rem', marginBottom: '5rem' }}>Join us in redefining the South Florida skyline. Explore our projects, learn about our methods, and discover opportunities to invest in the future of real estate development!</p>
 
         <p className="margin why"><strong>Why choose Agador Spartacus Development?</strong></p>
         <p className="margin">Top 5 reasons to choose <strong>Agador Spartacus Development</strong> for your Real Estate Ventures in Florida.</p>

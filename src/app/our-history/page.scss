@@ -50,7 +50,7 @@ body {
   color: white;
 
   h2 {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 300;
     max-width: 400px;
   }
@@ -76,6 +76,7 @@ body {
     text-align: center;
     border-radius: 6px;
     padding: 8px;
+    transition: all 0.3s ease-in-out;
 
     p {
       font-weight: 600;
@@ -85,7 +86,31 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 6rem;
+      height: 200px;
+    }
+
+    .initial {
+      display: block;
+    }
+
+    .on-hover {
+      display: none;
+    }
+  }
+
+  .card:hover {
+    background-color: #d30200;
+    color: white;
+
+    .initial {
+      display: none;
+    }
+
+    .on-hover {
+      display: block;
+      font-size: 16px;
+      font-family: "Satoshi";
+      font-weight: 100;
     }
   }
 }
@@ -113,4 +138,8 @@ footer .container {
 footer {
   border-top: solid 1px white;
   margin-top: 7rem;
+}
+
+.card-container p {
+  font-size: 20px;
 }

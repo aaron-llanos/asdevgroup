@@ -99,12 +99,12 @@ export default function Home() {
         <section className="home-welcome">
           <div className="home-welcome__container">
             <div className="step-one">
-              <div style={{ marginRight: '3rem' }}>
-                <h2
-                  className={`tiggers ${inView01 && 'animate__animated animate__fadeInLeft'}`}
-                  style={{ opacity: `${inView01 ? '1' : '0'}` }}
-                  ref={ref01}
-                >Welcome to <strong>Agador Spartacus Development</strong>
+              <div
+                style={{ marginRight: '3rem', opacity: `${inView01 ? '1' : '0'}`  }}
+                className={`${inView01 && 'animate__animated animate__fadeInLeft'}`}
+                ref={ref01}
+              >
+                <h2 className="tiggers">Welcome to <strong>Agador Spartacus Development</strong>
                 </h2>
 
                 <h3>Where Vision Meets Excellence in Florida Real Estate</h3>

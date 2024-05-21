@@ -26,7 +26,7 @@
       h3 {
         font-weight: 100;
         letter-spacing: 2px;
-        margin: 1rem 0;
+        margin: 1rem 0 20px;
       }
 
       button {
@@ -57,7 +57,7 @@
 .topics {
   margin-top: -21%;
   max-width: 1000px;
-  margin: -23% auto 0;
+  margin: -370px auto 0;
   background-color: white;
   padding: 1rem 4rem;
   padding-bottom: 3%;
@@ -92,10 +92,10 @@
 
     .black {
       border: solid 1px black;
-      width: 234px;
-      border-radius: 15px;
+      max-width: 100%;
+      border-radius: 33px;
       text-align: center;
-      padding: 2px 0;
+      padding: 5px 16px;
       font-weight: 300;
       margin-right: 15px;
       letter-spacing: 2px;
@@ -126,7 +126,7 @@
 }
 
 .translation {
-  margin: -5% auto 0;
+  margin: -81px auto 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,7 +176,7 @@
 .about,
 .gallery {
   h4 {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 300;
     margin-bottom: 3rem;
   }
@@ -214,10 +214,11 @@ button {
 }
 
 .btn-red {
-  border-radius: 15px;
+  border-radius: 33px;
   background-color: #d20000;
   color: white;
-  width: 130px;
+  width: 154px;
   text-align: center;
-  padding: 2px 0;
+  padding: 4px 0;
+  font-size: 20px;
 }
