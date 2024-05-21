@@ -116,7 +116,7 @@ export default function Home() {
               <img src="/home/wc-01.jpg" atl="Agador logo"/>
             </div>
 
-            <h3 className="testing" style={{
+            <h3 style={{
               margin: '5rem 0', fontSize: '38px', textAlign: 'center', fontWeight: '300'
             }}><strong>Our</strong> highlights</h3>
 
@@ -160,9 +160,9 @@ export default function Home() {
               </div>
             </div>
 
-            <p
-              style={{ marginTop: '6rem', fontWeight: '300', fontSize: '20px' }}
-            >Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader.  Spartacus meaning "from the city of Sparta" in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding real estate development company with a portfolio that includes a wealth of:</p>
+            <h3 style={{
+              margin: '6rem 0 1rem', fontSize: '38px', textAlign: 'center', fontWeight: '300'
+            }}><strong>Property</strong> types</h3>
           </div>
         </section>
 
