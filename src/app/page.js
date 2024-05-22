@@ -184,6 +184,45 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="home-benefits">
+          <div className="home-benefits__column flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <h4>Multi-family</h4>
+              </div>
+              <div className="flip-card-back">
+                <p>pppsss back!!!</p>
+              </div>
+            </div>
+          </div>
+          <div className="home-benefits__column">
+            <h4>Industrial</h4>
+          </div>
+          <div className="home-benefits__column">
+            <h4>Hospitality</h4>
+          </div>
+          <div className="home-benefits__column">
+            <h4>Residential</h4>
+          </div>
+          <div className="home-benefits__column">
+            <h4>Commercial or Mixed Use</h4>
+          </div>
+        </section>
+
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div
+              className="flip-card-front"
+              style={{ backgroundImage: "url('https://i.pinimg.com/564x/13/ce/1a/13ce1a83c6728beb5dfcb4f3149f5bd0.jpg')" }}
+            >
+              frente
+            </div>
+            <div className="flip-card-back">
+              Studio Ghibli, dirigida y creada por Hayao Miyazaki en 1988. Tras realizar esta película, se adoptó como logotipo del estudio a los Totoros. Es la tercera película del estudio tras su fundación.
+            </div>
+          </div>
+        </div>
+
         <section className="home-featured">
           <div className="home-featured__content">
             <h3
