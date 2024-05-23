@@ -4,6 +4,8 @@
 import './home.scss'
 import 'animate.css';
 
+import Link from 'next/link'
+
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
@@ -14,7 +16,11 @@ import Footer from "@/components/Footer/Footer";
 import Underline from "@/components/Underline/Underline";
 import HomeSlider from '@/components/HomeSlider/HomeSlider';
 
+import { properties } from '@/helpers/properties';
+
 export default function Home() {
+  const limitProperties = properties.slice(0,4)
+
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
   const { ref: ref02, inView: inView02 } = useInView();
@@ -60,13 +66,15 @@ export default function Home() {
                     duration={5}
                     className="number"
                     enableScrollSpy={true}
+                    style={{ fontSize: '70px' }}
                   />
                 </div>
             </div>
             <div className="card">
+              <p className="text"><strong>COMBINED YEARS</strong> OF EXPERIENCE</p>
               <div className="">
                 <CountUp
-                  end={15}
+                  end={60}
                   start={0}
                   duration={5}
                   className="number"
@@ -74,10 +82,10 @@ export default function Home() {
                   style={{ fontSize: '70px' }}
                 />
               </div>
-              <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p>
+              {/* <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p> */}
             </div>
             <div className="card">
-              <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
+              <p className="text"><strong>COMPLETED</strong> PROJECTS</p>
               <div className="mt">
                 <CountUp
                   end={35}
@@ -85,6 +93,7 @@ export default function Home() {
                   duration={5}
                   className="number"
                   enableScrollSpy={true}
+                  style={{ fontSize: '70px' }}
                 />
               </div>
             </div>
@@ -155,61 +164,23 @@ export default function Home() {
         </div>
 
         <div className="home-featured__grid">
-          <div className="grid-item">
-            <img src="/home/grid-01.jpg" alt="House" />
-            <div className="view">
-              <p>VIEW</p>
-            </div>
-            <div className="info">
-              <div>
-                <h4>Solamar Palm Bay</h4>
-                <p className="type">Multifamily</p>
+          {limitProperties.map((property, key) => (
+            <div className="grid-item" key={key}>
+              <img src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`} alt="property" />
+              <Link href={`/inside/${property.slug}`}>
+                <div className="view">
+                  <p>VIEW</p>
+                </div>
+              </Link>
+              <div className="info">
+                <div>
+                  <h4>{property.name}</h4>
+                  <p className="type">{property.type}</p>
+                </div>
+                <p className="location">{property.location}</p>
               </div>
-              <p className="location">Melbourne, FL</p>
             </div>
-          </div>
-
-          <div className="grid-item">
-            <img src="/home/grid-01.jpg" alt="House" />
-            <div className="view">
-              <p>VIEW</p>
-            </div>
-            <div className="info">
-              <div>
-                <h4>Solamar Palm Bay</h4>
-                <p className="type">Multifamily</p>
-              </div>
-              <p className="location">Melbourne, FL</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <img src="/home/grid-01.jpg" alt="House" />
-            <div className="view">
-              <p>VIEW</p>
-            </div>
-            <div className="info">
-              <div>
-                <h4>Solamar Palm Bay</h4>
-                <p className="type">Multifamily</p>
-              </div>
-              <p className="location">Melbourne, FL</p>
-            </div>
-          </div>
-
-          <div className="grid-item">
-            <img src="/home/grid-01.jpg" alt="House" />
-            <div className="view">
-              <p>VIEW</p>
-            </div>
-            <div className="info">
-              <div>
-                <h4>Solamar Palm Bay</h4>
-                <p className="type">Multifamily</p>
-              </div>
-              <p className="location">Melbourne, FL</p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 

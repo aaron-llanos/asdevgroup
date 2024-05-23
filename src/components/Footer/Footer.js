@@ -1,7 +1,7 @@
 import './footer.scss'
 import Image from "next/image";
 
-import Social from '../Social';
+import Social from '../Social/Social';
 
 export default function Footer() {
 

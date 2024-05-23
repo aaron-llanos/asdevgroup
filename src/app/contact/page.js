@@ -2,7 +2,7 @@ import './page.scss'
 
 import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
-import Social from '@/components/Social';
+import Social from '@/components/Social/Social';
 import Button from '@/components/Button/Button';
 
 export default function Home() {

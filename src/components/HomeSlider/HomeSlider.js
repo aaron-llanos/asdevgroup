@@ -5,35 +5,16 @@ import './home-slider.scss'
 import { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
 
+import { properties } from '@/helpers/properties';
+import { dynamicClass } from '@/helpers/dynamic-class';
+
 export default function HomeSlider() {
-  const data = [
-    {
-      id: 1,
-      location: 'Palm Bay, FL',
-      name: 'Apartments at Palm Bay',
-      state: 'UNDER CONSTRUCTION',
-      image: '/home/s-01.jpg'
-    },
-    {
-      id: 2,
-      location: 'Palm Bay, FL',
-      name: 'Miami',
-      state: 'UNDER CONSTRUCTION',
-      image: 'https://soyarquitectura.mx/wp-content/uploads/2021/09/casas-de-lujo-blogc10.jpg'
-    },
-    {
-      id: 3,
-      location: 'Palm Bay, FL',
-      name: 'LA',
-      state: 'UNDER CONSTRUCTION',
-      image: 'https://realestatemarket.com.mx/images/2023/08-agosto/01-08/Ciudades-de-EU-con-mayor-cantidad-de-casas-de-lujo-en-venta-II.jpeg'
-    },
-  ]
+  const limitSlides = 7;
+
+  const limitProperties = properties.slice(0,limitSlides)
 
   const [counter, setCounter] = useState(1);
-
-  const currentProperty = data.filter(property => property.id === counter);
-
+  const currentProperty = limitProperties.filter(property => property.id === counter);
   const [property, setProperty] = useState(currentProperty[0]);
 
 
@@ -46,7 +27,6 @@ export default function HomeSlider() {
   useEffect(() => {
     setAnimation('animate__fadeInDown')
   }, [property]);
-
 
   useEffect(() => {
     setEnableBTN(false)
@@ -62,7 +42,7 @@ export default function HomeSlider() {
   const handleNext = () => {
     setAnimation('animate__fadeOutDown')
     setFlash(true)
-    if (counter === 3) {
+    if (counter === limitSlides) {
       setCounter(1)
     } else {
       setCounter(counter + 1)
@@ -73,7 +53,7 @@ export default function HomeSlider() {
     setAnimation('animate__fadeOutDown')
     setFlash(true)
     if (counter === 1) {
-      setCounter(3)
+      setCounter(limitSlides)
     } else {
       setCounter(counter - 1)
     }
@@ -81,7 +61,7 @@ export default function HomeSlider() {
 
   return (
     <section className="home-slider"
-      style={{ backgroundImage: `url(${property.image})` }}
+      style={{ backgroundImage: `url(/home/slider/${property.image})` }}
     >
       {flash && (<div className="black-flash"></div>)}
 
@@ -89,13 +69,13 @@ export default function HomeSlider() {
 
       <div
         ref={ref01}
-        className={`home-slider__info ${inView01 && `animate__animated ${animation}`}`}
-        style={{ padding: '4rem 6rem 0', zIndex: '1', opacity: `${inView01 ? '1' : '0'}` }}
+        className={`home-slider__info ${dynamicClass(inView01, `animate__animated ${animation}`)}`}
+        style={{ opacity: `${inView01 ? '1' : '0'}` }}
       >
         <h3>{property.location}</h3>
         <h2>{property.name}</h2>
-        <h3 style={{ letterSpacing: '2px', fontSize: '26px' }} >{property.state}</h3>
-        <button>Multifamily</button>
+        <h3 className="progress">{property.progress}</h3>
+        <button>{property.type}</button>
       </div>
 
       <div className="home-slider__buttons"
@@ -117,7 +97,7 @@ export default function HomeSlider() {
       <div className="home-slider__count" style={{ zIndex: '1' }}>
         <p>{counter}</p>
         <div className="line"></div>
-        <p>10</p>
+        <p>{limitSlides}</p>
       </div>
     </section>
   );
