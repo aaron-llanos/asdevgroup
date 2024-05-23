@@ -7,7 +7,7 @@ import { useState } from "react";
 import Link from 'next/link'
 
 import Nav from '../Nav/Nav';
-import Social from "@/components/Social";
+import Social from "@/components/Social/Social";
 
 export default function Menu({ children, onMenu }) {
 

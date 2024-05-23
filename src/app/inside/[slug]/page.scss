@@ -3,7 +3,6 @@
 }
 
 .home {
-  background-image: url('/home/s-01.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 15%;
@@ -13,6 +12,7 @@
   flex-direction: column;
   justify-content: flex-start;
   color: white;
+  overflow-y: hidden;
 
   &-slider {
     &__info {
@@ -99,6 +99,7 @@
       font-weight: 300;
       margin-right: 15px;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
   }
 

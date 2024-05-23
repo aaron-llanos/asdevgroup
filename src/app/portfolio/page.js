@@ -7,10 +7,10 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
 import Menu from '@/components/Menu/Menu';
-import Nav from "@/components/Nav/Nav";
 import Button from '@/components/Button/Button';
 
 import { properties } from '@/helpers/properties';
+import { dynamicClass } from '@/helpers/dynamic-class';
 
 export default function portfolio() {
   const [currentType, setCurrentType] = useState('all');
@@ -25,8 +25,8 @@ export default function portfolio() {
     if (currentType === 'all') {
       concatProperties.push(...properties)
     } else {
-      const filterType = properties.filter(property =>
-        property.tags.includes(currentType))
+      const filterType =
+        properties.filter(property => property.type === currentType)
       concatProperties.push(...filterType)
     }
 
@@ -60,8 +60,8 @@ export default function portfolio() {
   return (
     <Menu>
       <section
-        className={`home ${zoom && 'zoom'}`}
-        style={{ backgroundImage: `url(${currentProperty.image})`}}
+        className={`home ${dynamicClass(zoom, 'zoom')}`}
+        style={{ backgroundImage: `url(/home/slider/${currentProperty.image})`}}
       >
         {flash && (<div className="flash"></div>)}
 
@@ -72,50 +72,50 @@ export default function portfolio() {
             <p>FILTER:</p>
             <Button
               text="All"
-              css={`${currentType === 'all' && 'bg-red'}`}
+              css={dynamicClass(currentType === 'all', 'bg-red')}
               click={() => setCurrentType('all')}
             />
             <Button
-              text="Multifamily"
-              css={`${currentType === 'multifamily' && 'bg-red'}`}
-              click={() => setCurrentType('multifamily')}
+              text="Multi-family"
+              css={dynamicClass(currentType === 'Multi-family', 'bg-red')}
+              click={() => setCurrentType('Multi-family')}
             />
             <Button
               text="Mixed-Use"
-              css={`${currentType === 'mixed' && 'bg-red'}`}
+              css={dynamicClass(currentType === 'mixed', 'bg-red')}
               click={() => setCurrentType('mixed')}
             />
             <Button
               text="Hospitality"
-              css={`${currentType === 'hospitality' && 'bg-red'}`}
-              click={() => setCurrentType('hospitality')}
+              css={dynamicClass(currentType === 'Hospitality', 'bg-red')}
+              click={() => setCurrentType('Hospitality')}
             />
             <Button
               text="Residential"
-              css={`${currentType === 'residential' && 'bg-red'}`}
-              click={() => setCurrentType('residential')}
+              css={dynamicClass(currentType === 'Residential', 'bg-red')}
+              click={() => setCurrentType('Residential')}
             />
             <Button
               text="Industrial"
-              css={`${currentType === 'industrial' && 'bg-red'}`}
-              click={() => setCurrentType('industrial')}
+              css={dynamicClass(currentType === 'Industrial', 'bg-red')}
+              click={() => setCurrentType('Industrial')}
             />
           </div>
 
           <div className="filter-row" style={{ maxWidth: '462px' }}>
             <Button
               text="All"
-              css={`${currentProgress === 'all' && 'bg-red'}`}
+              css={dynamicClass(currentProgress === 'all', 'bg-red')}
               click={() => setCurrentProgress('all')}
             />
             <Button
               text="In Progress"
-              css={`${currentProgress === 'in-process' && 'bg-red'}`}
+              css={dynamicClass(currentProgress === 'in-process', 'bg-red')}
               click={() => setCurrentProgress('in-process')}
             />
             <Button
               text="Completed"
-              css={`${currentProgress === 'completed' && 'bg-red'}`}
+              css={dynamicClass(currentProgress === 'completed', 'bg-red')}
               click={() => setCurrentProgress('completed')}
             />
           </div>
@@ -128,7 +128,7 @@ export default function portfolio() {
                 key={key}
                 onMouseLeave={deleteFlash}
                 onMouseEnter={() => hoverProperty(property)}
-                className={`card ${property.id === currentProperty.id && 'bg-card'}`}
+                className={`card ${dynamicClass(property.id === currentProperty.id, 'bg-card')}`}
               >
                 <p className="title">{property.name}</p>
                 <p className="city">{property.location}</p>

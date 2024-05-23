@@ -13,14 +13,27 @@ import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 import Underline from '@/components/Underline/Underline';
 
-
 import { properties } from '@/helpers/properties';
+import { dynamicClass } from '@/helpers/dynamic-class';
 
 export default function Home({params}) {
   const [showInfo, setShowInfo] = useState(false);
 
   const filterProperty = properties.find(({ slug }) => slug === params.slug);
-  const { name, size, unit, description, location, details } = filterProperty;
+  const {
+    id,
+    name,
+    size,
+    unit,
+    description,
+    location,
+    details,
+    progress,
+    image,
+    type,
+    gallery,
+    slug,
+  } = filterProperty;
 
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
@@ -38,10 +51,10 @@ export default function Home({params}) {
 
   return (
     <Menu>
-      <section className="home" style={{ overflowY: 'hidden' }}>
+      <section className="home" style={{ backgroundImage: `url('/home/slider/${image}')` }}>
         <div className="home-slider__info">
           <div
-            className={`line ${inView01 && 'animate__animated animate__fadeInLeft'}`}
+            className={`line ${dynamicClass(inView01, 'animate__animated animate__fadeInLeft')}`}
             style={{ opacity: `${inView01 ? '1' : '0'}` }}
             ref={ref01}
           >
@@ -53,16 +66,18 @@ export default function Home({params}) {
             <div
               ref={ref02}
               style={{ opacity: `${inView03 ? '1' : '0'}` }}
-              className={inView02 && 'animate__animated animate__fadeInLeft'}
+              className={dynamicClass(inView02, 'animate__animated animate__fadeInLeft')}
             >
-              <h3>UNDER CONSTRUCTION</h3>
-              <p className="btn-red">Multifamily</p>
+              <h3 style={{ textTransform: 'uppercase' }} >{progress}</h3>
+              <p className="btn-red">{type}</p>
             </div>
           )}
         </div>
       </section>
 
-      <section className={`topics ${!showInfo && 'translation'}`}>
+      <section
+        className={`topics ${dynamicClass(!showInfo, 'translation')}`}
+      >
         <h3 style={{ visibility: !showInfo ? 'inherit' : 'hidden' }}>PROJECT CHARACTERISTICS</h3>
         <div className="arrow" onClick={() => setShowInfo(!showInfo)}>
           <Image
@@ -79,8 +94,8 @@ export default function Home({params}) {
           <>
             <h4>PROJECT CHARACTERISTICS</h4>
             <div className="buttons">
-              <p className="black">UNDER CONSTRUCTION</p>
-              <p className="btn-red">Multifamily</p>
+              <p className="black">{progress}</p>
+              <p className="btn-red">{type}</p>
             </div>
 
             <div className="character-container">
@@ -105,7 +120,7 @@ export default function Home({params}) {
         <>
           <section className="about">
             <h4
-              className={inView03 && 'animate__animated animate__fadeInLeft'}
+              className={dynamicClass(inView03, 'animate__animated animate__fadeInLeft')}
               style={{ opacity: `${inView03 ? '1' : '0'}` }}
               ref={ref03}
             ><strong>About</strong> Project</h4>
@@ -122,44 +137,15 @@ export default function Home({params}) {
           <section className="gallery">
             <h4><strong>Project</strong> Gallery</h4>
             <div className="gallery-grid">
-              <Image
-                src="/inside/Magnolia-at-Powell-1.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
-              <Image
-                src="/inside/gallery.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
-
-              <Image
-                src="/inside/gallery.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
-              <Image
-                src="/inside/gallery.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
-
-              <Image
-                src="/inside/gallery.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
-              <Image
-                src="/inside/gallery.jpg"
-                alt="Vercel"
-                height={333}
-                width={545}
-              />
+              {gallery.map((img, key) => (
+                <Image
+                  src={`/inside/${id}-${slug}/${img}`}
+                  alt="property"
+                  height={300}
+                  width={550}
+                  key={key}
+                />
+              ))}
             </div>
           </section>
 

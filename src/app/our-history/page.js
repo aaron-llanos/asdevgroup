@@ -8,6 +8,8 @@ import { useInView } from "react-intersection-observer";
 import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 
+import { dynamicClass } from '@/helpers/dynamic-class';
+
 export default function History() {
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
@@ -26,7 +28,7 @@ export default function History() {
 
       <section className="container-h">
         <h2
-          className={inView01 && 'animate__animated animate__fadeInLeft'}
+          className={dynamicClass(inView01, 'animate__animated animate__fadeInLeft')}
           style={{ opacity: `${inView01 ? '1' : '0'}` }}
           ref={ref01}
         ><strong>Welcome to</strong> Agador Spartacus Development</h2>
