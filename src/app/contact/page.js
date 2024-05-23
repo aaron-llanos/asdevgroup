@@ -1,19 +1,16 @@
 import './page.scss'
 
-import Nav from "@/components/Nav/Nav";
+import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Social from '@/components/Social';
 import Button from '@/components/Button/Button';
 
 export default function Home() {
-
   return (
-    <>
+    <Menu>
       <section className="contact">
         <img src="/border.jpg" alt="house" width="100%" />
         <div className="home">
-          <Nav />
-
           <div className="home-slider__info">
             <h2>Contact</h2>
             <h3>GET IN TOUCH</h3>
@@ -55,6 +52,6 @@ export default function Home() {
         </div>
       </section>
       <Footer />
-    </>
+    </Menu>
   );
 }

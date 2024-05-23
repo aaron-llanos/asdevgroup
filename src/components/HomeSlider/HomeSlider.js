@@ -5,9 +5,7 @@ import './home-slider.scss'
 import { useEffect, useState } from 'react';
 import { useInView } from "react-intersection-observer";
 
-import Nav from "@/components/Nav/Nav";
-
-export default function HomeSlider({ openMenu }) {
+export default function HomeSlider() {
   const data = [
     {
       id: 1,
@@ -89,12 +87,10 @@ export default function HomeSlider({ openMenu }) {
 
       <div className="overlay"></div>
 
-      <Nav openMenu={openMenu} />
-
       <div
         ref={ref01}
         className={`home-slider__info ${inView01 && `animate__animated ${animation}`}`}
-        style={{ paddingTop: '4rem', zIndex: '1', opacity: `${inView01 ? '1' : '0'}` }}
+        style={{ padding: '4rem 6rem 0', zIndex: '1', opacity: `${inView01 ? '1' : '0'}` }}
       >
         <h3>{property.location}</h3>
         <h2>{property.name}</h2>
@@ -117,22 +113,6 @@ export default function HomeSlider({ openMenu }) {
           <p>PREV</p>
         </div>
       </div>
-
-      {/* <div className="spinner"></div>
-
-      <div class="lds-ring"><div></div><div></div><div></div><div></div></div> */}
-
-      {/* <div class="circle-wrap">
-        <div class="circle">
-          <div class="mask full">
-            <div class="fill"></div>
-          </div>
-          <div class="mask half">
-            <div class="fill"></div>
-          </div>
-          <div class="inside-circle"> 70% </div>
-        </div>
-      </div> */}
 
       <div className="home-slider__count" style={{ zIndex: '1' }}>
         <p>{counter}</p>

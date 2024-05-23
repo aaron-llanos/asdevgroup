@@ -8,10 +8,11 @@ import Image from "next/image";
 import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/navigation';
 import { useInView } from "react-intersection-observer";
-import Nav from "@/components/Nav/Nav";
+import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 import Underline from '@/components/Underline/Underline';
+
 
 import { properties } from '@/helpers/properties';
 
@@ -36,10 +37,8 @@ export default function Home({params}) {
   }, [showInfo]);
 
   return (
-    <>
+    <Menu>
       <section className="home" style={{ overflowY: 'hidden' }}>
-        <Nav />
-
         <div className="home-slider__info">
           <div
             className={`line ${inView01 && 'animate__animated animate__fadeInLeft'}`}
@@ -124,7 +123,7 @@ export default function Home({params}) {
             <h4><strong>Project</strong> Gallery</h4>
             <div className="gallery-grid">
               <Image
-                src="/inside/gallery.jpg"
+                src="/inside/Magnolia-at-Powell-1.jpg"
                 alt="Vercel"
                 height={333}
                 width={545}
@@ -171,6 +170,6 @@ export default function Home({params}) {
           <Footer />
         </>
       )}
-    </>
+    </Menu>
   );
 }
