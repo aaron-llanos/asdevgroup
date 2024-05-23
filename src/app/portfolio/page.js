@@ -5,6 +5,8 @@ import './page.scss'
 import Link from 'next/link'
 
 import { useEffect, useState } from 'react';
+
+import Menu from '@/components/Menu/Menu';
 import Nav from "@/components/Nav/Nav";
 import Button from '@/components/Button/Button';
 
@@ -56,84 +58,85 @@ export default function portfolio() {
   }
 
   return (
-    <section
-      className={`home ${zoom && 'zoom'}`}
-      style={{ backgroundImage: `url(${currentProperty.image})`}}
-    >
-      {flash && (<div className="flash"></div>)}
+    <Menu>
+      <section
+        className={`home ${zoom && 'zoom'}`}
+        style={{ backgroundImage: `url(${currentProperty.image})`}}
+      >
+        {flash && (<div className="flash"></div>)}
 
-      <Nav />
-      <h1>Our developments are built in the most attractive areas in Florida</h1>
+        <h1>Our developments are built in the most attractive areas in Florida</h1>
 
-      <div className="filter">
-        <div className="filter-row">
-          <p>FILTER:</p>
-          <Button
-            text="All"
-            css={`${currentType === 'all' && 'bg-red'}`}
-            click={() => setCurrentType('all')}
-          />
-          <Button
-            text="Multifamily"
-            css={`${currentType === 'multifamily' && 'bg-red'}`}
-            click={() => setCurrentType('multifamily')}
-          />
-          <Button
-            text="Mixed-Use"
-            css={`${currentType === 'mixed' && 'bg-red'}`}
-            click={() => setCurrentType('mixed')}
-          />
-          <Button
-            text="Hospitality"
-            css={`${currentType === 'hospitality' && 'bg-red'}`}
-            click={() => setCurrentType('hospitality')}
-          />
-          <Button
-            text="Residential"
-            css={`${currentType === 'residential' && 'bg-red'}`}
-            click={() => setCurrentType('residential')}
-          />
-          <Button
-            text="Industrial"
-            css={`${currentType === 'industrial' && 'bg-red'}`}
-            click={() => setCurrentType('industrial')}
-          />
+        <div className="filter">
+          <div className="filter-row">
+            <p>FILTER:</p>
+            <Button
+              text="All"
+              css={`${currentType === 'all' && 'bg-red'}`}
+              click={() => setCurrentType('all')}
+            />
+            <Button
+              text="Multifamily"
+              css={`${currentType === 'multifamily' && 'bg-red'}`}
+              click={() => setCurrentType('multifamily')}
+            />
+            <Button
+              text="Mixed-Use"
+              css={`${currentType === 'mixed' && 'bg-red'}`}
+              click={() => setCurrentType('mixed')}
+            />
+            <Button
+              text="Hospitality"
+              css={`${currentType === 'hospitality' && 'bg-red'}`}
+              click={() => setCurrentType('hospitality')}
+            />
+            <Button
+              text="Residential"
+              css={`${currentType === 'residential' && 'bg-red'}`}
+              click={() => setCurrentType('residential')}
+            />
+            <Button
+              text="Industrial"
+              css={`${currentType === 'industrial' && 'bg-red'}`}
+              click={() => setCurrentType('industrial')}
+            />
+          </div>
+
+          <div className="filter-row" style={{ maxWidth: '462px' }}>
+            <Button
+              text="All"
+              css={`${currentProgress === 'all' && 'bg-red'}`}
+              click={() => setCurrentProgress('all')}
+            />
+            <Button
+              text="In Progress"
+              css={`${currentProgress === 'in-process' && 'bg-red'}`}
+              click={() => setCurrentProgress('in-process')}
+            />
+            <Button
+              text="Completed"
+              css={`${currentProgress === 'completed' && 'bg-red'}`}
+              click={() => setCurrentProgress('completed')}
+            />
+          </div>
         </div>
 
-        <div className="filter-row" style={{ maxWidth: '462px' }}>
-          <Button
-            text="All"
-            css={`${currentProgress === 'all' && 'bg-red'}`}
-            click={() => setCurrentProgress('all')}
-          />
-          <Button
-            text="In Progress"
-            css={`${currentProgress === 'in-process' && 'bg-red'}`}
-            click={() => setCurrentProgress('in-process')}
-          />
-          <Button
-            text="Completed"
-            css={`${currentProgress === 'completed' && 'bg-red'}`}
-            click={() => setCurrentProgress('completed')}
-          />
+        <div className="grid">
+          {filterProperties().map((property, key) => (
+            <Link href={`/inside/${property.slug}`}>
+              <div
+                key={key}
+                onMouseLeave={deleteFlash}
+                onMouseEnter={() => hoverProperty(property)}
+                className={`card ${property.id === currentProperty.id && 'bg-card'}`}
+              >
+                <p className="title">{property.name}</p>
+                <p className="city">{property.location}</p>
+              </div>
+            </Link>
+          ))}
         </div>
-      </div>
-
-      <div className="grid">
-        {filterProperties().map((property, key) => (
-          <Link href={`/inside/${property.slug}`}>
-            <div
-              key={key}
-              onMouseLeave={deleteFlash}
-              onMouseEnter={() => hoverProperty(property)}
-              className={`card ${property.id === currentProperty.id && 'bg-card'}`}
-            >
-              <p className="title">{property.name}</p>
-              <p className="city">{property.location}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+      </section>
+    </Menu>
   );
 }

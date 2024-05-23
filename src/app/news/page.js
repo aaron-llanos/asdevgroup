@@ -1,17 +1,15 @@
 import './page.scss'
 
-import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
+import Menu from '@/components/Menu/Menu';
 
 export default function News() {
-
   return (
-    <>
+    <Menu>
       <section className="news">
         <img src="/border.jpg" alt="house" width="100%" />
         <div className="home">
-          <Nav />
 
           <div className="home-slider__info">
             <h2>Recent news</h2>
@@ -58,6 +56,6 @@ export default function News() {
         </div>
       </section>
       <Footer />
-    </>
+    </Menu>
   );
 }

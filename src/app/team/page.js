@@ -1,17 +1,14 @@
 import './page.scss'
 
-import Image from "next/image";
+import Menu from '@/components/Menu/Menu';
 import Nav from "@/components/Nav/Nav";
 import Footer from '@/components/Footer/Footer';
-import Social from '@/components/Social';
 
 export default function Home() {
 
   return (
-    <>
+    <Menu>
       <section className="team">
-        <Nav />
-
         <div className="team-content">
           <h1><strong>The Driving Forces Behind Our Success</strong></h1>
           <h2>MEET THE TEAM</h2>
@@ -41,6 +38,6 @@ export default function Home() {
         </div>
       </section>
       <Footer />
-    </>
+    </Menu>
   );
 }

@@ -9,254 +9,211 @@ import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 
 // import gsap from "gsap";
-import Link from 'next/link'
-import Social from "@/components/Social";
+import Menu from '@/components/Menu/Menu';
 import Footer from "@/components/Footer/Footer";
 import Underline from "@/components/Underline/Underline";
 import HomeSlider from '@/components/HomeSlider/HomeSlider';
 
 export default function Home() {
-
-  // Manu animation
-  const [showMenu, setShowMenu] = useState(true);
-  const [translateMenu, setTranslateMenu] = useState('20');
-  const [translatePage, setTranslatePage] = useState('100');
-  const [zIndex, setZIndex] = useState('0');
-  const [time, setTime] = useState('1');
-
-  const closeMenu = () => {
-    setShowMenu(false)
-    setTimeout(() => {
-      setTime('0')
-      setTranslateMenu('100')
-      setTranslatePage('20')
-      setZIndex('1')
-    }, 1000);
-    setTime(1)
-  }
-
-  const openMenu = () => {
-    setShowMenu(true)
-    setTimeout(() => {
-      setTime('0')
-      setTranslateMenu('20')
-      setTranslatePage('100')
-      setZIndex('0')
-    }, 1000);
-    setTime(1)
-  }
-
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
   const { ref: ref02, inView: inView02 } = useInView();
 
+  // Change Background types
+  const [backImage, setBackImage] = useState('multifamily');
+
   return (
-    <div className="home-container">
-      <div className="animation-reference"></div>
+    <Menu onMenu>
+      <HomeSlider />
 
-      <div
-        className="home-modal"
-        style={{
-          transform: showMenu ? 'translate(0%, 0px)' : `translate(${translateMenu}%, 0px)`,
-          zIndex: zIndex,
-          transitionDuration: `${time}s`
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <img src="/agador-white-logo.png" atl="Agador logo" style={{ 'width': '250px' }} />
-          <img src="/close.png" alt="close" width="30" onClick={closeMenu} />
-        </div>
-        <ul>
-          <li><h2><Link href="/our-history">About Us</Link></h2></li>
-          <li><h2><Link href="/portfolio">Portfolio</Link></h2></li>
-          <li><h2><Link href="/investors">Investors</Link></h2></li>
-          <li><h2><Link href="/team">Team</Link></h2></li>
-          <li><h2><Link href="/team">News</Link></h2></li>
-          <li><h2><Link href="/contact">Contact</Link></h2>
-          </li>
-        </ul>
+      <section className="home-welcome">
+        <div className="home-welcome__container">
+          <div className="step-one">
+            <div
+              style={{ marginRight: '3rem', opacity: `${inView01 ? '1' : '0'}`  }}
+              className={`${inView01 && 'animate__animated animate__fadeInLeft'}`}
+              ref={ref01}
+            >
+              <h2 className="tiggers">Welcome to <strong>Agador Spartacus Development</strong>
+              </h2>
 
-        <div className="details">
-          <div>
-            <h3>CONTACT DETAILS</h3>
-            <p>EMAIL: INFO@ASDEVGROUP.COM</p>
-            <p>PHONE: <span style={{ textDecoration: 'underline' }}>(305)-974-2418</span></p>
-          </div>
-          <Social />
-        </div>
-      </div>
+              <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
+              <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
-      <div
-        className="home-principal"
-        style={{
-          transform: showMenu ? `translate(-${translatePage}%, 0px)` : 'translate(0%, 0px)',
-          transitionDuration: `${time}s`
-        }}
-      >
-
-        <HomeSlider openMenu={openMenu} />
-
-        <section className="home-welcome">
-          <div className="home-welcome__container">
-            <div className="step-one">
-              <div
-                style={{ marginRight: '3rem', opacity: `${inView01 ? '1' : '0'}`  }}
-                className={`${inView01 && 'animate__animated animate__fadeInLeft'}`}
-                ref={ref01}
-              >
-                <h2 className="tiggers">Welcome to <strong>Agador Spartacus Development</strong>
-                </h2>
-
-                <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
-                <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
-
-                <Underline text="PORTFOLIO" width="90%" />
-              </div>
-
-              <img src="/home/wc-01.jpg" atl="Agador logo"/>
+              <Underline text="PORTFOLIO" width="90%" />
             </div>
 
-            <h3 style={{
-              margin: '5rem 0', fontSize: '38px', textAlign: 'center', fontWeight: '300'
-            }}><strong>Our</strong> highlights</h3>
+            <img src="/home/wc-01.jpg" atl="Agador logo"/>
+          </div>
 
-            <div className="cards-container">
-              <div className="card">
-                <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
-                  <div className="mt">
-                    <CountUp
-                      end={9}
-                      start={0}
-                      duration={5}
-                      className="number"
-                      enableScrollSpy={true}
-                    />
-                  </div>
-              </div>
-              <div className="card">
-                <div className="">
-                  <CountUp
-                    end={15}
-                    start={0}
-                    duration={5}
-                    className="number"
-                    enableScrollSpy={true}
-                    style={{ fontSize: '70px' }}
-                  />
-                </div>
-                <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p>
-              </div>
-              <div className="card">
-                <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
+          <h3 style={{
+            margin: '5rem 0', fontSize: '38px', textAlign: 'center', fontWeight: '300'
+          }}><strong>Our</strong> highlights</h3>
+
+          <div className="cards-container">
+            <div className="card">
+              <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
                 <div className="mt">
                   <CountUp
-                    end={35}
+                    end={9}
                     start={0}
                     duration={5}
                     className="number"
                     enableScrollSpy={true}
                   />
                 </div>
+            </div>
+            <div className="card">
+              <div className="">
+                <CountUp
+                  end={15}
+                  start={0}
+                  duration={5}
+                  className="number"
+                  enableScrollSpy={true}
+                  style={{ fontSize: '70px' }}
+                />
+              </div>
+              <p className="text mt"><strong>PROJECTS</strong> IN PROGESS</p>
+            </div>
+            <div className="card">
+              <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
+              <div className="mt">
+                <CountUp
+                  end={35}
+                  start={0}
+                  duration={5}
+                  className="number"
+                  enableScrollSpy={true}
+                />
               </div>
             </div>
-
-            <h3 style={{
-              margin: '6rem 0 1rem', fontSize: '38px', textAlign: 'center', fontWeight: '300'
-            }}><strong>Property</strong> types</h3>
           </div>
-        </section>
 
-        <section className="home-benefits">
-          <div className="home-benefits__column">
+          <h3 style={{
+            margin: '6rem 0 1rem', fontSize: '38px', textAlign: 'center', fontWeight: '300'
+          }}><strong>Property</strong> types</h3>
+        </div>
+      </section>
+
+      <section className="home-benefits" style={{ backgroundImage: `url('/types/${backImage}.jpg')` }}>
+        <div
+          className="home-benefits__bg multifamily"
+          style={{ opacity: backImage === 'multifamily' ? '1': '0' }}
+        ></div>
+        <div
+          className="home-benefits__bg industrial"
+          style={{ opacity: backImage === 'industrial' ? '1': '0' }}
+        ></div>
+        <div
+          className="home-benefits__bg hospitality"
+          style={{ opacity: backImage === 'hospitality' ? '1': '0' }}
+        ></div>
+        <div
+          className="home-benefits__bg residential"
+          style={{ opacity: backImage === 'residential' ? '1': '0' }}
+        ></div>
+
+        <div className="home-benefits__container">
+          <div
+            className="home-benefits__column"
+            onMouseEnter={() => setBackImage('multifamily')}
+          >
             <h4>Multi-family</h4>
           </div>
-          <div className="home-benefits__column">
+          <div
+            className="home-benefits__column"
+            onMouseEnter={() => setBackImage('industrial')}
+          >
             <h4>Industrial</h4>
           </div>
-          <div className="home-benefits__column">
+          <div
+            className="home-benefits__column"
+            onMouseEnter={() => setBackImage('hospitality')}
+          >
             <h4>Hospitality</h4>
           </div>
-          <div className="home-benefits__column">
+          <div
+            className="home-benefits__column"
+            onMouseEnter={() => setBackImage('residential')}
+          >
             <h4>Residential</h4>
           </div>
-          <div className="home-benefits__column">
-            <h4>Commercial or Mixed Use</h4>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="home-featured">
-          <div className="home-featured__content">
-            <h3
-              className={inView02 && 'animate__animated animate__fadeInLeft'}
-              style={{ opacity: `${inView02 ? '1' : '0'}` }}
-              ref={ref02}
-            ><strong>Featured</strong> Projects</h3>
+      <section className="home-featured">
+        <div className="home-featured__content">
+          <h3
+            className={inView02 && 'animate__animated animate__fadeInLeft'}
+            style={{ opacity: `${inView02 ? '1' : '0'}` }}
+            ref={ref02}
+          ><strong>Featured</strong> Projects</h3>
 
-            <p>Our portfolio currently exceeds 5 million square feet, both domestic and international of commercial, multi-family, hospitality and retail assets —with another million square feet in our development pipeline—all concentrated in attractive submarkets in Florida.</p>
-            <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
-          </div>
+          <p>Our portfolio currently exceeds 5 million square feet, both domestic and international of commercial, multi-family, hospitality and retail assets —with another million square feet in our development pipeline—all concentrated in attractive submarkets in Florida.</p>
+          <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
+        </div>
 
-          <div className="home-featured__grid">
-            <div className="grid-item">
-              <img src="/home/grid-01.jpg" alt="House" />
-              <div className="view">
-                <p>VIEW</p>
-              </div>
-              <div className="info">
-                <div>
-                  <h4>Solamar Palm Bay</h4>
-                  <p className="type">Multifamily</p>
-                </div>
-                <p className="location">Melbourne, FL</p>
-              </div>
+        <div className="home-featured__grid">
+          <div className="grid-item">
+            <img src="/home/grid-01.jpg" alt="House" />
+            <div className="view">
+              <p>VIEW</p>
             </div>
-
-            <div className="grid-item">
-              <img src="/home/grid-01.jpg" alt="House" />
-              <div className="view">
-                <p>VIEW</p>
+            <div className="info">
+              <div>
+                <h4>Solamar Palm Bay</h4>
+                <p className="type">Multifamily</p>
               </div>
-              <div className="info">
-                <div>
-                  <h4>Solamar Palm Bay</h4>
-                  <p className="type">Multifamily</p>
-                </div>
-                <p className="location">Melbourne, FL</p>
-              </div>
-            </div>
-
-            <div className="grid-item">
-              <img src="/home/grid-01.jpg" alt="House" />
-              <div className="view">
-                <p>VIEW</p>
-              </div>
-              <div className="info">
-                <div>
-                  <h4>Solamar Palm Bay</h4>
-                  <p className="type">Multifamily</p>
-                </div>
-                <p className="location">Melbourne, FL</p>
-              </div>
-            </div>
-
-            <div className="grid-item">
-              <img src="/home/grid-01.jpg" alt="House" />
-              <div className="view">
-                <p>VIEW</p>
-              </div>
-              <div className="info">
-                <div>
-                  <h4>Solamar Palm Bay</h4>
-                  <p className="type">Multifamily</p>
-                </div>
-                <p className="location">Melbourne, FL</p>
-              </div>
+              <p className="location">Melbourne, FL</p>
             </div>
           </div>
-        </section>
 
-        <Footer />
-      </div>
-    </div>
+          <div className="grid-item">
+            <img src="/home/grid-01.jpg" alt="House" />
+            <div className="view">
+              <p>VIEW</p>
+            </div>
+            <div className="info">
+              <div>
+                <h4>Solamar Palm Bay</h4>
+                <p className="type">Multifamily</p>
+              </div>
+              <p className="location">Melbourne, FL</p>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <img src="/home/grid-01.jpg" alt="House" />
+            <div className="view">
+              <p>VIEW</p>
+            </div>
+            <div className="info">
+              <div>
+                <h4>Solamar Palm Bay</h4>
+                <p className="type">Multifamily</p>
+              </div>
+              <p className="location">Melbourne, FL</p>
+            </div>
+          </div>
+
+          <div className="grid-item">
+            <img src="/home/grid-01.jpg" alt="House" />
+            <div className="view">
+              <p>VIEW</p>
+            </div>
+            <div className="info">
+              <div>
+                <h4>Solamar Palm Bay</h4>
+                <p className="type">Multifamily</p>
+              </div>
+              <p className="location">Melbourne, FL</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </Menu>
   );
 }

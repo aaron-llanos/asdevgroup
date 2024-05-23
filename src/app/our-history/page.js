@@ -5,7 +5,7 @@ import 'animate.css';
 
 import { useInView } from "react-intersection-observer";
 
-import Nav from "@/components/Nav/Nav";
+import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 
 export default function History() {
@@ -13,12 +13,10 @@ export default function History() {
   const { ref: ref01, inView: inView01 } = useInView();
 
   return (
-    <>
+    <Menu>
       <section className="history">
         <img src="/border.jpg" alt="house" width="100%" />
         <div className="home">
-          <Nav />
-
           <div className="home-slider__info">
             <h2><strong>Our History</strong></h2>
             <h3>PILLARS THAT SHAPE US UP</h3>
@@ -90,6 +88,6 @@ export default function History() {
         </div>
       </section>
       <Footer />
-    </>
+    </Menu>
   );
 }

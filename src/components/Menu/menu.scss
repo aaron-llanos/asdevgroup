@@ -1,0 +1,68 @@
+.animation-reference {
+  position: relative;
+}
+
+.complete-menu, .container-principal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+}
+
+.complete-menu {
+  color: #fefefe;
+  padding: 4rem 6rem;
+  height: 100vh;
+  background-color: #d20000;
+  background-image: url('/agador-bg.png');
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
+  // position: fixed !important;
+  position: fixed;
+
+  ul {
+    li {
+      margin: 2rem 0;
+      list-style: none;
+
+      h2 {
+        font-family: "Archia";
+        font-size: 28px;
+      }
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 1.5rem;
+      letter-spacing: 3px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    p {
+      font-weight: lighter;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+.principal-body {
+  background-color: white;
+}
+
+.container-principal {
+  transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
+  background-color: white;
+}

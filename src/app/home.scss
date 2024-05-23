@@ -1,65 +1,3 @@
-.animation-reference {
-  position: relative;
-}
-
-.home-modal, .home-principal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100vw;
-}
-
-.home-modal {
-  color: #fefefe;
-  padding: 4rem 6rem;
-  height: 100vh;
-  background-color: #d20000;
-  background-image: url('/agador-bg.png');
-  background-repeat: no-repeat;
-  background-size: 55%;
-  background-position: 15%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
-
-  ul {
-    li {
-      margin: 2rem 0;
-      list-style: none;
-
-      h2 {
-        font-family: "Archia";
-        font-size: 28px;
-      }
-    }
-  }
-
-  .details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h3 {
-      margin-bottom: 1.5rem;
-      letter-spacing: 3px;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    p {
-      font-weight: lighter;
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
-  }
-}
-
-.home-principal {
-  transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
-}
-
 .home {
   &-welcome {
     background-color: #ffffff;
@@ -130,15 +68,42 @@
     }
   }
 
-  &-benefits {
-    background-image: url('/home/wc-02.jpg');
-    height: 770px;
+  &-benefits,
+  &-benefits__bg {
+    height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    display: flex;
-    justify-content: space-between;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &-benefits {
+    position: relative;
+
+    &__bg {
+      position: absolute;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .multifamily {
+      background-image: url('/types/multifamily.jpg');
+    }
+    .industrial {
+      background-image: url('/types/industrial.jpg');
+    }
+    .hospitality {
+      background-image: url('/types/hospitality.jpg');
+    }
+    .residential {
+      background-image: url('/types/residential.jpg');
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+      width: 100%;
+    }
 
     &__column {
       position: relative;
@@ -149,16 +114,23 @@
 
       h4 {
         position: absolute;
-        max-width: 133px;
+        max-width: 166px;
         font-weight: 200;
-        font-size: 24px;
+        font-size: 34px;
         top: 78%;
         left: 10%;
+        transition: top 0.5s ease-in-out;
       }
-    }
 
+    }
     &__column:last-of-type {
       border-right: none;
+    }
+
+    &__column:hover {
+      h4 {
+        top: 75%
+      }
     }
   }
 

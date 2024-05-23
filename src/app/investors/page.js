@@ -1,16 +1,14 @@
 import './page.scss'
 
-import Nav from "@/components/Nav/Nav";
+import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 
 export default function Home() {
 
   return (
-    <>
+    <Menu>
       <section className="home">
-        <Nav />
-
         <div className="home-slider__info">
           <h2>Quick access to the Juniper Square portal:</h2>
           <Button text="Go to Juniper Square Portal" />
@@ -42,6 +40,6 @@ export default function Home() {
         </div>
       </section>
       <Footer />
-    </>
+    </Menu>
   );
 }

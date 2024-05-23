@@ -1,17 +1,13 @@
 import './page.scss'
 
-import Nav from "@/components/Nav/Nav";
+import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
 
 export default function News() {
 
   return (
-    <>
-      <section className="home">
-        <Nav light />
-      </section>
-
+    <Menu>
       <section className="container">
         <div className="information">
           <h2>March 19, 2024</h2>
@@ -57,6 +53,6 @@ export default function News() {
       <Underline text="SIGUIENTE NOTICIA" />
 
       <Footer />
-    </>
+    </Menu>
   );
 }
