@@ -1,5 +1,5 @@
-import Menu from '@/components/Menu/Menu';
-import Portfolio from '@/components/Portfolio/Portfolio';
+import Menu from "@/components/Menu/Menu";
+import Portfolio from "@/components/Portfolio/Portfolio";
 
 export default function portfolio() {
 

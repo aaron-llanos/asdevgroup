@@ -166,6 +166,7 @@ export default function Home() {
         <div className="home-featured__grid">
           {limitProperties.map((property, key) => (
             <div className="grid-item" key={key}>
+              <div className="overlay"></div>
               <img src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`} alt="property" />
               <Link href={`/inside/${property.slug}`}>
                 <div className="view">

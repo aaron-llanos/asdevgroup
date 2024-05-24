@@ -24,15 +24,15 @@ export default function Home({params}) {
     id,
     name,
     size,
-    unit,
-    description,
-    location,
-    details,
-    progress,
-    image,
     type,
-    gallery,
+    unit,
     slug,
+    image,
+    details,
+    gallery,
+    location,
+    progress,
+    description,
   } = filterProperty;
 
   // Texts animations
@@ -51,7 +51,7 @@ export default function Home({params}) {
 
   return (
     <Menu>
-      <section className="home" style={{ backgroundImage: `url('/home/slider/${image}')` }}>
+      <section className="home" style={{ backgroundImage: `url('/inside/${id}-${slug}/${image}')` }}>
         <div className="home-slider__info">
           <div
             className={`line ${dynamicClass(inView01, 'animate__animated animate__fadeInLeft')}`}
@@ -126,7 +126,9 @@ export default function Home({params}) {
             ><strong>About</strong> Project</h4>
             <p>{description}</p>
 
-            <p style={{ marginTop: '1rem' }}>Amenities include:</p>
+            {details.length > 0 && (
+              <p style={{ marginTop: '1rem' }}>Amenities include:</p>
+            )}
             <ul>
               {details.map((detail, key) => (
                 <li key={key}>{detail}</li>
