@@ -1,5 +1,6 @@
 import './footer.scss'
-import Image from "next/image";
+
+import Link from 'next/link'
 
 import Social from '../Social/Social';
 
@@ -9,7 +10,15 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="content">
-          <img src="/agador-logo.png" atl="Agador logo" width="200px" />
+          <Link href="/">
+            <img
+              width="200px"
+              atl="Agador logo"
+              src="/agador-logo.png"
+              style={{ cursor: 'pointer' }}
+            />
+          </Link>
+
 
           <div className="social">
             <p><strong>Where Vision Meets Excellence in Florida Real Estate</strong></p>
@@ -25,10 +34,18 @@ export default function Footer() {
             <p>Phone: (305)-974-2418</p>
           </div>
           <div className="menu">
-            <p>About Us</p>
-            <p>Portfolio</p>
-            <p>Investors</p>
-            <p>Contact</p>
+            <Link href="/our-history">
+              <p>About Us</p>
+            </Link>
+            <Link href="/portfolio/us">
+              <p>Portfolio</p>
+            </Link>
+            <Link href="/investors">
+              <p>Investors login</p>
+            </Link>
+            <Link href="/contact">
+              <p>Contact</p>
+            </Link>
           </div>
         </div>
       </div>

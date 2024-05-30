@@ -14,9 +14,19 @@ export default function Nav({ light, openMenu }) {
           />
         </Link>
         <nav>
-          <p>Portfolio</p>
-          <p>Contact</p>
-          <img atl="Hamburger" src="/hamburger.png" height="26px" onClick={openMenu} />
+          <Link href="/portfolio/us">
+            <p>Portfolio</p>
+          </Link>
+          <Link href="/contact">
+            <p>Contact</p>
+          </Link>
+          <img
+            height="26px"
+            atl="Hamburger"
+            onClick={openMenu}
+            src="/hamburger.png"
+            style={{ cursor: 'pointer' }}
+          />
         </nav>
       </div>
   );

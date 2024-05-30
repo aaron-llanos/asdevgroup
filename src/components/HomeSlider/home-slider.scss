@@ -21,7 +21,7 @@
 }
 
 .nav-container {
-  z-index: 2;
+  z-index: 3;
 }
 
 @keyframes AnimationSlider {
@@ -93,6 +93,7 @@
       padding: 5px;
       font-weight: 100;
       // transition: ease-in 1s;
+      cursor: pointer;
       animation: AnimationButton 5s ease;
 
       p {

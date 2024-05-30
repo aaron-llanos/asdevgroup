@@ -5,6 +5,8 @@ import 'animate.css';
 
 import Image from "next/image";
 
+import Link from 'next/link'
+
 import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/navigation';
 import { useInView } from "react-intersection-observer";
@@ -13,11 +15,13 @@ import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 import Underline from '@/components/Underline/Underline';
 
-import { properties } from '@/helpers/properties';
+import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
 
-export default function Home({params}) {
+export default function Inside({ params, isMX }) {
   const [showInfo, setShowInfo] = useState(false);
+
+  const properties = isMX ? propertiesMX : propertiesUS;
 
   const filterProperty = properties.find(({ slug }) => slug === params.slug);
   const {
@@ -141,19 +145,23 @@ export default function Home({params}) {
             <div className="gallery-grid">
               {gallery.map((img, key) => (
                 <Image
-                  src={`/inside/${id}-${slug}/${img}`}
-                  alt="property"
-                  height={300}
-                  width={550}
                   key={key}
+                  width={550}
+                  height={300}
+                  alt="property"
+                  src={`/inside/${id}-${slug}/${img}`}
                 />
               ))}
             </div>
           </section>
 
-          <Underline text="RETURN TO PROJECTS" />
+          <Link href="/contact" href={isMX ? '/portfolio/mx' : '/portfolio/us'}>
+            <Underline text="RETURN TO PROJECTS" />
+          </Link>
 
-          <Button text="Request more information" />
+          <Link href="/contact">
+            <Button text="Request more information" />
+          </Link>
 
           <Footer />
         </>

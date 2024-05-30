@@ -30,7 +30,8 @@
         }
 
         img {
-          max-width: 357px;
+          // max-width: 357px;
+          height: 335px;
         }
       }
 
@@ -177,7 +178,7 @@
 
       .view {
         position: absolute;
-        z-index: 2;
+        z-index: 3;
         top: 35%;
         right: 40%;
         color: white;
@@ -191,6 +192,7 @@
         font-size: 18px;
         align-items: center;
         transition: ease-out 0.3s;
+        cursor: pointer;
       }
 
       .view:hover {
@@ -212,6 +214,7 @@
         h4 {
           font-weight: 300;
           font-size: 22px;
+          max-width: 200px;
         }
 
         .type {

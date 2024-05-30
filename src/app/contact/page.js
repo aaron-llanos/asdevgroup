@@ -8,8 +8,8 @@ import Button from '@/components/Button/Button';
 export default function Home() {
   return (
     <Menu>
-      <section className="contact">
-        <img src="/border.jpg" alt="house" width="100%" />
+      <section className="contact-main">
+        <div className="overlay"></div>
         <div className="home">
           <div className="home-slider__info">
             <h2>Contact</h2>
@@ -27,7 +27,7 @@ export default function Home() {
           <div className="contact-info__container">
             <div className="contact-info__item">
               <p><strong>Office Adress</strong></p>
-              <p>2875 NE 191st Street, Suite 305, Aventura, FL 33180</p>
+              <p>2875 NW 191st Street, Suite 305, Aventura, FL 33180</p>
             </div>
             <div className="contact-info__item">
               <p><strong>Main Office Line</strong></p>

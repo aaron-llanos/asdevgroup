@@ -86,19 +86,9 @@ export default function Portfolio({ isMX }) {
               click={() => setCurrentType('Multi-family')}
             />
             <Button
-              text="Mixed-Use"
-              css={dynamicClass(currentType === 'mixed', 'bg-red')}
-              click={() => setCurrentType('mixed')}
-            />
-            <Button
               text="Hospitality"
               css={dynamicClass(currentType === 'Hospitality', 'bg-red')}
               click={() => setCurrentType('Hospitality')}
-            />
-            <Button
-              text="Residential"
-              css={dynamicClass(currentType === 'Residential', 'bg-red')}
-              click={() => setCurrentType('Residential')}
             />
             <Button
               text="Industrial"
@@ -130,7 +120,13 @@ export default function Portfolio({ isMX }) {
 
       <div className="grid">
         {filterProperties().map((property, key) => (
-          <Link key={key} href={`/inside/${property.slug}`}>
+          <Link
+            key={key}
+            href={isMX
+              ? `/inside/mx/${property.slug}`
+              : `/inside/us/${property.slug}`
+            }
+          >
             <div
               key={key}
               onMouseLeave={deleteFlash}
