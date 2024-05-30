@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <Menu>
       <section className="home">
+        <img src="/agador-big.png" alt="Agador Logo" className="agador" />
         <div className="home-slider__info">
           <h2>Quick access to the Juniper Square portal:</h2>
-          <Button text="Go to Juniper Square Portal" />
+          <Button text="Investors Login" />
         </div>
       </section>
       <section className="investors">

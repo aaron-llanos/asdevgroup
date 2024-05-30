@@ -1,19 +1,21 @@
+.container-principal {
+  background-color: black !important;
+}
+
 .home {
-  background-image: url('/home/slider/1-Apartmets-at-Palm-Bay.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 15%;
-  height: 100vh;
   padding: 4rem 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   color: white;
+
+  .agador {
+    width: 500px;
+    margin: 4rem auto 0;
+  }
 
   &-slider {
     &__info {
-      margin-top: 16%;
-
+      margin-top: 3rem;
       h2 {
         font-weight: 600;
         font-size: 50px;
@@ -94,14 +96,16 @@
 
       input {
         margin-top: 2rem;
-        background-color: #f3f3f3;
+        background-color: #212121;
         border: none;
         padding: 10px;
+        color: white;
       }
 
       .input::placeholder {
         color: #070707;
         font-weight: 300;
+        color: white;
       }
       .input::-webkit-input-placeholder {
         font-weight: lighter;

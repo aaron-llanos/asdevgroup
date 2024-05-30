@@ -29,7 +29,7 @@ export default function Home() {
   const [backImage, setBackImage] = useState('multifamily');
 
   return (
-    <Menu onMenu>
+    <Menu>
       <HomeSlider />
 
       <section className="home-welcome">
