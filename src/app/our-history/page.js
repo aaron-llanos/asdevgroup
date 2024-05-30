@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import './page.scss'
 import 'animate.css';
