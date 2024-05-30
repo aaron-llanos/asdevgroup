@@ -2,8 +2,21 @@ body {
   background-color: black;
 }
 
+.overlay {
+  height: 80vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 50%, rgba(0,0,0,0) 100%);
+}
+
 .history {
-  position: relative;
+  height: 80vh;
+  background-image: url('/our-history-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
   .home {
     position: absolute;
     top: 0;
@@ -46,7 +59,7 @@ body {
 
 .container-h {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 6rem auto 0;
   color: white;
 
   h2 {
@@ -77,6 +90,10 @@ body {
     border-radius: 6px;
     padding: 8px;
     transition: all 0.3s ease-in-out;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     p {
       font-weight: 600;

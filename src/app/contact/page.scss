@@ -2,8 +2,21 @@
   background-color: black !important;
 }
 
-.contact {
-  position: relative;
+.overlay {
+  height: 80vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 50%, rgba(0,0,0,0) 100%);
+}
+
+.contact-main {
+  height: 80vh;
+  background-image: url('/contact-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
   .home {
     position: absolute;
     top: 0;
@@ -44,7 +57,7 @@
 
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 4rem auto 0;
   color: white;
 
   h2 {

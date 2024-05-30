@@ -63,15 +63,23 @@ export default function Menu({ children, onMenu }) {
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <img src="/agador-white-logo.png" atl="Agador logo" style={{ 'width': '250px' }} />
-          <img src="/close.png" alt="close" width="30" onClick={closeMenu} />
+          <Link href="/">
+            <img src="/agador-white-logo.png" atl="Agador logo" style={{ 'width': '250px' }} />
+          </Link>
+          <img
+            alt="close"
+            width="30"
+            src="/close.png"
+            onClick={closeMenu}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
         <ul>
           <li><h2><Link href="/our-history">About Us</Link></h2></li>
-          <li><h2><Link href="/portfolio">Portfolio</Link></h2></li>
-          <li><h2><Link href="/investors">Investors</Link></h2></li>
+          <li><h2><Link href="/portfolio/us">Portfolio</Link></h2></li>
+          <li><h2><Link href="/investors">Investors login</Link></h2></li>
           <li><h2><Link href="/team">Team</Link></h2></li>
-          <li><h2><Link href="/team">News</Link></h2></li>
+          {/* <li><h2><Link href="/news">News</Link></h2></li> */}
           <li><h2><Link href="/contact">Contact</Link></h2>
           </li>
         </ul>

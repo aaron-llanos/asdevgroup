@@ -29,7 +29,7 @@ export default function Home() {
   const [backImage, setBackImage] = useState('multifamily');
 
   return (
-    <Menu onMenu>
+    <Menu>
       <HomeSlider />
 
       <section className="home-welcome">
@@ -46,10 +46,16 @@ export default function Home() {
               <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
               <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
-              <Underline text="PORTFOLIO" width="90%" />
+              <Link href="/portfolio/us">
+                <Underline text="PORTFOLIO" width="90%" />
+              </Link>
             </div>
 
-            <img src="/home/wc-01.jpg" atl="Agador logo"/>
+            <img
+              atl="Agador logo"
+              src="/home/wc-02.jpg"
+              // src="/home/wc-01.jpg"
+            />
           </div>
 
           <h3 style={{
@@ -168,7 +174,7 @@ export default function Home() {
             <div className="grid-item" key={key}>
               <div className="overlay"></div>
               <img src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`} alt="property" />
-              <Link href={`/inside/${property.slug}`}>
+              <Link href={`/inside/us/${property.slug}`}>
                 <div className="view">
                   <p>VIEW</p>
                 </div>

@@ -13,11 +13,12 @@ import { dynamicClass } from '@/helpers/dynamic-class';
 export default function History() {
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
+  const { ref: ref02, inView: inView02 } = useInView();
 
   return (
     <Menu>
       <section className="history">
-        <img src="/border.jpg" alt="house" width="100%" />
+        <div className="overlay"></div>
         <div className="home">
           <div className="home-slider__info">
             <h2><strong>Our History</strong></h2>
@@ -33,51 +34,59 @@ export default function History() {
           ref={ref01}
         ><strong>Welcome to</strong> Agador Spartacus Development</h2>
         <h3><strong>Where Vision Meets Excellence in Florida Real Estate</strong></h3>
-        <p>At <strong>Agador Spartacus Development</strong> , we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
+        <p>At <strong>Agador Spartacus Development</strong>, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
         <h2 style={{ margin: '3rem auto', textAlign: 'center' }}><strong>Our </strong>expertise</h2>
 
         <div className="card-container">
           <div className="card">
-            <p className="initial">Land acquisition</p>
-            <p className="on-hover">we navigate the complex landscape of South Florida real estate to secure prime locations for development.</p>
+            <p className="initial">Land Acquisition</p>
+            <p className="on-hover">We navigate the complex landscape of South Florida real estate to secure prime locations for development.</p>
           </div>
           <div className="card">
-            <p className="initial">Site development</p>
-            <p className="on-hover">from untouched land to groundbreaking, we manage every detail with precision.</p>
+            <p className="initial">Site Development</p>
+            <p className="on-hover">From untouched land to groundbreaking, we manage every detail with precision.</p>
           </div>
           <div className="card">
-            <p className="initial">Project management & oversight</p>
-            <p className="on-hover">our meticulous approach ensures that every projectis delivered on time and to the highest standards.</p>
+            <p className="initial">Project Management & Oversight</p>
+            <p className="on-hover">Our meticulous approach ensures that every projectis delivered on time and to the highest standards.</p>
           </div>
           <div className="card">
-            <p className="initial">Lender financing & Construction loan management</p>
-            <p className="on-hover">our meticulous approach  ensures that every project is delivered on time and  to the highest standards.</p>
+            <p className="initial">Lender Financing & Construction Loan Management</p>
+            <p className="on-hover">We secure the funding necessary to transform blueprints into reality.</p>
           </div>
         </div>
 
         <div className="card-container">
           <div className="card">
-            <p className="initial">Project budget controls</p>
-            <p className="on-hover">keeping a tight rein on finances, we deliver value without compromise.</p>
+            <p className="initial">Project Budget Controls</p>
+            <p className="on-hover">Keeping a tight rein on finances, we deliver value without compromise.</p>
           </div>
           <div className="card">
-            <p className="initial">Investor relation</p>
-            <p className="on-hover">building trust through transparent partnerships and consistent returns.</p>
+            <p className="initial">Investor Relations</p>
+            <p className="on-hover">Building trust through transparent partnerships and consistent returns.</p>
           </div>
           <div className="card">
-            <p className="initial">Project equity management</p>
-            <p className="on-hover">ensuring a balanced investment approach for long-term success.</p>
+            <p className="initial">Project Equity Management</p>
+            <p className="on-hover">Ensuring a balanced investment approach for long-term success.</p>
           </div>
           <div className="card">
-            <p className="initial">Financial reporting & oversight</p>
+            <p className="initial">Financial Reporting & Oversight</p>
             <p className="on-hover">With rigorous oversight, we maintain financial integrity at every stage.</p>
           </div>
         </div>
 
-        <p style={{ marginTop: '2rem', marginBottom: '5rem' }}>Join us in redefining the South Florida skyline. Explore our projects, learn about our methods, and discover opportunities to invest in the future of real estate development!</p>
+        <h2
+          ref={ref02}
+          className={dynamicClass(inView02, 'animate__animated animate__fadeInLeft')}
+          style={{ opacity: `${inView02 ? '1' : '0'}`, textAlign: 'center', margin: '2rem auto 4rem' }}
+        ><strong>Unrivaled</strong> results</h2>
 
-        <p className="margin why"><strong>Why choose Agador Spartacus Development?</strong></p>
+        <p style={{ marginTop: '2rem', textAlign: 'center' }}>&#34;At Agador Spartacus, our success lies in our diversity, which serves as our competitive advantage. With a talented team comprising construction, development operations, and investment professionals, we have established ourselves as leaders in the real estate development industry.</p>
+
+        <p style={{ marginTop: '2rem', marginBottom: '22rem', textAlign: 'center' }}>Our comprehensive expertise across various asset classes enables us to deliver exceptional results in every project we undertake. By fostering a collaborative and team-oriented approach, we maximize investment returns by harnessing the synergies of our platform. At Agador Spartacus, we don&#39;t just develop properties; we shape communities and redefine standards of excellence in the real estate sector.&#34;</p>
+
+        {/* <p className="margin why"><strong>Why choose Agador Spartacus Development?</strong></p>
         <p className="margin">Top 5 reasons to choose <strong>Agador Spartacus Development</strong> for your Real Estate Ventures in Florida.</p>
 
         <div className="list">
@@ -87,7 +96,7 @@ export default function History() {
           <p>4. Financial Acumen Financial stewardship is at the core of our operations. With strategic lender financing, construction loan management, and rigorous financial oversight, we turn fiscal responsibility into profitable investments.</p>
           <p>5. Community and Investor Focus We believe in building relationships just as much as we do in building properties. Our commitment to investor relations and equity management is matched only by our dedication to creating living spaces that enhance communities.</p>
           <p>Discover why <strong>Agador Spartacus Development</strong> is the right partner for your next Real Estate endeavor.</p>
-        </div>
+        </div> */}
       </section>
       <Footer />
     </Menu>

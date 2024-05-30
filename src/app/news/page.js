@@ -8,7 +8,7 @@ export default function News() {
   return (
     <Menu>
       <section className="news">
-        <img src="/border.jpg" alt="house" width="100%" />
+        {/* <img src="/news-bg.jpg" alt="house" width="100%" /> */}
         <div className="home">
 
           <div className="home-slider__info">

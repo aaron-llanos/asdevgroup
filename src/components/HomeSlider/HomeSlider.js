@@ -59,6 +59,24 @@ export default function HomeSlider() {
     }
   }
 
+  // setTimeout(() => {
+  //   handleNext();
+  // }, 4000);
+
+  // // setInterval(() => {
+  // //   // handleNext()
+  // //   console.log('call');
+  // // }, 4000);
+  // useEffect(() => {
+  //   // const interval = setInterval(() => {
+  //   //   handleNext();
+  //   // }, 4000);
+  //   // return () => clearInterval(interval);
+  //   setInterval(() => {
+  //     handleNext();
+  //   }, 4000);
+  // }, []);
+
   return (
     <section className="home-slider"
       style={{ backgroundImage: `url(/home/slider/${property.image})` }}
