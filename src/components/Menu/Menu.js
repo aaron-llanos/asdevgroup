@@ -92,7 +92,7 @@ export default function Menu({ children, onMenu }) {
                 className={dynamicClass(!showPortfolio, 'rotate')}
               />
             </div>
-            <div className={`links ${showPortfolio ? 'show' : ''}`}>
+            <div className={`links ${dynamicClass(showPortfolio, 'show')}`}>
               <Link href="/portfolio/us"><p>U.S</p></Link>
               <Link href="/portfolio/mx"><p>México</p></Link>
             </div>
