@@ -23,18 +23,62 @@
   justify-content: space-between;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
-  // position: fixed !important;
   position: fixed;
 
   ul {
     li {
       margin: 2rem 0;
       list-style: none;
+      max-width: fit-content;
 
       h2 {
         font-family: "Archia";
         font-size: 28px;
       }
+    }
+
+    .accordion {
+      position: relative;
+
+      &__title {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .rotate {
+          transform: rotate(180deg);
+        }
+
+        h2 {
+          margin-right: 12px;
+        }
+      }
+    }
+
+    .links {
+      position: absolute;
+      justify-content: space-between;
+      width: 150px;
+      top: 30px;
+      left: 135px;
+      display: flex;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+      pointer-events: none;
+
+      p {
+        font-size: 24px;
+      }
+    }
+
+    .show {
+      opacity: 1;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+      pointer-events: inherit;
     }
   }
 

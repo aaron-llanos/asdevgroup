@@ -9,6 +9,9 @@ import Link from 'next/link'
 import Nav from '../Nav/Nav';
 import Social from "@/components/Social/Social";
 
+import { dynamicClass } from '@/helpers/dynamic-class';
+
+
 export default function Menu({ children, onMenu }) {
 
   // Menu animation
@@ -18,6 +21,7 @@ export default function Menu({ children, onMenu }) {
   const [translatePage, setTranslatePage] = useState('100');
   const [zIndex, setZIndex] = useState('0');
   const [time, setTime] = useState('1');
+  const [showPortfolio, setShowPortfolio] = useState(false);
   // const [scrollValue, setScrollValue] = useState(0);
 
   // const position = window.pageYOffset;
@@ -76,7 +80,24 @@ export default function Menu({ children, onMenu }) {
         </div>
         <ul>
           <li><h2><Link href="/our-history">About Us</Link></h2></li>
-          <li><h2><Link href="/portfolio/us">Portfolio</Link></h2></li>
+
+          <li className="accordion">
+            <div className="accordion__title" onClick={() => setShowPortfolio(!showPortfolio)}>
+              <h2>Portfolio</h2>
+              <img
+                alt="arrow"
+                width="18px"
+                height="12px"
+                src="/mini-arrow.png"
+                className={dynamicClass(!showPortfolio, 'rotate')}
+              />
+            </div>
+            <div className={`links ${showPortfolio ? 'show' : ''}`}>
+              <Link href="/portfolio/us"><p>U.S</p></Link>
+              <Link href="/portfolio/mx"><p>México</p></Link>
+            </div>
+          </li>
+
           <li><h2><Link href="/investors">Investors login</Link></h2></li>
           <li><h2><Link href="/team">Team</Link></h2></li>
           {/* <li><h2><Link href="/news">News</Link></h2></li> */}
