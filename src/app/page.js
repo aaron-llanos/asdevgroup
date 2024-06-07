@@ -28,7 +28,7 @@ export default function Home() {
 
   // Change Background types
   const [backImage, setBackImage] = useState('multifamily');
-  const [showPage, setShowPage] = useState(false);
+  const [showPage, setShowPage] = useState(true);
 
   useEffect(() => {
     document.querySelector('video').addEventListener('ended', function(e) {
@@ -79,11 +79,7 @@ export default function Home() {
                   </Link>
                 </div>
 
-                <img
-                  atl="Agador logo"
-                  src="/home/wc-02.jpg"
-                  // src="/home/wc-01.jpg"
-                />
+                <img alt="Agador logo" src="/home/wc-02.jpg" />
               </div>
 
               <h3 style={{
@@ -157,29 +153,37 @@ export default function Home() {
             ></div>
 
             <div className="home-benefits__container">
-              <div
-                className="home-benefits__column"
-                onMouseEnter={() => setBackImage('multifamily')}
-              >
-                <h4>Multi-family</h4>
-              </div>
+                <div
+                  className="home-benefits__column"
+                  onMouseEnter={() => setBackImage('multifamily')}
+                >
+                  <Link href="/portfolio/us?filter=multifamily">
+                    <h4>Multifamily</h4>
+                  </Link>
+                </div>
               <div
                 className="home-benefits__column"
                 onMouseEnter={() => setBackImage('industrial')}
               >
-                <h4>Industrial</h4>
+                <Link href="/portfolio/us?filter=industrial">
+                  <h4>Industrial</h4>
+                </Link>
               </div>
               <div
                 className="home-benefits__column"
                 onMouseEnter={() => setBackImage('hospitality')}
               >
-                <h4>Hospitality</h4>
+                <Link href="/portfolio/us?filter=hospitality">
+                  <h4>Hospitality</h4>
+                </Link>
               </div>
               <div
                 className="home-benefits__column"
                 onMouseEnter={() => setBackImage('residential')}
               >
-                <h4>Residential</h4>
+                <Link href="/portfolio/us?filter=residential">
+                  <h4>Residential</h4>
+                </Link>
               </div>
             </div>
           </section>
@@ -207,11 +211,9 @@ export default function Home() {
                     </div>
                   </Link>
                   <div className="info">
-                    <div>
                       <h4>{property.name}</h4>
+                      <p className="location">{property.location}</p>
                       <p className="type">{property.type}</p>
-                    </div>
-                    <p className="location">{property.location}</p>
                   </div>
                 </div>
               ))}
