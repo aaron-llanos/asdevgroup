@@ -8,13 +8,18 @@ import { useEffect, useState } from 'react';
 
 import Button from '@/components/Button/Button';
 
+import { useSearchParams } from 'next/navigation'
 import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
 
 export default function Portfolio({ isMX }) {
+  const searchParams = useSearchParams()
+  const filterParam = searchParams.get('filter')
   const properties = isMX ? propertiesMX : propertiesUS;
 
-  const [currentType, setCurrentType] = useState('all');
+  const capitalize = (string) => string.replace(/^\w/, (c) => c.toUpperCase());
+
+  const [currentType, setCurrentType] = useState(filterParam ? capitalize(filterParam) : 'all');
   const [currentProgress, setCurrentProgress] = useState('all');
   const [currentProperty, setCurrentProperty] = useState(properties[0]);
   const [flash, setflash] = useState(false);
@@ -81,9 +86,9 @@ export default function Portfolio({ isMX }) {
               click={() => setCurrentType('all')}
             />
             <Button
-              text="Multi-family"
-              css={dynamicClass(currentType === 'Multi-family', 'bg-red')}
-              click={() => setCurrentType('Multi-family')}
+              text="Multifamily"
+              css={dynamicClass(currentType === 'Multifamily', 'bg-red')}
+              click={() => setCurrentType('Multifamily')}
             />
             <Button
               text="Hospitality"

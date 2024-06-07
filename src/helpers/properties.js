@@ -20,7 +20,7 @@ export const properties = [
       'Apartments-at-Palm-Bay-5.jpg',
       'Apartments-at-Palm-Bay-6.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const properties = [
       'Crela-Spring-Hill-3.jpg',
       'Crela-Spring-Hill-4.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ export const properties = [
       'Cottages-at-Lake-Hamilton-2.jpg',
       'Cottages-at-Lake-Hamilton-3.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 4,
@@ -84,7 +84,7 @@ export const properties = [
       'Magnolia-at-Powell-2.jpg',
       'Magnolia-at-Powell-3.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ export const properties = [
       'Storage-at-Powell-2.jpg',
       'Storage-at-Powell-3.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Industrial',
   },
   {
     id: 6,
@@ -128,7 +128,7 @@ export const properties = [
       'Solamar-Wildwood-3.jpg',
       'Solamar-Wildwood-4.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 7,
@@ -148,7 +148,7 @@ export const properties = [
       'Solamar-Kissimmee-2.jpg',
       'Solamar-Kissimmee-3.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 8,
@@ -331,7 +331,7 @@ export const propertiesMX = [
       'Apartments-at-Palm-Bay-5.jpg',
       'Apartments-at-Palm-Bay-6.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
   {
     id: 2,
@@ -353,6 +353,6 @@ export const propertiesMX = [
       'Crela-Spring-Hill-3.jpg',
       'Crela-Spring-Hill-4.jpg',
     ],
-    type: 'Multi-family',
+    type: 'Multifamily',
   },
 ]
