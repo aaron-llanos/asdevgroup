@@ -28,7 +28,7 @@ export default function Home() {
 
   // Change Background types
   const [backImage, setBackImage] = useState('multifamily');
-  const [showPage, setShowPage] = useState(true);
+  const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
     document.querySelector('video').addEventListener('ended', function(e) {
