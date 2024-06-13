@@ -6,7 +6,7 @@ export default function portfolio() {
 
   return (
     <Suspense>
-      <Menu>
+      <Menu css="portfolio">
         <Portfolio isMX />
       </Menu>
     </Suspense>

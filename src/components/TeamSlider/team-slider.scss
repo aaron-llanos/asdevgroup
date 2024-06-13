@@ -1,0 +1,52 @@
+.team-slider {
+  .custom-slider {
+    margin: 3rem auto;
+    // margin-left: -26.5% !important;
+    right: 13%;
+
+    .swiper {
+      &-wrapper {
+        // max-width: fit-content;
+        // right: 13%;
+      }
+
+      &-slide {
+        max-width: fit-content;
+
+        &-active {
+          img {
+            width: 400px;
+            height: 400px;
+          }
+        }
+      }
+    }
+
+    .swiper-slide:first-of-type{
+      margin-left: -5.4%;
+    }
+  }
+
+  .btn {
+    &-container {
+      max-width: 160px;
+      display: flex;
+      margin: 0 auto;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+
+    &-slider {
+      cursor: pointer;
+      border-radius: 50%;
+      border: 1px solid white;
+      background-color: transparent;
+      color: white;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

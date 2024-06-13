@@ -8,7 +8,7 @@ export default function portfolio() {
 
   return (
     <Suspense>
-      <Menu>
+      <Menu css="portfolio">
         <Portfolio />
       </Menu>
     </Suspense>

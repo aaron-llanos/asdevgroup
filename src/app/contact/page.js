@@ -5,13 +5,13 @@ import Footer from '@/components/Footer/Footer';
 import Social from '@/components/Social/Social';
 import Button from '@/components/Button/Button';
 
-export default function Home() {
+export default function Contact() {
   return (
-    <Menu>
+    <Menu css="contact">
       <section className="contact-main">
         <div className="overlay"></div>
-        <div className="home">
-          <div className="home-slider__info">
+        <div className="text">
+          <div className="text-slider__info">
             <h2>Contact</h2>
             <h3>GET IN TOUCH</h3>
           </div>

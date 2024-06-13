@@ -1,8 +1,32 @@
-.not-scroll {
-  overflow-y: hidden;
-}
-
+// .not-scroll {
+//   overflow-y: hidden;
+// }
 .home {
+  .portada-container {
+    background-color: black;
+    margin-top: -28px;
+    background-image: url('/agador-gray.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 2rem 0;
+
+    .text {
+      max-width: 1000px;
+      margin: 0 auto;
+      color: white;
+
+      h1 {
+        font-size: 38px;
+        margin: 1.5rem 0;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+  }
+
   &-welcome {
     background-color: #ffffff;
     padding: 4rem 0;
@@ -14,11 +38,15 @@
       .step-one {
         display: flex;
         justify-content: space-between;
+        background-image: url('/agador-gray-02.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 5rem 0;
 
         h2 {
           font-size: 36px;
           font-weight: 900;
-          max-width: 390px;
         }
 
         h3 {
@@ -33,9 +61,8 @@
           font-weight: 200;
         }
 
-        img {
-          // max-width: 357px;
-          height: 335px;
+        .underline-container {
+          margin: 0 auto;
         }
       }
 

@@ -5,6 +5,7 @@ import './home.scss'
 import 'animate.css';
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -25,26 +26,27 @@ export default function Home() {
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
   const { ref: ref02, inView: inView02 } = useInView();
+  const { ref: ref03, inView: inView03 } = useInView();
 
   // Change Background types
   const [backImage, setBackImage] = useState('multifamily');
-  const [showPage, setShowPage] = useState(false);
+  // const [showPage, setShowPage] = useState(true);
 
-  useEffect(() => {
-    document.querySelector('video').addEventListener('ended', function(e) {
-      setShowPage(true);
-    })
-    const body = document.querySelector('body')
-    if (showPage) {
-      body.classList.remove('not-scroll')
-    } else {
-      body.classList.add('not-scroll')
-    }
-  }, []);
+  // useEffect(() => {
+  //   document.querySelector('video').addEventListener('ended', function(e) {
+  //     setShowPage(true);
+  //   })
+  //   const body = document.querySelector('body')
+  //   if (showPage) {
+  //     body.classList.remove('not-scroll')
+  //   } else {
+  //     body.classList.add('not-scroll')
+  //   }
+  // }, []);
 
   return (
     <div>
-      <video
+      {/* <video
         muted
         autoPlay
         width="100%"
@@ -52,23 +54,57 @@ export default function Home() {
       >
         <source src="/video-intro.mp4" type="video/mp4" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
       <div
-        style={{ display: showPage ? 'inherit' : 'none' }}
+        // style={{ display: showPage ? 'inherit' : 'none' }}
         className="animate__animated animate__fadeIn"
       >
-        <Menu>
+        <Menu css="home">
+          <video
+            muted
+            autoPlay
+            width="100%"
+            height="100%"
+          >
+            <source src="/video-intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <div className="portada-container">
+            <div
+              ref={ref03}
+              style={{ opacity: `${inView03 ? '1' : '0'}` }}
+              className={`text ${dynamicClass(inView03, 'animate__animated animate__fadeInLeft')}`}
+            >
+              <h1>
+                <strong>A Real Estate Development Firm</strong>
+              </h1>
+              <p>
+                Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader.  Spartacus meaning "from the city of Sparta" in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding <strong>real estate development firm </strong> with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
+              </p>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+              <Image
+                alt="Alan"
+                src="/arrow-down.png"
+                width="60"
+                height="35"
+              />
+            </div>
+          </div>
+
           <HomeSlider />
 
           <section className="home-welcome">
             <div className="home-welcome__container">
               <div className="step-one">
                 <div
-                  style={{ marginRight: '3rem', opacity: `${inView01 ? '1' : '0'}`  }}
+                  style={{ opacity: `${inView01 ? '1' : '0'}`, textAlign: 'center' }}
                   className={`${inView01 && 'animate__animated animate__fadeInLeft'}`}
                   ref={ref01}
                 >
-                  <h2 className="tiggers">Welcome to <strong>Agador Spartacus Development</strong>
+                  <h2 className="tiggers">
+                    Welcome to <strong>Agador Spartacus Development</strong>
                   </h2>
 
                   <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
@@ -78,8 +114,6 @@ export default function Home() {
                     <Underline text="PORTFOLIO" width="90%" />
                   </Link>
                 </div>
-
-                <img alt="Agador logo" src="/home/wc-02.jpg" />
               </div>
 
               <h3 style={{

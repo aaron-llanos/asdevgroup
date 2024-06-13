@@ -21,8 +21,9 @@ export default function HomeSlider() {
   // Animations
   const [flash, setFlash] = useState(false);
   const [enableBTN, setEnableBTN] = useState(true);
-  const { ref: ref01, inView: inView01 } = useInView();
   const [animation, setAnimation] = useState('animate__fadeInDown');
+  const { ref: ref01, inView: inView01 } = useInView();
+  const [firstClick, setFirstClick] = useState(false);
 
   useEffect(() => {
     setAnimation('animate__fadeInDown')
@@ -37,6 +38,10 @@ export default function HomeSlider() {
     setTimeout(() => {
       setProperty(currentProperty[0])
     }, 500);
+    let timer1 = setTimeout(() => handleNext(false), 4000);
+    return () => {
+      clearTimeout(timer1);
+    };
   }, [counter]);
 
   const handleNext = () => {
@@ -58,24 +63,6 @@ export default function HomeSlider() {
       setCounter(counter - 1)
     }
   }
-
-  // setTimeout(() => {
-  //   handleNext();
-  // }, 4000);
-
-  // // setInterval(() => {
-  // //   // handleNext()
-  // //   console.log('call');
-  // // }, 4000);
-  // useEffect(() => {
-  //   // const interval = setInterval(() => {
-  //   //   handleNext();
-  //   // }, 4000);
-  //   // return () => clearInterval(interval);
-  //   setInterval(() => {
-  //     handleNext();
-  //   }, 4000);
-  // }, []);
 
   return (
     <section className="home-slider"

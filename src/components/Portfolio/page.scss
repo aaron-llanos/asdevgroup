@@ -1,123 +1,122 @@
-.zoom {
-  animation: AnimationZoom 6s infinite alternate;
-}
-
-@keyframes AnimationZoom {
-  0% {
-    background-size: 100%;
-  }
-  100% {
-    background-size: 103%;
-  }
-}
-
-.home {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
-  padding: 4rem 6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  color: white;
-  min-height: 100vh;
-
-  h1 {
-    text-align: center;
-    max-width: 800px;
-    margin: 4rem auto 1rem;
-    font-size: 44px;
-    z-index: 1;
+.portfolio {
+  .zoom {
+    animation: AnimationZoom 6s infinite alternate;
   }
 
-  .filter {
-    width: 700px;
-    margin: 0 auto;
-    z-index: 1;
-
-    &-row {
-      display: flex;
-      margin: 1.5rem auto 0;
-      align-items: center;
-
-      p {
-        letter-spacing: 2px;
-        font-size: 20px;
-      }
-
-      button {
-        width: inherit;
-        margin-top: 0;
-        padding: 4px 26px;
-      }
+  @keyframes AnimationZoom {
+    0% {
+      background-size: 100%;
+    }
+    100% {
+      background-size: 103%;
     }
   }
-}
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: transparent;
-  max-width: 1300px;
-  width: 100%;
-  margin: 5rem auto 0;
-  z-index: 1;
-
-  .card {
-    width: 250px;
-    height: 250px;
-    border: solid 1px white;
+  .portfoliocomp {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 4rem 6rem;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    min-height: 100vh;
+    min-width: 100vw;
+
+    h1 {
+      text-align: center;
+      max-width: 800px;
+      margin: 4rem auto 1rem;
+      font-size: 44px;
+      z-index: 1;
+    }
+
+    .filter {
+      width: 700px;
+      margin: 0 auto;
+      z-index: 1;
+
+      &-row {
+        display: flex;
+        margin: 1.5rem auto 0;
+        align-items: center;
+
+        p {
+          letter-spacing: 2px;
+          font-size: 20px;
+        }
+
+        button {
+          width: inherit;
+          margin-top: 0;
+          padding: 4px 26px;
+        }
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 1.5rem;
-    margin: 2rem;
+    background-color: transparent;
+    max-width: 1300px;
+    width: 100%;
+    margin: 5rem auto 0;
+    z-index: 1;
 
-    .title {
-      font-weight: 700;
-      font-size: 20px;
-      max-width: 135px;
+    .card {
+      width: 250px;
+      height: 250px;
+      border: solid 1px white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.5rem;
+      margin: 2rem;
+
+      .title {
+        font-weight: 700;
+        font-size: 20px;
+        max-width: 135px;
+      }
+
+      .city {
+        font-size: 18px;
+      }
     }
 
-    .city {
-      font-size: 18px;
+    .red {
+      background-color: rgb(211 2 0 / 83%);
+      border: solid 1px rgb(211 2 0 / 83%);
     }
   }
 
-  .red {
+  .bg-red {
+    background-color: #d30200;
+    color: white;
+  }
+
+  .bg-card {
     background-color: rgb(211 2 0 / 83%);
-    border: solid 1px rgb(211 2 0 / 83%);
+    border: solid 1px rgb(211 2 0 / 83%) !important;
   }
-}
 
-.bg-red {
-  background-color: #d30200;
-  color: white;
-}
+  .flash {
+    z-index: 0;
+    background: rgb(255 255 255 / 22%);
+    opacity: 0;
+    animation: AnimationFlash 0.6s ease;
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
 
-.bg-card {
-  background-color: rgb(211 2 0 / 83%);
-  border: solid 1px rgb(211 2 0 / 83%) !important;
-}
-
-.nav-container {
-  z-index: 1;
-}
-
-.flash {
-  z-index: 0;
-  background: rgb(255 255 255 / 22%);
-  opacity: 0;
-  animation: AnimationFlash 0.6s ease;
-  min-height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-@keyframes AnimationFlash {
-  25% {opacity: 1};
+  @keyframes AnimationFlash {
+    25% {opacity: 1};
+  }
 }

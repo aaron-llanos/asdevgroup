@@ -7,7 +7,7 @@ import Underline from '@/components/Underline/Underline';
 export default function News() {
 
   return (
-    <Menu>
+    <Menu css="new">
       <section className="container">
         <div className="information">
           <h2>March 19, 2024</h2>

@@ -16,11 +16,11 @@ export default function History() {
   const { ref: ref02, inView: inView02 } = useInView();
 
   return (
-    <Menu>
+    <Menu css="history">
       <section className="history">
         <div className="overlay"></div>
-        <div className="home">
-          <div className="home-slider__info">
+        <div className="historytext">
+          <div className="historytext-slider__info">
             <h2><strong>Our History</strong></h2>
             <h3>PILLARS THAT SHAPE US UP</h3>
           </div>

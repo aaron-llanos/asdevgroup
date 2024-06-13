@@ -1,166 +1,166 @@
-body {
-  background-color: black;
-}
-
-.overlay {
-  height: 80vh;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 50%, rgba(0,0,0,0) 100%);
-}
-
 .history {
-  height: 80vh;
-  background-image: url('/our-history-bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: black !important;
 
-  .home {
+  .overlay {
+    height: 80vh;
+    width: 100%;
     position: absolute;
     top: 0;
-    width: 100%;
-
-    &-slider__info {
-      margin-top: 15%;
-      margin-left: 10%;
-    }
+    right: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 50%, rgba(0,0,0,0) 100%);
   }
-}
 
-.home {
-  padding: 4rem 6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
+  .history {
+    height: 80vh;
+    background-image: url('/our-history-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 
-  &-slider {
-    &__info {
-      max-width: 800px;
-      margin: 0 auto 18rem;
+    .historytext {
+      position: absolute;
+      top: 0;
       width: 100%;
 
-      h2 {
-        font-weight: 500;
-        font-size: 62px;
-        margin: 10px 0;
-      }
-
-      h3 {
-        font-weight: 100;
-        font-size: 20px;
-        letter-spacing: 2px;
+      &-slider__info {
+        margin-top: 15%;
+        margin-left: 10%;
       }
     }
   }
-}
 
-.container-h {
-  max-width: 1000px;
-  margin: 6rem auto 0;
-  color: white;
-
-  h2 {
-    font-size: 38px;
-    font-weight: 300;
-    max-width: 400px;
-  }
-
-  h3 {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    font-size: 20px;
-    font-style: italic;
-  }
-
-  p {
-    font-size: 22px;
-    font-weight: 200;
-  }
-
-  .card {
-    background-color: #d9d9d9;
-    color: black;
-    font-weight: 900 !important;
-    font-family: 'Satoshi-Bold';
-    width: 200px;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px;
-    transition: all 0.3s ease-in-out;
-    height: 115px;
+  .historytext {
+    padding: 4rem 6rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    p {
-      font-weight: 600;
-    }
-
-    &-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 200px;
-    }
-
-    .initial {
-      display: block;
-    }
-
-    .on-hover {
-      display: none;
-    }
-  }
-
-  .card:hover {
-    background-color: #d30200;
+    flex-direction: column;
+    justify-content: space-between;
     color: white;
 
-    .initial {
-      display: none;
-    }
+    &-slider {
+      &__info {
+        max-width: 800px;
+        margin: 0 auto 18rem;
+        width: 100%;
 
-    .on-hover {
-      display: block;
-      font-size: 16px;
-      font-family: "Satoshi";
-      font-weight: 100;
+        h2 {
+          font-weight: 500;
+          font-size: 62px;
+          margin: 10px 0;
+        }
+
+        h3 {
+          font-weight: 100;
+          font-size: 20px;
+          letter-spacing: 2px;
+        }
+      }
     }
   }
-}
 
-.why {
-  font-weight: 500 !important;
-  font-size: 22px !important;
-}
+  .container-h {
+    max-width: 1000px;
+    margin: 6rem auto 0;
+    color: white;
 
-.margin {
-  margin-top: 3rem;
-  margin-left: 10px;
-}
+    h2 {
+      font-size: 38px;
+      font-weight: 300;
+      max-width: 400px;
+    }
 
-.list {
-  p {
-    margin-top: 1.5rem;
+    h3 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 22px;
+      font-weight: 200;
+    }
+
+    .card {
+      background-color: #d9d9d9;
+      color: black;
+      font-weight: 900 !important;
+      font-family: 'Satoshi-Bold';
+      width: 200px;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      transition: all 0.3s ease-in-out;
+      height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+        font-weight: 600;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+      }
+
+      .initial {
+        display: block;
+      }
+
+      .on-hover {
+        display: none;
+      }
+    }
+
+    .card:hover {
+      background-color: #d30200;
+      color: white;
+
+      .initial {
+        display: none;
+      }
+
+      .on-hover {
+        display: block;
+        font-size: 16px;
+        font-family: "Satoshi";
+        font-weight: 100;
+      }
+    }
   }
-}
 
-footer .container {
-  max-width: 100%;
-}
+  .why {
+    font-weight: 500 !important;
+    font-size: 22px !important;
+  }
 
-footer {
-  border-top: solid 1px white;
-  margin-top: 7rem;
-}
+  .margin {
+    margin-top: 3rem;
+    margin-left: 10px;
+  }
 
-.card-container p {
-  font-size: 20px;
-}
+  .list {
+    p {
+      margin-top: 1.5rem;
+    }
+  }
 
-.container-principal {
-  background-color: black !important;
+  footer .container {
+    max-width: 100%;
+  }
+
+  footer {
+    border-top: solid 1px white;
+    margin-top: 7rem;
+  }
+
+  .card-container p {
+    font-size: 20px;
+  }
+
+  .container-principal {
+    background-color: black !important;
+  }
 }

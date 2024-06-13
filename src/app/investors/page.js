@@ -4,15 +4,17 @@ import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 
-export default function Home() {
+export default function Investors() {
 
   return (
-    <Menu>
-      <section className="home">
+    <Menu css="investors">
+      <section className="investors">
         <img src="/agador-big.png" alt="Agador Logo" className="agador" />
-        <div className="home-slider__info">
-          <h2>Quick access to the Juniper Square portal:</h2>
-          <Button text="Investors Login" />
+        <div className="investors-slider__info">
+          <h2>Quick access to the <span>Juniper Square</span> portal:</h2>
+          <a href="https://www.junipersquare.com/login" target="_blank">
+            <Button text="Investors Login" />
+          </a>
         </div>
       </section>
       <section className="investors">

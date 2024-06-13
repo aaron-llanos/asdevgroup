@@ -65,7 +65,8 @@ export default function Portfolio({ isMX }) {
 
   return (
     <section
-      className={`home ${dynamicClass(zoom, 'zoom')}`}
+      className={`portfoliocomp ${dynamicClass(zoom, 'zoom')}`}
+      // className={`portfoliocomp zoom`}
       style={{ backgroundImage: `url(/inside/${currentProperty.id}-${currentProperty.slug}/${currentProperty.image})`}}
     >
       {flash && (<div className="flash"></div>)}

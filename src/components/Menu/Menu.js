@@ -12,7 +12,7 @@ import Social from "@/components/Social/Social";
 import { dynamicClass } from '@/helpers/dynamic-class';
 
 
-export default function Menu({ children, onMenu }) {
+export default function Menu({ children, onMenu, css }) {
 
   // Menu animation
   // const [showMenu, setShowMenu] = useState(true);
@@ -116,7 +116,7 @@ export default function Menu({ children, onMenu }) {
       </div>
 
       <div
-        className="container-principal"
+        className={`container-principal ${dynamicClass(css, css)}`}
         style={{
           // transform: showMenu ? `translate(-${translatePage}%, 0px)` : 'translate(0%, 0px)',
           // transform: showMenu ? `translate(-${translatePage}%, ${scrollValue}px)` : 'none',

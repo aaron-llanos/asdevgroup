@@ -1,70 +1,50 @@
-body {
-  background-color: black;
-}
-
 .team {
-  color: white;
-  padding: 4rem 6rem 1rem;
+  background-color: black;
 
-  &-content {
-    max-width: 1000px;
-    margin: 6rem auto;
+  .team {
+    color: white;
+    padding: 4rem 6rem 1rem;
 
-    h1 {
-      font-weight: 500;
-      font-size: 42px;
-      max-width: 400px;
-    }
+    &-content {
+      max-width: 1000px;
+      margin: 6rem auto 0rem;
 
-    h2 {
-      font-weight: 300;
-      font-size: 20px;
-      letter-spacing: 4px;
-    }
-  }
+      h1 {
+        font-weight: 500;
+        font-size: 42px;
+        max-width: 400px;
+      }
 
-  &-slider {
-    display: flex;
-    max-width: 1034px;
-    margin: 0 auto;
-
-    img {
-      max-width: 350px;
-      margin: 1rem;
-    }
-
-    .little {
-      display: flex;
-
-      img {
-        width: 200px;
-        height: fit-content;
+      h2 {
+        font-weight: 300;
+        font-size: 20px;
+        letter-spacing: 4px;
       }
     }
   }
-}
 
-.light {
-  font-size: 22px;
-  font-weight: 200;
-  margin-top: 3rem;
-  border-bottom: solid 1px white;
-  padding-bottom: 6rem;
-}
+  .light {
+    font-size: 22px;
+    font-weight: 200;
+    margin-top: 3rem;
+    border-bottom: solid 1px white;
+    padding-bottom: 6rem;
+  }
 
-.strong {
-  margin: 3rem;
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: 9rem;
-  font-family: 'Archia';
-}
+  .strong {
+    margin: 3rem;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 9rem;
+    font-family: 'Archia';
+  }
 
-footer {
-  border-top: solid 1px;
-  padding-top: 3rem !important;
-}
+  footer {
+    border-top: solid 1px;
+    padding-top: 3rem !important;
+  }
 
-.container-principal {
-  background-color: black !important;
+  .container-principal {
+    background-color: black !important;
+  }
 }

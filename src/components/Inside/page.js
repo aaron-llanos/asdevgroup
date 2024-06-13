@@ -20,7 +20,7 @@ import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
 
 export default function Inside({ params, isMX }) {
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(true);
 
   const properties = isMX ? propertiesMX : propertiesUS;
 
@@ -55,9 +55,9 @@ export default function Inside({ params, isMX }) {
   }, [showInfo]);
 
   return (
-    <Menu>
-      <section className="home" style={{ backgroundImage: `url('/inside/${id}-${slug}/${image}')` }}>
-        <div className="home-slider__info">
+    <Menu css="inside">
+      <section className="inside" style={{ backgroundImage: `url('/inside/${id}-${slug}/${image}')` }}>
+        <div className="inside-slider__info">
           <div
             className={`line ${dynamicClass(inView01, 'animate__animated animate__fadeInLeft')}`}
             style={{ opacity: `${inView01 ? '1' : '0'}` }}
@@ -84,7 +84,7 @@ export default function Inside({ params, isMX }) {
         className={`topics ${dynamicClass(!showInfo, 'translation')}`}
       >
         <h3 style={{ visibility: !showInfo ? 'inherit' : 'hidden' }}>PROJECT CHARACTERISTICS</h3>
-        <div className="arrow" onClick={() => setShowInfo(!showInfo)}>
+        {/* <div className="arrow" onClick={() => setShowInfo(!showInfo)}>
           <Image
             src="/inside/arrow.png"
             alt="Vercel Logo"
@@ -92,7 +92,7 @@ export default function Inside({ params, isMX }) {
             width={15}
             priority
           />
-        </div>
+        </div> */}
         <h3 style={{ visibility: 'hidden' }}>PROJECT CHARACTERISTICS</h3>
 
         {showInfo && (
@@ -112,10 +112,10 @@ export default function Inside({ params, isMX }) {
                 <h5>PROJECT SIZE</h5>
                 <p><strong>{`${size} ${unit}`}</strong></p>
               </div>
-              <div className="character">
+              {/* <div className="character">
                 <h5>DATE</h5>
                 <p><strong>March 2024</strong></p>
-              </div>
+              </div> */}
             </div>
           </>
         )}

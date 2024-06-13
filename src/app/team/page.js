@@ -1,28 +1,19 @@
 import './page.scss'
 
 import Menu from '@/components/Menu/Menu';
-import Nav from "@/components/Nav/Nav";
+import TeamSlider from '../../components/TeamSlider/TeamSlider';
 import Footer from '@/components/Footer/Footer';
 
-export default function Home() {
-
+export default function Team() {
   return (
-    <Menu>
+    <Menu css="team">
       <section className="team">
         <div className="team-content">
           <h1><strong>The Driving Forces Behind Our Success</strong></h1>
           <h2>MEET THE TEAM</h2>
         </div>
 
-        <div className="team-slider">
-          <img src="/team/01.png" atl="facebook logo"/>
-
-          <div className="little">
-            <img src="/team/01.png" atl="facebook logo"/>
-            <img src="/team/01.png" atl="facebook logo"/>
-            <img src="/team/01.png" atl="facebook logo"/>
-          </div>
-        </div>
+        <TeamSlider />
 
         <div className="team-content">
           <div className="light">

@@ -6,12 +6,12 @@ import Menu from '@/components/Menu/Menu';
 
 export default function News() {
   return (
-    <Menu>
+    <Menu css="news-principal">
       <section className="news">
         {/* <img src="/news-bg.jpg" alt="house" width="100%" /> */}
-        <div className="home">
+        <div className="title">
 
-          <div className="home-slider__info">
+          <div className="title-slider__info">
             <h2>Recent news</h2>
             <h3>PROJECT RELEASES AND MORE</h3>
           </div>
