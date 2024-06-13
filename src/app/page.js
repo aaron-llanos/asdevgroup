@@ -80,7 +80,7 @@ export default function Home() {
                 <strong>A Real Estate Development Firm</strong>
               </h1>
               <p>
-                Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader.  Spartacus meaning "from the city of Sparta" in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding <strong>real estate development firm </strong> with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
+                Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader. Spartacus meaning &quot;from the city of Sparta&quot; in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding <strong>real estate development firm </strong> with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
               </p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
