@@ -7,11 +7,14 @@ import './team-slider.scss'
 
 import Image from 'next/image'
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function TeamSlider() {
-  localStorage.getItem('theme') || 'light';
+  useEffect(() => {
+    localStorage.getItem('theme') || 'light';
+  }, []);
+
   const swiperRef = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
 
