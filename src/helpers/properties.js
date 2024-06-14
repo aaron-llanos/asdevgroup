@@ -7,10 +7,11 @@ export const properties = [
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'apartments-at-palm-bay',
-    description: '',
-    size: 90,
-    unit: 'units',
+    description: 'Five minutes from The Avenue Viera mall for shopping, dining, and entertainment. The USSA Space Coast Stadium and Duran Golf Club are within two miles. Cocoa Village is a 20-minute drive, home to boutique shopping and weekend markets. This is new residential community with 120 units featuring luxury amenities including a resort style pool & Clubhouse area.',
+    size: 120,
+    unit: 'units + commercial space ',
     details: [
+      '3-story apartment walk up'
     ],
     gallery: [
       'Apartments-at-Palm-Bay-1.jpg',
@@ -24,16 +25,17 @@ export const properties = [
   },
   {
     id: 2,
-    name: 'Magnolia at Spring Hill',
-    location: 'Springhill FL',
+    name: 'Magnolia Spring Hill',
+    location: 'Spring Hill FL',
     image: '2-Crela-Spring-Hill.jpg',
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'magnolia-at-spring-hill',
-    description: '',
+    description: "Coming soon to Florida's West Coast is Magnolia at Spring Hill. A Residential property located within a short drive from Tampa Bay.  A new residential townhome community with 162 units featuring luxury amenities including a resort style pool & Clubhouse area.",
     size: 162,
     unit: 'Townhomes',
     details: [
+      'Townhomes'
     ],
     gallery: [
       'Crela-Spring-Hill-5.jpg',
@@ -53,10 +55,11 @@ export const properties = [
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'magnolia-at-lake-hamilton',
-    description: '',
+    description: 'Coming soon to Central Florida is Magnolia at Lake Hamilton. A Residential property near Lego Land.  A new residential community with 200 units featuring luxury amenities including a resort style pool & Clubhouse area.',
     size: 200,
     unit: 'units',
     details: [
+      'Cottages and Apartments'
     ],
     gallery: [
       'Cottages-at-Lake-Hamilton-1.jpg',
@@ -73,7 +76,7 @@ export const properties = [
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'magnolia-at-powell',
-    description: 'Coming soon to central Florida is Townhomes at Powell. Residential property adjacent to the villages.  A new residential townhome community with 132 units featuring luxury amenities including a resort style pool & Clubhouse area.',
+    description: 'Coming soon to Central Florida is Magnolia at Powell. Residential property adjacent to the villages.  A new residential townhome community with 132 units featuring luxury amenities including a resort style pool & Clubhouse area.',
     size: 132,
     unit: 'units',
     details: [
@@ -92,16 +95,17 @@ export const properties = [
   },
   {
     id: 5,
-    name: 'Storage at Powell',
+    name: 'Storage at Powell a Life Storage Facility',
     location: 'Wildwood FL',
     image: '5-Storage-at-Powell.jpg',
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'storage-at-powell',
-    description: '',
+    description: 'Coming soon to Central Florida is a Self Storage facility at Powell.  A Life Storage branded facility with 900+ storage units.',
     size: '100,000',
     unit: 'Sq Ft self-storage facility',
     details: [
+      '900+ Storage units'
     ],
     gallery: [
       'Storage-at-Powell-1.jpg',
@@ -120,7 +124,7 @@ export const properties = [
     progress: 'Under Construction',
     status: 'in-process',
     slug: 'solamar-wildwood',
-    description: 'Solamar Wildwood I, is a new residential rental community with a mixture of 248 Villas and Townhomes located in Wildwood, FL near the Villages! This project broke ground  Spring 2022. The property will feature both villas and townhomes with luxury amenities including a resort style pool & clubhouse area, Kids Play area, Dog Park & Dog Wash station as well as a BBQ Area and Gazebos for residents to enjoy the beautiful year-round Florida weather!',
+    description: 'Solamar Wildwood is a new residential rental community with a mixture of 248 Villas and Townhomes located in Wildwood, FL near the Villages! This project broke ground  Spring 2022. The property will feature both villas and townhomes with luxury amenities including a resort style pool & clubhouse area, Kids Play area, Dog Park & Dog Wash station as well as a BBQ Area and Gazebos for residents to enjoy the beautiful year-round Florida weather!',
     size: 243,
     unit: 'units',
     details: [
@@ -144,10 +148,11 @@ export const properties = [
     progress: 'Completed',
     status: 'completed',
     slug: 'solamar-kissimmee',
-    description: 'The Solamar project is a new 210 residential townhome rental community located in Kissimmee near Orlando, the heart of Florida! This project was completed in early Spring 2023 . The property will features private terraces with luxury amenities including a resort style pool & clubhouse area.',
-    size: 212,
+    description: 'The Solamar project is a new 210 residential townhome rental community located in Kissimmee near Orlando, the heart of Florida! This project was completed in early Spring 2023 . The property will feature private terraces with luxury amenities including a resort style pool & clubhouse area.',
+    size: 210,
     unit: 'Townhomes',
     details: [
+      'Townhomes'
     ],
     gallery: [
       'Solamar-Kissimmee-1.jpg',
@@ -194,8 +199,8 @@ export const properties = [
     status: 'completed',
     type: 'Hospitality',
     description: 'One of our latest projects is a sophisticated five-story, four-star hotel featuring inspired guest-rooms and premium suites with energizing design and insightful in-room technology. Amenities include a roof top bar, coffee bar, outdoor swimming pool, multiple outdoor terraces, fitness studio, business center, and a large high-tech multi-space conference center.',
-    size: '',
-    unit: '',
+    size: 142,
+    unit: 'room hotel',
     details: [
       'Rooftop Bar',
       'Coffee Bar',
@@ -275,8 +280,8 @@ export const properties = [
     status: 'completed',
     type: 'Hospitality',
     description: 'Element Orlando International, a hotel committed to wellness and comfort. Located near SeaWorld Orlando, the Orange County Convention Center and shopping outlets. Move in Motion, with a 24-hour fitness center, offering everything you need to stay fit on the road. ',
-    size: '',
-    unit: '',
+    size: 144,
+    unit: 'room hotel',
     details: [
       'Fitness Center',
       'Pool',
@@ -300,7 +305,7 @@ export const properties = [
     status: 'completed',
     type: 'Hospitality',
     description: 'A trendy and tech-forward hotel in Orlando, Florida, steps from SeaWorld Orlando. Offering easy-breezy access to major attractions, restaurants, museums, shops, theme parks and golf courses. This is a dual brand 288 room hotel completed in 2021.',
-    size: 288,
+    size: 144,
     unit: 'room hotel',
     details: [
       'Fitness Center',
