@@ -17,9 +17,17 @@ export default function Portfolio({ isMX }) {
   const filterParam = searchParams.get('filter')
   const properties = isMX ? propertiesMX : propertiesUS;
 
-  const capitalize = (string) => string.replace(/^\w/, (c) => c.toUpperCase());
+  const initialQueryParam = (filterParam) => {
+    const cases = {
+      multifamily: 'Multifamily',
+      hospitality: 'Hospitality',
+      'self-storage': 'Self-Storage',
+    };
 
-  const [currentType, setCurrentType] = useState(filterParam ? capitalize(filterParam) : 'all');
+    return cases[filterParam];
+  };
+
+  const [currentType, setCurrentType] = useState(filterParam ? initialQueryParam(filterParam) : 'all');
   const [currentProgress, setCurrentProgress] = useState('all');
   const [currentProperty, setCurrentProperty] = useState(properties[0]);
   const [flash, setflash] = useState(false);
@@ -71,11 +79,11 @@ export default function Portfolio({ isMX }) {
     >
       {flash && (<div className="flash"></div>)}
 
-      {isMX ? (
+      {/* {isMX ? (
         <h1>Located in Mexico’s most luxurious and prestigious areas</h1>
       ) : (
         <h1>Our developments are built in the most attractive areas in Florida</h1>
-      )}
+      )} */}
 
       {!isMX && (
         <div className="filter">
@@ -97,9 +105,9 @@ export default function Portfolio({ isMX }) {
               click={() => setCurrentType('Hospitality')}
             />
             <Button
-              text="Industrial"
-              css={dynamicClass(currentType === 'Industrial', 'bg-red')}
-              click={() => setCurrentType('Industrial')}
+              text="Self-Storage"
+              css={dynamicClass(currentType === 'Self-Storage', 'bg-red')}
+              click={() => setCurrentType('Self-Storage')}
             />
           </div>
 

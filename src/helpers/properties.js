@@ -114,7 +114,7 @@ export const properties = [
       'Storage-at-Powell-4.jpg',
       'Storage-at-Powell-5.jpg',
     ],
-    type: 'Industrial',
+    type: 'Self-Storage',
   },
   {
     id: 6,

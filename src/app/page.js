@@ -80,7 +80,7 @@ export default function Home() {
                 <strong>A Real Estate Development Firm</strong>
               </h1>
               <p>
-                Agador is stated as a balanced name; derived from Arabic to relate to ancient wisdom or an independent leader. Spartacus meaning &quot;from the city of Sparta&quot; in Latin. Famously the name of a Roman slave who led a slave revolt in Italy in the 1st century BC. Today, Agador Spartacus is a dynamic, expanding <strong>real estate development firm </strong> with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
+              Agador Spartacus is a dynamic, expanding <strong>real estate development</strong> firm with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
               </p>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
@@ -107,7 +107,7 @@ export default function Home() {
                     Welcome to <strong>Agador Spartacus Development</strong>
                   </h2>
 
-                  <h3>Where Vision Meets Excellence in Florida Real Estate</h3>
+                  {/* <h3>Where Vision Meets Excellence in Florida Real Estate</h3> */}
                   <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
                   <Link href="/portfolio/us">
@@ -199,8 +199,8 @@ export default function Home() {
                 className="home-benefits__column"
                 onMouseEnter={() => setBackImage('industrial')}
               >
-                <Link href="/portfolio/us?filter=industrial">
-                  <h4>Industrial</h4>
+                <Link href="/portfolio/us?filter=self-storage">
+                  <h4>Self-Storage</h4>
                 </Link>
               </div>
               <div

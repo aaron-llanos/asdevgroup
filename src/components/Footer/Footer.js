@@ -21,7 +21,7 @@ export default function Footer() {
 
 
           <div className="social">
-            <p><strong>Where Vision Meets Excellence in Florida Real Estate</strong></p>
+            {/* <p><strong>Where Vision Meets Excellence in Florida Real Estate</strong></p> */}
             <Social />
           </div>
         </div>
@@ -40,9 +40,9 @@ export default function Footer() {
             <Link href="/portfolio/us">
               <p>Portfolio</p>
             </Link>
-            <Link href="/investors">
+            {/* <Link href="/investors">
               <p>Investors login</p>
-            </Link>
+            </Link> */}
             <Link href="/contact">
               <p>Contact</p>
             </Link>
