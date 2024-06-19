@@ -10,6 +10,7 @@ export default function Investors() {
     <Menu css="investors">
       <section className="investors">
         <img src="/agador-big.png" alt="Agador Logo" className="agador" />
+
         <div className="investors-slider__info">
           <h2>Quick access to the <span>Juniper Square</span> portal:</h2>
           <a href="https://www.junipersquare.com/login" target="_blank">
@@ -17,7 +18,10 @@ export default function Investors() {
           </a>
         </div>
       </section>
-      <section className="investors">
+
+      <br /><br /><br /><br /><br />
+
+      {/* <section className="investors">
         <div className="investors-container">
           <h3>Want to change your contact information?</h3>
           <h4>Fill the form below</h4>
@@ -41,7 +45,8 @@ export default function Investors() {
             <Button text="Change" />
           </form>
         </div>
-      </section>
+      </section> */}
+
       <Footer />
     </Menu>
   );

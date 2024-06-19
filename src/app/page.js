@@ -108,7 +108,7 @@ export default function Home() {
                   </h2>
 
                   {/* <h3>Where Vision Meets Excellence in Florida Real Estate</h3> */}
-                  <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
+                  <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) and Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
                   <Link href="/portfolio/us">
                     <Underline text="PORTFOLIO" width="90%" />

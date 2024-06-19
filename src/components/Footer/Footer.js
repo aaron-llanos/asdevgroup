@@ -40,9 +40,9 @@ export default function Footer() {
             <Link href="/portfolio/us">
               <p>Portfolio</p>
             </Link>
-            {/* <Link href="/investors">
+            <Link href="/investors">
               <p>Investors login</p>
-            </Link> */}
+            </Link>
             <Link href="/contact">
               <p>Contact</p>
             </Link>
