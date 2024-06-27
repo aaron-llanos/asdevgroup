@@ -1,6 +1,8 @@
 import Inside from "@/components/Inside/page";
 import { propertiesMX } from "@/helpers/properties";
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   return propertiesMX.map((property) => ({ slug: property.slug }));
 }
