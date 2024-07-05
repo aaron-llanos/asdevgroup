@@ -287,6 +287,7 @@ export default function Home() {
           <Footer />
         </Menu>
       </div>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9XH694YBL"></script>
     </div>
   );
 }
