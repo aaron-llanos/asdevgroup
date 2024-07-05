@@ -87,6 +87,7 @@ export default function Portfolio({ isMX }) {
 
       {!isMX && (
         <div className="filter">
+          <p>FILTER:</p>
           <div className="filter-row">
             <p>FILTER:</p>
             <Button

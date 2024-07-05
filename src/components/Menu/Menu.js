@@ -68,7 +68,12 @@ export default function Menu({ children, onMenu, css }) {
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Link href="/">
-            <img src="/agador-white-logo.png" atl="Agador logo" style={{ 'width': '250px' }} />
+            <img
+              atl="Agador logo"
+              className="menu-agador"
+              src="/agador-white-logo.png"
+              style={{ 'width': '250px' }}
+          />
           </Link>
           <img
             alt="close"

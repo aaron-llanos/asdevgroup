@@ -10,6 +10,7 @@ export default function Nav({ light, openMenu }) {
           <img
             atl="Agador logo"
             style={{ 'width': '250px' }}
+            className="logo-main"
             src={light ? '/agador-logo-b.png' : '/agador-logo.png'}
           />
         </Link>

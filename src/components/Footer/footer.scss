@@ -66,3 +66,42 @@ footer {
     padding: 4rem;
   }
 }
+
+@media (max-width: 900px) {
+  footer {
+    padding-top: 0;
+
+    .container {
+      display: flex;
+
+      .content {
+        .footer-agador {
+          display: none;
+        }
+      }
+
+      .contact {
+        text-align: center;
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+
+    .container:nth-child(2) {
+      padding: 1rem 0;
+    }
+
+    .rights {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      align-items: center;
+
+      div {
+        display: none;
+      }
+    }
+  }
+}

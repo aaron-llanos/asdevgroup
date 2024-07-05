@@ -15,6 +15,7 @@ export default function Footer() {
               width="200px"
               atl="Agador logo"
               src="/agador-logo.png"
+              className="footer-agador"
               style={{ cursor: 'pointer' }}
             />
           </Link>

@@ -7,6 +7,7 @@ import { useInView } from "react-intersection-observer";
 
 import { properties } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
+import { isMobile } from '@/helpers/view-mobile';
 
 export default function HomeSlider() {
   const limitSlides = 7;
@@ -16,7 +17,6 @@ export default function HomeSlider() {
   const [counter, setCounter] = useState(1);
   const currentProperty = limitProperties.filter(property => property.id === counter);
   const [property, setProperty] = useState(currentProperty[0]);
-
 
   // Animations
   const [flash, setFlash] = useState(false);
@@ -66,7 +66,10 @@ export default function HomeSlider() {
 
   return (
     <section className="home-slider"
-      style={{ backgroundImage: `url(/home/slider/${property.image})` }}
+      style={{ backgroundImage: isMobile
+        ? `url(/home/slider/${property.image})`
+        : `url(/home/slider/mobile/${property.imageMobile})`
+      }}
     >
       {flash && (<div className="black-flash"></div>)}
 

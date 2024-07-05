@@ -110,3 +110,32 @@
   transition-timing-function: cubic-bezier( 0.89, 0.25, 0, 0.99 );
   background-color: white;
 }
+
+@media (max-width: 900px) {
+  .complete-menu {
+    padding: 3rem;
+    background-position: center;
+    background-size: 85%;
+
+    .menu-agador {
+      width: 200px !important;
+    }
+
+    ul {
+      margin-top: 4rem;
+
+      li {
+        margin: 3rem 0;
+      }
+    }
+
+    .details {
+      flex-direction: column-reverse;
+      text-align: center;
+
+      .social-logos {
+        padding-bottom: 3rem;
+      }
+    }
+  }
+}

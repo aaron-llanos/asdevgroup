@@ -36,3 +36,19 @@ nav {
     font-size: 18px;
   }
 }
+
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 2rem !important;
+  
+    nav {
+      width: fit-content;
+      a {
+        display: none;
+      }
+    }
+    .logo-main {
+      width: 150px !important;
+    }
+  }
+}

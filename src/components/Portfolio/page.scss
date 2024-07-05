@@ -38,12 +38,17 @@
       margin: 5rem auto 0;
       z-index: 1;
 
+      p {
+        display: none;
+      }
+
       &-row {
         display: flex;
         margin: 1.5rem auto 0;
         align-items: center;
 
         p {
+          display: block;
           letter-spacing: 2px;
           font-size: 20px;
         }
@@ -118,5 +123,56 @@
 
   @keyframes AnimationFlash {
     25% {opacity: 1};
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio {
+    .portfoliocomp {
+      padding: 0;
+      background-size: 300% !important;
+
+      .filter {
+        padding: 1rem;
+        width: 100%;
+
+        p {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      .filter-row {
+        margin: 2rem auto 0;
+        p {
+          display: none;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 4px 18px;
+        }
+      }
+
+      .filter-row:last-of-type {
+        max-width: 300px !important;
+      }
+    }
+
+    .grid {
+      margin: 2rem auto 0;
+
+      .card {
+        width: 160px;
+        height: 160px;
+        margin: 1rem;
+        padding: 1rem;
+
+        .title,
+        .city {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

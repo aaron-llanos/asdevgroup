@@ -19,6 +19,7 @@ import HomeSlider from '@/components/HomeSlider/HomeSlider';
 
 import { properties } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
+import { isMobile } from '@/helpers/view-mobile';
 
 export default function Home() {
   const limitProperties = properties.slice(0,4)
@@ -65,8 +66,19 @@ export default function Home() {
             autoPlay
             width="100%"
             height="100%"
+            className="video-desktop"
           >
             <source src="/video-intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video
+            muted
+            autoPlay
+            width="100%"
+            height="100%"
+            className="video-mobile"
+          >
+            <source src="/video-mobile.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -83,7 +95,7 @@ export default function Home() {
               Agador Spartacus is a dynamic, expanding <strong>real estate development</strong> firm with a portfolio that includes a wealth of office, multifamily, residential, hotel and retail commercial properties.
               </p>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+            <div className="arrow-down" style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
               <Image
                 alt="Alan"
                 src="/arrow-down.png"
@@ -165,6 +177,21 @@ export default function Home() {
               <h3 style={{
                 margin: '6rem 0 1rem', fontSize: '38px', textAlign: 'center', fontWeight: '300'
               }}><strong>Property</strong> types</h3>
+
+              <div className="buttons-container">
+                <Link href="/portfolio/us?filter=multifamily">
+                  <p className="go-portfolio">Multi-family</p>
+                </Link>
+                <Link href="/portfolio/us?filter=self-storage">
+                  <p className="go-portfolio">Self-Storage</p>
+                </Link>
+                <Link href="/portfolio/us?filter=hospitality">
+                  <p className="go-portfolio">Hospitality</p>
+                </Link>
+                <Link href="/portfolio/us?filter=residential">
+                  <p className="go-portfolio">Residential</p>
+                </Link>
+              </div>
             </div>
           </section>
 
@@ -238,7 +265,10 @@ export default function Home() {
               {limitProperties.map((property, key) => (
                 <div className="grid-item" key={key}>
                   <div className="overlay"></div>
-                  <img src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`} alt="property" />
+                  <img
+                    alt="property"
+                    src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                  />
                   <Link href={`/inside/us/${property.slug}`}>
                     <div className="view">
                       <p>VIEW</p>
