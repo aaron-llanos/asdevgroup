@@ -129,6 +129,10 @@
         font-weight: 100;
       }
     }
+
+    .card.mobile {
+      display: none;
+    }
   }
 
   .why {
@@ -214,13 +218,29 @@
         margin-top: 2rem;
       }
 
+      .card:hover {
+        background-color: #d9d9d9;
+        color: black;
+
+        .on-hover {
+          display: none;
+        }
+
+        .initial {
+          display: block;
+        }
+      }
+
       .card.mobile {
+        display: flex;
         background-color: #d30200;
         color: white;
         height: 133px;
 
         .on-hover {
           display: block;
+          font-weight: 100;
+          font-family: "Satoshi";
         }
       }
 

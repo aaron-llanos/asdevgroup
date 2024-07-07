@@ -9,7 +9,7 @@ export default function Investors() {
   return (
     <Menu css="investors">
       <section className="investors">
-        <img src="/agador-big.png" alt="Agador Logo" className="agador" />
+        <img src="/agador-big-mb.png" alt="Agador Logo" className="agador" />
 
         <div className="investors-slider__info">
           <h2>Quick access to the <span>Juniper Square</span> portal:</h2>

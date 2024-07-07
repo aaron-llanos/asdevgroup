@@ -129,3 +129,26 @@
     padding-top: 3rem !important;
   }
 }
+
+@media (max-width: 900px) {
+  .investors {
+    .investors {
+      padding: 0 4rem;
+      margin-bottom: -1rem;
+
+      .agador {
+        width: 180px;
+        margin: 8rem auto 0;
+      }
+
+      &-slider__info h2 {
+        font-size: 28px;
+      }
+    }
+
+    footer {
+      border-top: none;
+      padding-top: 0 !important;
+    }
+  }
+}
