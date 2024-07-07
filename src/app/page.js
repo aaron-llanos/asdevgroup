@@ -4,12 +4,14 @@
 import './home.scss'
 import 'animate.css';
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import CountUp from "react-countup";
+// import {CountUp} from "react-countup";
+import CountUp from 'react-countup';
+// import { CountUp as CountUp } from 'react-countup';
 
 // import gsap from "gsap";
 import Menu from '@/components/Menu/Menu';
@@ -22,7 +24,7 @@ import { dynamicClass } from '@/helpers/dynamic-class';
 import { isMobile } from '@/helpers/view-mobile';
 
 export default function Home() {
-  const limitProperties = properties.slice(0,4)
+  const limitProperties = properties.slice(0,4);
 
   // Texts animations
   const { ref: ref01, inView: inView01 } = useInView();
@@ -119,7 +121,6 @@ export default function Home() {
                     Welcome to <strong>Agador Spartacus Development</strong>
                   </h2>
 
-                  {/* <h3>Where Vision Meets Excellence in Florida Real Estate</h3> */}
                   <p>At Agador Spartacus Development, we don’t just build properties; we craft communities. With a laser focus on Build-To-Rent (BTR) and Multi-Family Communities, we are at the forefront of creating vibrant living spaces that cater to the dynamic lifestyles of Florida.</p>
 
                   <Link href="/portfolio/us">
@@ -136,40 +137,43 @@ export default function Home() {
                 <div className="card">
                   <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
                     <div className="mt">
-                      <CountUp
+                      {/* <CountUp
                         end={9}
                         start={0}
-                        duration={5}
+                        // duration={5}
                         className="number"
-                        enableScrollSpy={true}
-                        style={{ fontSize: '70px' }}
-                      />
+                        // enableScrollSpy={true}
+                        // style={{ fontSize: '70px' }}
+                      /> */}
+                      <p className="number">9</p>
                     </div>
                 </div>
                 <div className="card">
                   <p className="text"><strong>COMBINED YEARS</strong> OF EXPERIENCE</p>
                   <div>
-                    <CountUp
+                    {/* <CountUp
                       end={60}
                       start={0}
                       duration={5}
                       className="number"
                       enableScrollSpy={true}
                       style={{ fontSize: '70px' }}
-                    />
+                    /> */}
+                    <p className="number">60</p>
                   </div>
                 </div>
                 <div className="card">
                   <p className="text"><strong>COMPLETED</strong> PROJECTS</p>
                   <div className="mt">
-                    <CountUp
+                    {/* <CountUp
                       end={35}
                       start={0}
                       duration={5}
                       className="number"
                       enableScrollSpy={true}
                       style={{ fontSize: '70px' }}
-                    />
+                    /> */}
+                    <p className="number">35</p>
                   </div>
                 </div>
               </div>
@@ -249,40 +253,40 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="home-featured">
-            <div className="home-featured__content">
-              <h3
-                className={dynamicClass(inView02, 'animate__animated animate__fadeInLeft')}
-                style={{ opacity: `${inView02 ? '1' : '0'}` }}
-                ref={ref02}
-              ><strong>Featured</strong> Projects</h3>
+            <section className="home-featured">
+              <div className="home-featured__content">
+                <h3
+                  className={dynamicClass(inView02, 'animate__animated animate__fadeInLeft')}
+                  style={{ opacity: `${inView02 ? '1' : '0'}` }}
+                  ref={ref02}
+                ><strong>Featured</strong> Projects</h3>
 
-              <p>Our portfolio currently exceeds 5 million square feet, both domestic and international of commercial, multi-family, hospitality and retail assets —with another million square feet in our development pipeline—all concentrated in attractive submarkets in Florida.</p>
-              <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
-            </div>
+                <p>Our portfolio currently exceeds 5 million square feet, both domestic and international of commercial, multi-family, hospitality and retail assets —with another million square feet in our development pipeline—all concentrated in attractive submarkets in Florida.</p>
+                <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
+              </div>
 
-            <div className="home-featured__grid">
-              {limitProperties.map((property, key) => (
-                <div className="grid-item" key={key}>
-                  <div className="overlay"></div>
-                  <img
-                    alt="property"
-                    src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
-                  />
-                  <Link href={`/inside/us/${property.slug}`}>
-                    <div className="view">
-                      <p>VIEW</p>
+              <div className="home-featured__grid">
+                {limitProperties.map((property, key) => (
+                  <div className="grid-item" key={key}>
+                    <div className="overlay"></div>
+                    <img
+                      alt="property"
+                      src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                    />
+                    <Link href={`/inside/us/${property.slug}`}>
+                      <div className="view">
+                        <p>VIEW</p>
+                      </div>
+                    </Link>
+                    <div className="info">
+                        <h4>{property.name}</h4>
+                        <p className="location">{property.location}</p>
+                        <p className="type">{property.type}</p>
                     </div>
-                  </Link>
-                  <div className="info">
-                      <h4>{property.name}</h4>
-                      <p className="location">{property.location}</p>
-                      <p className="type">{property.type}</p>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
 
           <Footer />
         </Menu>

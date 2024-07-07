@@ -164,3 +164,71 @@
     background-color: black !important;
   }
 }
+
+@media (max-width: 900px) {
+  .history {
+    .history {
+      height: 350px;
+
+      .historytext {
+        padding: 4rem 3rem;
+    
+        &-slider__info {
+          margin-left: 0%;
+    
+          h2 {
+            font-size: 48px;
+          }
+    
+          h3 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .overlay {
+      height: 350px;
+    }
+
+    .container-h {
+      margin: -3rem auto 0;
+      padding: 0 3.5rem;
+
+      p:last-of-type {
+        margin-bottom: 0 !important;
+      }
+
+      h2 {
+        font-size: 26px;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 16px;
+        text-align: center;
+      }
+
+      .card {
+        margin-top: 2rem;
+      }
+
+      .card.mobile {
+        background-color: #d30200;
+        color: white;
+        height: 133px;
+
+        .on-hover {
+          display: block;
+        }
+      }
+
+      .card-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 70rem;
+      }
+    }
+  }
+}

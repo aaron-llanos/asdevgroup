@@ -135,6 +135,7 @@
       .filter {
         padding: 1rem;
         width: 100%;
+        margin-bottom: -8rem;
 
         p {
           display: block;
@@ -160,7 +161,7 @@
     }
 
     .grid {
-      margin: 2rem auto 0;
+      margin: 8rem auto 0;
 
       .card {
         width: 160px;

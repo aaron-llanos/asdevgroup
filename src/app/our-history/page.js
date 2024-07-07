@@ -43,38 +43,31 @@ export default function History() {
             <p className="initial">Land Acquisition</p>
             <p className="on-hover">We navigate the complex landscape of South Florida real estate to secure prime locations for development.</p>
           </div>
+          <div className="card mobile">
+            <p className="on-hover">We navigate the complex landscape of South Florida real estate to secure prime locations for development.</p>
+          </div>
           <div className="card">
             <p className="initial">Site Development</p>
+            <p className="on-hover">From untouched land to groundbreaking, we manage every detail with precision.</p>
+          </div>
+          <div className="card mobile">
             <p className="on-hover">From untouched land to groundbreaking, we manage every detail with precision.</p>
           </div>
           <div className="card">
             <p className="initial">Project Management & Oversight</p>
             <p className="on-hover">Our meticulous approach ensures that every projectis delivered on time and to the highest standards.</p>
           </div>
+          <div className="card mobile">
+            <p className="on-hover">Our meticulous approach ensures that every projectis delivered on time and to the highest standards.</p>
+          </div>
           <div className="card">
             <p className="initial">Investor Relations</p>
             <p className="on-hover">Building trust through transparent partnerships and consistent returns.</p>
           </div>
-          {/* <div className="card">
-            <p className="initial">Lender Financing & Construction Loan Management</p>
-            <p className="on-hover">We secure the funding necessary to transform blueprints into reality.</p>
-          </div> */}
+          <div className="card mobile">
+            <p className="on-hover">Building trust through transparent partnerships and consistent returns.</p>
+          </div>
         </div>
-
-        {/* <div className="card-container">
-          <div className="card">
-            <p className="initial">Project Budget Controls</p>
-            <p className="on-hover">Keeping a tight rein on finances, we deliver value without compromise.</p>
-          </div>
-          <div className="card">
-            <p className="initial">Project Equity Management</p>
-            <p className="on-hover">Ensuring a balanced investment approach for long-term success.</p>
-          </div>
-          <div className="card">
-            <p className="initial">Financial Reporting & Oversight</p>
-            <p className="on-hover">With rigorous oversight, we maintain financial integrity at every stage.</p>
-          </div>
-        </div> */}
 
         <h2
           ref={ref02}
