@@ -7,10 +7,10 @@ import 'animate.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 // import {CountUp} from "react-countup";
-import CountUp from 'react-countup';
+// import CountUp from 'react-countup';
 // import { CountUp as CountUp } from 'react-countup';
 
 // import gsap from "gsap";
@@ -66,6 +66,7 @@ export default function Home() {
           <video
             muted
             autoPlay
+            playsinline
             width="100%"
             height="100%"
             className="video-desktop"
@@ -76,6 +77,7 @@ export default function Home() {
           <video
             muted
             autoPlay
+            playsinline
             width="100%"
             height="100%"
             className="video-mobile"
@@ -267,23 +269,47 @@ export default function Home() {
 
               <div className="home-featured__grid">
                 {limitProperties.map((property, key) => (
-                  <div className="grid-item" key={key}>
-                    <div className="overlay"></div>
-                    <img
-                      alt="property"
-                      src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
-                    />
+                  <>
+                  {isMobile ? (
                     <Link href={`/inside/us/${property.slug}`}>
-                      <div className="view">
-                        <p>VIEW</p>
+                      <div className="grid-item" key={key}>
+                        <div className="overlay"></div>
+                        <img
+                          alt="property"
+                          src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                        />
+                        <Link href={`/inside/us/${property.slug}`}>
+                          <div className="view">
+                            <p>VIEW</p>
+                          </div>
+                        </Link>
+                        <div className="info">
+                            <h4>{property.name}</h4>
+                            <p className="location">{property.location}</p>
+                            <p className="type">{property.type}</p>
+                        </div>
                       </div>
                     </Link>
-                    <div className="info">
-                        <h4>{property.name}</h4>
-                        <p className="location">{property.location}</p>
-                        <p className="type">{property.type}</p>
+                  ):(
+                    <div className="grid-item" key={key}>
+                      <div className="overlay"></div>
+                      <img
+                        alt="property"
+                        src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                      />
+                      <Link href={`/inside/us/${property.slug}`}>
+                        <div className="view">
+                          <p>VIEW</p>
+                        </div>
+                      </Link>
+                      <div className="info">
+                          <h4>{property.name}</h4>
+                          <p className="location">{property.location}</p>
+                          <p className="type">{property.type}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  </>
                 ))}
               </div>
             </section>

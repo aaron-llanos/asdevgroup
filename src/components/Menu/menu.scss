@@ -133,6 +133,10 @@
       flex-direction: column-reverse;
       text-align: center;
 
+      .contact {
+        display: none;
+      }
+
       .social-logos {
         padding-bottom: 3rem;
       }

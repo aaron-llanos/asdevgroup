@@ -111,7 +111,7 @@ export default function Menu({ children, onMenu, css }) {
         </ul>
 
         <div className="details">
-          <div>
+          <div className="contact">
             <h3>CONTACT DETAILS</h3>
             <p>EMAIL: INFO@ASDEVGROUP.COM</p>
             <p>PHONE: <span style={{ textDecoration: 'underline' }}>(305)-974-2418</span></p>

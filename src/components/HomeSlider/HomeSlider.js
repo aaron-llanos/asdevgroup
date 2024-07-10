@@ -12,6 +12,8 @@ import { isMobile } from '@/helpers/view-mobile';
 export default function HomeSlider() {
   const limitSlides = 7;
 
+  console.log('isMobile', isMobile);
+
   const limitProperties = properties.slice(0,limitSlides)
 
   const [counter, setCounter] = useState(1);
@@ -67,8 +69,8 @@ export default function HomeSlider() {
   return (
     <section className="home-slider"
       style={{ backgroundImage: isMobile
-        ? `url(/home/slider/${property.image})`
-        : `url(/home/slider/mobile/${property.imageMobile})`
+        ? `url(/home/slider/mobile/${property.imageMobile})`
+        : `url(/home/slider/${property.image})`
       }}
     >
       {flash && (<div className="black-flash"></div>)}
