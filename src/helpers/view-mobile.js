@@ -1,4 +1,4 @@
-let widthDOM
+let widthDOM = 1
 if (typeof window !== 'undefined') {
   widthDOM = window.screen.width;
 }

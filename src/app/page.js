@@ -7,11 +7,9 @@ import 'animate.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-// import {CountUp} from "react-countup";
-// import CountUp from 'react-countup';
-// import { CountUp as CountUp } from 'react-countup';
+import CountUp from 'react-countup';
 
 // import gsap from "gsap";
 import Menu from '@/components/Menu/Menu';
@@ -33,58 +31,41 @@ export default function Home() {
 
   // Change Background types
   const [backImage, setBackImage] = useState('multifamily');
-  // const [showPage, setShowPage] = useState(true);
 
-  // useEffect(() => {
-  //   document.querySelector('video').addEventListener('ended', function(e) {
-  //     setShowPage(true);
-  //   })
-  //   const body = document.querySelector('body')
-  //   if (showPage) {
-  //     body.classList.remove('not-scroll')
-  //   } else {
-  //     body.classList.add('not-scroll')
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (isMobile) {
+      document.querySelector('.video-mobile').play()
+    }
+  }, []);
 
   return (
     <div>
-      {/* <video
-        muted
-        autoPlay
-        width="100%"
-        height="100%"
-      >
-        <source src="/video-intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
       <div
-        // style={{ display: showPage ? 'inherit' : 'none' }}
         className="animate__animated animate__fadeIn"
       >
         <Menu css="home">
-          <video
-            muted
-            autoPlay
-            playsinline
-            width="100%"
-            height="100%"
-            className="video-desktop"
-          >
-            <source src="/video-intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <video
-            muted
-            autoPlay
-            playsinline
-            width="100%"
-            height="100%"
-            className="video-mobile"
-          >
-            <source src="/video-mobile.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            <video
+              muted
+              // autoPlay
+              // playsInline
+              width="100%"
+              height="100%"
+              className="video-mobile"
+            >
+              <source src="/video-mobile.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video
+              muted
+              autoPlay
+              playsInline
+              width="100%"
+              height="100%"
+              className="video-desktop"
+            >
+              <source src="/video-intro.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
           <div className="portada-container">
             <div
@@ -139,43 +120,40 @@ export default function Home() {
                 <div className="card">
                   <p className="text"><strong>PROJECTS</strong> IN PROGESS</p>
                     <div className="mt">
-                      {/* <CountUp
+                      <CountUp
                         end={9}
                         start={0}
-                        // duration={5}
+                        duration={5}
                         className="number"
-                        // enableScrollSpy={true}
-                        // style={{ fontSize: '70px' }}
-                      /> */}
-                      <p className="number">9</p>
+                        enableScrollSpy={true}
+                        style={{ fontSize: '70px' }}
+                      />
                     </div>
                 </div>
                 <div className="card">
                   <p className="text"><strong>COMBINED YEARS</strong> OF EXPERIENCE</p>
                   <div>
-                    {/* <CountUp
+                    <CountUp
                       end={60}
                       start={0}
                       duration={5}
                       className="number"
                       enableScrollSpy={true}
                       style={{ fontSize: '70px' }}
-                    /> */}
-                    <p className="number">60</p>
+                    />
                   </div>
                 </div>
                 <div className="card">
                   <p className="text"><strong>COMPLETED</strong> PROJECTS</p>
                   <div className="mt">
-                    {/* <CountUp
+                    <CountUp
                       end={35}
                       start={0}
                       duration={5}
                       className="number"
                       enableScrollSpy={true}
                       style={{ fontSize: '70px' }}
-                    /> */}
-                    <p className="number">35</p>
+                    />
                   </div>
                 </div>
               </div>
@@ -267,49 +245,47 @@ export default function Home() {
                 <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
               </div>
 
-              <div className="home-featured__grid">
+              <div className="home-featured__grid grid-mobile">
                 {limitProperties.map((property, key) => (
-                  <>
-                  {isMobile ? (
-                    <Link href={`/inside/us/${property.slug}`}>
-                      <div className="grid-item" key={key}>
-                        <div className="overlay"></div>
-                        <img
-                          alt="property"
-                          src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
-                        />
-                        <Link href={`/inside/us/${property.slug}`}>
-                          <div className="view">
-                            <p>VIEW</p>
-                          </div>
-                        </Link>
-                        <div className="info">
-                            <h4>{property.name}</h4>
-                            <p className="location">{property.location}</p>
-                            <p className="type">{property.type}</p>
-                        </div>
-                      </div>
-                    </Link>
-                  ):(
-                    <div className="grid-item" key={key}>
+                  <Link href={`/inside/us/${property.slug}`} key={key}>
+                    <div className="grid-item">
                       <div className="overlay"></div>
                       <img
                         alt="property"
                         src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
                       />
-                      <Link href={`/inside/us/${property.slug}`}>
                         <div className="view">
                           <p>VIEW</p>
                         </div>
-                      </Link>
                       <div className="info">
-                          <h4>{property.name}</h4>
-                          <p className="location">{property.location}</p>
-                          <p className="type">{property.type}</p>
+                        <h4>{property.name}</h4>
+                        <p className="location">{property.location}</p>
+                        <p className="type">{property.type}</p>
                       </div>
                     </div>
-                  )}
-                  </>
+                  </Link>
+                ))}
+              </div>
+
+              <div className="home-featured__grid grid-desktop">
+                {limitProperties.map((property, key) => (
+                  <div className="grid-item" key={key}>
+                    <div className="overlay"></div>
+                    <img
+                      alt="property"
+                      src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                    />
+                    <Link href={`/inside/us/${property.slug}`}>
+                      <div className="view">
+                        <p>VIEW</p>
+                      </div>
+                    </Link>
+                    <div className="info">
+                      <h4>{property.name}</h4>
+                      <p className="location">{property.location}</p>
+                      <p className="type">{property.type}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>

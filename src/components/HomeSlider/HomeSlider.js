@@ -12,8 +12,6 @@ import { isMobile } from '@/helpers/view-mobile';
 export default function HomeSlider() {
   const limitSlides = 7;
 
-  console.log('isMobile', isMobile);
-
   const limitProperties = properties.slice(0,limitSlides)
 
   const [counter, setCounter] = useState(1);

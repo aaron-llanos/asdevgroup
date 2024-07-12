@@ -1,5 +1,5 @@
 button {
-  background-color: #d0ced1;
+  background-color: #d0ced1 !important;
   border: none;
   border-radius: 18px;
   width: 210px;
@@ -10,9 +10,11 @@ button {
   transition: ease-out 0.3s;
   font-size: 18px;
   cursor: pointer;
+  -webkit-appearance: none !important;
+  color: black !important;
 }
 
 button:hover {
   background-color: #d30200;
-  color: white;
+  color: white !important;
 }
