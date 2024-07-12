@@ -11,24 +11,17 @@ import Social from "@/components/Social/Social";
 
 import { dynamicClass } from '@/helpers/dynamic-class';
 
-
 export default function Menu({ children, onMenu, css }) {
 
   // Menu animation
-  // const [showMenu, setShowMenu] = useState(true);
-  const [showMenu, setShowMenu] = useState(onMenu);
-  const [translateMenu, setTranslateMenu] = useState('20');
+  const [showMenu, setShowMenu] = useState(onMenu || false);
+  const [translateMenu, setTranslateMenu] = useState('100');
   const [translatePage, setTranslatePage] = useState('100');
   const [zIndex, setZIndex] = useState('0');
   const [time, setTime] = useState('1');
   const [showPortfolio, setShowPortfolio] = useState(false);
-  // const [scrollValue, setScrollValue] = useState(0);
-
-  // const position = window.pageYOffset;
-  // console.log('position', position);
 
   const closeMenu = () => {
-    // setScrollValue(position)
     setShowMenu(false)
     setTimeout(() => {
       setTime('0')
@@ -40,7 +33,6 @@ export default function Menu({ children, onMenu, css }) {
   }
 
   const openMenu = () => {
-    // setScrollValue(position)
     setShowMenu(true)
     setTimeout(() => {
       setTime('0')
@@ -58,12 +50,9 @@ export default function Menu({ children, onMenu, css }) {
       <div
         className="complete-menu"
         style={{
-          // transform: showMenu ? 'translate(0%, 0px)' : `translate(${translateMenu}%, 0px)`,
-          // transform: showMenu ? 'none' : `translate(${translateMenu}%, ${scrollValue}px)`,
-          // transform: showMenu ? `translate(0%, ${scrollValue}px)` : `translate(${translateMenu}%, ${scrollValue}px)`,
-          transform: showMenu ? 'none' : `translate(${translateMenu}%, 0px)`,
           zIndex: zIndex,
-          transitionDuration: `${time}s`
+          transitionDuration: `${time}s`,
+          transform: showMenu ? 'none' : `translate(${translateMenu}%, 0px)`
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -123,10 +112,6 @@ export default function Menu({ children, onMenu, css }) {
       <div
         className={`container-principal ${dynamicClass(css, css)}`}
         style={{
-          // transform: showMenu ? `translate(-${translatePage}%, 0px)` : 'translate(0%, 0px)',
-          // transform: showMenu ? `translate(-${translatePage}%, ${scrollValue}px)` : 'none',
-          // transform: showMenu ? `translate(-${translatePage}%, ${scrollValue}px)` : `translate(0%, ${scrollValue}px)`,
-          // transform: showMenu ? `translate(-${translatePage}%, 0px)` : `translate(0%, ${position}px)`,
           transform: showMenu ? `translate(-${translatePage}%, 0px)` : 'none',
           transitionDuration: `${time}s`
         }}

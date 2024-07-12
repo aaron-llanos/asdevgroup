@@ -19,7 +19,6 @@ import HomeSlider from '@/components/HomeSlider/HomeSlider';
 
 import { properties } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
-// import { isMobile } from '@/helpers/view-mobile';
 
 export default function Home() {
   const limitProperties = properties.slice(0,4);
@@ -31,12 +30,6 @@ export default function Home() {
 
   // Change Background types
   const [backImage, setBackImage] = useState('multifamily');
-
-  // useEffect(() => {
-  //   if (isMobile) {
-  //     document.querySelector('.video-mobile').play()
-  //   }
-  // }, []);
 
   return (
     <div>
