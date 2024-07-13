@@ -12,7 +12,6 @@ import useWidth from '@/hooks/useWidth';
 
 export default function HomeSlider() {
   const { isMobile } = useWidth()
-  console.log('isMobile', isMobile);
   const limitSlides = 7;
 
   const limitProperties = properties.slice(0,limitSlides)

@@ -7,7 +7,7 @@ import 'animate.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from 'react-countup';
 
@@ -41,31 +41,28 @@ export default function Home() {
         className="animate__animated animate__fadeIn"
       >
         <Menu css="home">
-          {isMobile ? (
-            <video
-              muted
-              autoPlay
-              playsInline
-              width="100%"
-              height="100%"
-              className="video-mobile"
-            >
-              <source src="/video-mobile.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ):(
-            <video
-              muted
-              autoPlay
-              playsInline
-              width="100%"
-              height="100%"
-              className="video-desktop"
-            >
-              <source src="/video-intro.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <video
+            muted
+            autoPlay
+            playsInline
+            width="100%"
+            height="100%"
+            className="video-mobile"
+          >
+            <source src="/video-mobile.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <video
+            muted
+            autoPlay
+            playsInline
+            width="100%"
+            height="100%"
+            className="video-desktop"
+          >
+            <source src="/video-intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           <div className="portada-container">
             <div

@@ -1,4 +1,8 @@
 .home {
+  .video-mobile {
+    display: none;
+  }
+
   .portada-container {
     background-color: black;
     margin-top: -28px;
@@ -284,6 +288,13 @@
 
 @media (max-width: 900px) {
   .home {
+    .video-desktop {
+      display: none;
+    }
+
+    .video-mobile {
+      display: block;
+    }
     .portada-container {
       padding: 2rem 3rem;
 
