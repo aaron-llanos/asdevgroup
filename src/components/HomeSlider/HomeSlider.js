@@ -7,9 +7,12 @@ import { useInView } from "react-intersection-observer";
 
 import { properties } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
-import { isMobile } from '@/helpers/view-mobile';
+
+import useWidth from '@/hooks/useWidth';
 
 export default function HomeSlider() {
+  const { isMobile } = useWidth()
+  console.log('isMobile', isMobile);
   const limitSlides = 7;
 
   const limitProperties = properties.slice(0,limitSlides)
@@ -23,7 +26,6 @@ export default function HomeSlider() {
   const [enableBTN, setEnableBTN] = useState(true);
   const [animation, setAnimation] = useState('animate__fadeInDown');
   const { ref: ref01, inView: inView01 } = useInView();
-  const [firstClick, setFirstClick] = useState(false);
 
   useEffect(() => {
     setAnimation('animate__fadeInDown')

@@ -7,7 +7,7 @@ import 'animate.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from 'react-countup';
 
@@ -17,10 +17,14 @@ import Footer from "@/components/Footer/Footer";
 import Underline from "@/components/Underline/Underline";
 import HomeSlider from '@/components/HomeSlider/HomeSlider';
 
+import useWidth from '@/hooks/useWidth';
+
 import { properties } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
 
+
 export default function Home() {
+  const { isMobile } = useWidth()
   const limitProperties = properties.slice(0,4);
 
   // Texts animations
@@ -37,6 +41,7 @@ export default function Home() {
         className="animate__animated animate__fadeIn"
       >
         <Menu css="home">
+          {isMobile ? (
             <video
               muted
               autoPlay
@@ -48,6 +53,7 @@ export default function Home() {
               <source src="/video-mobile.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          ):(
             <video
               muted
               autoPlay
@@ -59,6 +65,7 @@ export default function Home() {
               <source src="/video-intro.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          )}
 
           <div className="portada-container">
             <div
@@ -238,49 +245,52 @@ export default function Home() {
                 <p>Our creativity and scale enable us to be more than developers—we are placemakers who shape inspiring and engaging places, which we believe create value and have a positive impact in every community we touch.</p>
               </div>
 
-              <div className="home-featured__grid grid-mobile">
-                {limitProperties.map((property, key) => (
-                  <Link href={`/inside/us/${property.slug}`} key={key}>
-                    <div className="grid-item">
+              {isMobile ? (
+                <div className="home-featured__grid grid-mobile">
+                  {limitProperties.map((property, key) => (
+                    <Link href={`/inside/us/${property.slug}`} key={key}>
+                      <div className="grid-item">
+                        <div className="overlay"></div>
+                        <img
+                          alt="property"
+                          src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
+                        />
+                          <div className="view">
+                            <p>VIEW</p>
+                          </div>
+                        <div className="info">
+                          <h4>{property.name}</h4>
+                          <p className="location">{property.location}</p>
+                          <p className="type">{property.type}</p>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ):(
+                <div className="home-featured__grid grid-desktop">
+                  {limitProperties.map((property, key) => (
+                    <div className="grid-item" key={key}>
                       <div className="overlay"></div>
                       <img
                         alt="property"
                         src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
                       />
+                      <Link href={`/inside/us/${property.slug}`}>
                         <div className="view">
                           <p>VIEW</p>
                         </div>
+                      </Link>
                       <div className="info">
                         <h4>{property.name}</h4>
                         <p className="location">{property.location}</p>
                         <p className="type">{property.type}</p>
                       </div>
                     </div>
-                  </Link>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
 
-              <div className="home-featured__grid grid-desktop">
-                {limitProperties.map((property, key) => (
-                  <div className="grid-item" key={key}>
-                    <div className="overlay"></div>
-                    <img
-                      alt="property"
-                      src={`/inside/${property.id}-${property.slug}/${property.gallery[0]}`}
-                    />
-                    <Link href={`/inside/us/${property.slug}`}>
-                      <div className="view">
-                        <p>VIEW</p>
-                      </div>
-                    </Link>
-                    <div className="info">
-                      <h4>{property.name}</h4>
-                      <p className="location">{property.location}</p>
-                      <p className="type">{property.type}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </section>
 
           <Footer />

@@ -1,8 +1,4 @@
 .home {
-  .video-mobile {
-    display: none;
-  }
-
   .portada-container {
     background-color: black;
     margin-top: -28px;
@@ -208,10 +204,6 @@
       padding-bottom: 8rem;
     }
 
-    &__grid.grid-mobile {
-      display: none;
-    }
-
     .grid-item {
       width: 545px;
       position: relative;
@@ -292,13 +284,6 @@
 
 @media (max-width: 900px) {
   .home {
-    .video-desktop {
-      display: none;
-    }
-
-    .video-mobile {
-      display: block;
-    }
     .portada-container {
       padding: 2rem 3rem;
 
@@ -404,14 +389,6 @@
         padding: 0 2rem;
       }
 
-      &__grid.grid-desktop {
-        display: none;
-      }
-
-      &__grid.grid-mobile {
-        display: block;
-      }
-
       .grid-item {
         width: 100%;
 
@@ -429,6 +406,10 @@
             font-size: 14px;
           }
         }
+      }
+
+      .overlay {
+        height: 99%;
       }
     }
   }
