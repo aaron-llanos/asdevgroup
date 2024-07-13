@@ -7,7 +7,7 @@ import 'animate.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from 'react-countup';
 
