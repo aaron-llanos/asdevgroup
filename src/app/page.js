@@ -169,7 +169,7 @@ export default function Home() {
                 <Link href="/portfolio/us?filter=hospitality">
                   <p className="go-portfolio">Hospitality</p>
                 </Link>
-                <Link href="/portfolio/us?filter=residential">
+                <Link href="/portfolio/mx">
                   <p className="go-portfolio">Residential</p>
                 </Link>
               </div>
@@ -223,7 +223,7 @@ export default function Home() {
                 className="home-benefits__column"
                 onMouseEnter={() => setBackImage('residential')}
               >
-                <Link href="/portfolio/us?filter=residential">
+                <Link href="/portfolio/mx">
                   <h4>Residential</h4>
                 </Link>
               </div>
