@@ -4,7 +4,11 @@
     filter: invert(100%);
   }
 
-  .container {
+  .nav-container {
+    color: black;
+  }
+
+  .title-container {
     max-width: 940px;
     margin: 0 auto;
     padding-top: 12rem;
@@ -26,6 +30,10 @@
         font-size: 20px;
       }
     }
+  }
+
+  .container.text {
+    padding-top: 0rem;
   }
 
   .text {

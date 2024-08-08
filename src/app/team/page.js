@@ -1,10 +1,27 @@
+'use client';
+
 import './page.scss'
 
+import Image from 'next/image'
+
 import Menu from '@/components/Menu/Menu';
-import TeamSlider from '../../components/TeamSlider/TeamSlider';
+// import TeamSlider from '../../components/TeamSlider/TeamSlider';
 import Footer from '@/components/Footer/Footer';
 
+import useFlashlight from '@/hooks/useFlashlight';
+
 export default function Team() {
+
+  const { ref: ref01 } = useFlashlight();
+  const { ref: ref02 } = useFlashlight();
+  const { ref: ref03 } = useFlashlight();
+  const { ref: ref04 } = useFlashlight();
+  const { ref: ref05 } = useFlashlight();
+  const { ref: ref06 } = useFlashlight();
+  const { ref: ref07 } = useFlashlight();
+  const { ref: ref08 } = useFlashlight();
+  // const { ref: ref09 } = useFlashlight();
+
   return (
     <Menu css="team">
       <section className="team">
@@ -13,15 +30,153 @@ export default function Team() {
           <h2>MEET THE TEAM</h2>
         </div>
 
-        <TeamSlider />
+        <div className="team-photos">
 
-        <div className="team-content">
+          <div className="team-photos__item">
+            <Image
+              alt="Alan"
+              src="/team/Alan.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref01}>
+              <div className="description">
+                <h3>Alan Benenson</h3>
+                <p>PRINCIPAL</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Alberto"
+              src="/team/Alberto.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref02}>
+              <div className="description">
+                <h3>Alberto Dichi</h3>
+                <p>PRINCIPAL</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Samy"
+              src="/team/Samy.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref03}>
+              <div className="description">
+                <h3>Samy Cohen</h3>
+                <p>PRINCIPAL</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Alan"
+              src="/team/Helen.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref04}>
+              <div className="description">
+                <h3>Helen L. Cruz</h3>
+                <p>CHIEF FINANCIAL OFFICER</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Nico"
+              src="/team/Nico.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref05}>
+              <div className="description">
+                <h3>Nico Chami</h3>
+                <p>DIRECTOR OF ACQUISITIONS</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Nika"
+              src="/team/Nika.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref06}>
+              <div className="description">
+                <h3>Nika Zyryanova</h3>
+                <p>DIRECTOR OF LAND ENTITLEMENT</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Aaron"
+              src="/team/Aaron.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref07}>
+              <div className="description">
+                <h3>Aaron Benenson</h3>
+                <p>SENIOR ACQUISITION ANALYS</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-photos__item">
+            <Image
+              alt="Stephanie"
+              src="/team/Stephanie.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref08}>
+              <div className="description">
+                <h3>Stephanie Roque</h3>
+                <p>EXECUTIVE ASSISTANT</p>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="team-photos__item">
+            <Image
+              alt="Sophia"
+              src="/team/Sophia.jpg"
+              width="350"
+              height="350"
+            />
+            <div className="flashlight" ref={ref09}>
+              <div className="description">
+                <h3>Sophia Serur</h3>
+                <p>MARKETING DIRECTOR</p>
+              </div>
+            </div>
+          </div> */}
+        </div>
+
+        {/* <TeamSlider /> */}
+
+        {/* <div className="team-content">
           <div className="strong">
             <p>Agador Spartacus Development is a regional, professionally-run, privately-owned company that has been doing business in the U.S. and Mexico.</p>
             <br />
             <p>Since its beginnings, Agador Spartacus has distinguished itself through innovation and excellence in property investment.</p>
           </div>
-        </div>
+        </div> */}
       </section>
       <Footer />
     </Menu>

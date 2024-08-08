@@ -12,13 +12,51 @@
       h1 {
         font-weight: 500;
         font-size: 42px;
-        max-width: 400px;
       }
 
       h2 {
         font-weight: 300;
         font-size: 20px;
         letter-spacing: 4px;
+        margin-top: 1rem;
+      }
+    }
+
+    &-photos {
+      max-width: 1100px;
+      margin: 4rem auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      &__item {
+        margin-top: 1.5rem;
+        position: relative;
+
+        .description {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          pointer-events: none;
+
+          h3 {
+            font-size: 24px;
+          }
+
+          p {
+            font-size: 18px;
+            letter-spacing: 2px;
+          }
+        }
+
+        .flashlight {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          background: radial-gradient(circle at -100px -100px, transparent 0%, #0000008f 150px);
+        }
       }
     }
   }
@@ -40,11 +78,27 @@
   }
 
   footer {
-    border-top: solid 1px;
     padding-top: 3rem !important;
   }
 
   .container-principal {
     background-color: black !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .team {
+    .team {
+      padding: 4rem 4rem 1rem;
+      margin-bottom: -1px;
+
+      &-content h1 {
+        font-size: 30px;
+      }
+
+      &-photos {
+        margin: 2rem auto;
+      }
+    }
   }
 }

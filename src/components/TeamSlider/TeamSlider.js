@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function TeamSlider() {
+
   useEffect(() => {
     localStorage.getItem('theme') || 'light';
   }, []);

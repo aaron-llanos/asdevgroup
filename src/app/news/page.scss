@@ -180,3 +180,28 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .news-principal {
+    .title {
+      padding: 4rem;
+
+      &-slider__info {
+        margin-top: 15%;
+        margin-left: 0% !important;
+
+        h2 {
+          font-size: 58px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .news {
+      height: 380px;
+    }
+  }
+}
