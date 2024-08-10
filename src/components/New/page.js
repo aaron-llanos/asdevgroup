@@ -1,14 +1,37 @@
+'use client';
+
 import './page.scss'
+
+import Link from 'next/link'
 
 import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
+import MobileSlider from '../MobileSlider/MobileSlider';
+
+import useWidth from '@/hooks/useWidth';
+
 import { news } from '@/helpers/news';
 
 export default function New({ params }) {
+  const { isMobile } = useWidth()
 
   const filterNew = news.find(({ slug }) => slug === params.slug);
-  const { name, date, description, gallery  } = filterNew;
+  const { id, slug, name, date, description, gallery } = filterNew;
+
+  const galleryProps = {
+    id: id,
+    slug: slug,
+    folder: 'news',
+    gallery: gallery
+  }
+
+  const slugNextNew = () => {
+    const nextId = id + 1
+    const findNew = news.find(({ id }) => id === nextId);
+
+    return findNew?.slug || undefined
+  }
 
   return (
     <Menu css="new">
@@ -20,15 +43,18 @@ export default function New({ params }) {
       </section>
 
       <div className="grid-container">
-        <div className="grid-item">
-          <img src="/news/01.jpg" alt="House" />
-        </div>
-        <div className="grid-item">
-          <img src="/news/01.jpg" alt="House" />
-        </div>
-        <div className="grid-item">
-          <img src="/news/01.jpg" alt="House" />
-        </div>
+      {isMobile ? (
+        <MobileSlider {...galleryProps} />
+      ) : (
+        <>
+          {gallery.map((img, key) => (
+            <div className="grid-item" key={key}>
+              <img src={`/news/${id}-${slug}/${img}`} alt="new" />
+            </div>
+          ))}
+        </>
+      )}
+
       </div>
 
       {/* <section className="container text">
@@ -40,7 +66,11 @@ export default function New({ params }) {
         ))}
       </section>
 
-      <Underline text="SIGUIENTE NOTICIA" />
+      {slugNextNew() && (
+        <Link href={`/new/${slugNextNew()}`}>
+          <Underline text="SIGUIENTE NOTICIA" />
+        </Link>
+      )}
 
       <Footer />
     </Menu>

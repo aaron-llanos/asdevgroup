@@ -3,14 +3,16 @@
 import 'swiper/css/bundle'
 import 'swiper/css';
 
-import './inside-slider.scss'
+import './mobile-slider.scss'
+
+import Link from 'next/link'
 
 import Image from 'next/image'
 
 import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function InsideSlider({ slug, gallery, id }) {
+export default function MobileSlider({ slug, folder, gallery, id, newsConfig }) {
 
   useEffect(() => {
     localStorage.getItem('theme') || 'light';
@@ -29,16 +31,37 @@ export default function InsideSlider({ slug, gallery, id }) {
           swiperRef.current = swiper;
         }}
       >
-          {gallery.map((img, key) => (
-            <SwiperSlide key={key}>
-              <Image
-                width={550}
-                height={300}
-                alt="property"
-                src={`/inside/${id}-${slug}/${img}`}
-              />
-            </SwiperSlide>
-          ))}
+        {newsConfig ? (
+          <>
+            {newsConfig.map((newItem, key) => (
+              <SwiperSlide key={key}>
+                <Link href={`/new/${newItem.slug}`}>
+                  <Image
+                    width={550}
+                    height={300}
+                    alt="property"
+                    src={`/${folder}/${newItem.id}-${newItem.slug}/${newItem.gallery[0]}`}
+                  />
+                </Link>
+                <p className="date">{newItem.date}</p>
+                <h3>{newItem.name}</h3>
+              </SwiperSlide>
+            ))}
+          </>
+        ) : (
+          <>
+            {gallery.map((img, key) => (
+              <SwiperSlide key={key}>
+                <Image
+                  width={550}
+                  height={300}
+                  alt="property"
+                  src={`/${folder}/${id}-${slug}/${img}`}
+                />
+              </SwiperSlide>
+            ))}
+        </>
+        )}
       </Swiper>
 
       <div className="btn-container">

@@ -14,7 +14,7 @@ import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 import Underline from '@/components/Underline/Underline';
-import InsideSlider from '../InsideSlider/InsideSlider';
+import MobileSlider from '../MobileSlider/MobileSlider';
 
 import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
@@ -44,6 +44,7 @@ export default function Inside({ params, isMX }) {
   const galleryProps = {
     id: id,
     slug: slug,
+    folder: 'inside',
     gallery: gallery
   }
 
@@ -108,8 +109,8 @@ export default function Inside({ params, isMX }) {
       </section>
 
       {isMobile ? (
-        <InsideSlider {...galleryProps} />
-      ): (
+        <MobileSlider {...galleryProps} />
+      ) : (
         <section className="gallery">
           <h4><strong>Project</strong> Gallery</h4>
           <div className="gallery-grid">

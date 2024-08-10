@@ -1,10 +1,25 @@
+'use client';
+
 import './page.scss'
+
+import Link from 'next/link'
 
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
 import Menu from '@/components/Menu/Menu';
+import MobileSlider from '@/components/MobileSlider/MobileSlider';
+
+import useWidth from '@/hooks/useWidth';
+
+import { news } from '@/helpers/news';
 
 export default function News() {
+  const { isMobile } = useWidth()
+
+  const limitNews = news.slice(0,4);
+  const [lastNew, ...restNews] = limitNews;
+  const { id, slug, name, date, description, gallery } = lastNew;
+
   return (
     <Menu css="news-principal">
       <section className="news">
@@ -19,40 +34,44 @@ export default function News() {
       </section>
 
       <section className="container">
-        <div className="principal">
-          <div className="grid-item">
-            <img src="/news/01.jpg" alt="House" />
+        {!isMobile && (
+          <div className="principal">
+            <div className="grid-item">
+              <img src={`/news/${id}-${slug}/${gallery[0]}`} alt="new" />
+            </div>
+            <div className="content">
+              <p className="date">{date}</p>
+              <h3>{name}</h3>
+              <p className="text">{description[0]}</p>
+              <Link href={`/new/${slug}`}>
+                <Underline text="LEER MÁS" />
+              </Link>
+            </div>
           </div>
-          <div className="content">
-            <p className="date">March 19, 2024</p>
-            <h3>Groundbreaking Ceremony Event - Crela Spring Hill</h3>
-            <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <Underline text="LEER MÁS" />
-          </div>
-        </div>
+        )}
 
         <div className="grid-container">
-          <div className="grid-item">
-            <img src="/news/01.jpg" alt="House" />
-            <div className="info">
-              <h3>Groundbreaking Ceremony Event Crela Spring Hill</h3>
-              <p className="date">March 19, 2024</p>
-            </div>
-          </div>
-          <div className="grid-item">
-            <img src="/news/01.jpg" alt="House" />
-            <div className="info">
-              <h3>Groundbreaking Ceremony Event Crela Spring Hill</h3>
-              <p className="date">March 19, 2024</p>
-            </div>
-          </div>
-          <div className="grid-item">
-            <img src="/news/01.jpg" alt="House" />
-            <div className="info">
-              <h3>Groundbreaking Ceremony Event Crela Spring Hill</h3>
-              <p className="date">March 19, 2024</p>
-            </div>
-          </div>
+          {isMobile ? (
+            <MobileSlider newsConfig={limitNews} folder="news" />
+          ) : (
+            <>
+              {restNews.map((newItem, key) => (
+                <Link href={`/new/${newItem.slug}`} key={key}>
+                  <div className="grid-item">
+                    <div className="overlay"></div>
+                    <img
+                      alt="House"
+                      src={`/news/${newItem.id}-${newItem.slug}/${newItem.gallery[0]}`}
+                    />
+                    <div className="info">
+                      <h3>{newItem.name}</h3>
+                      <p className="date">{newItem.date}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </>
+          )}
         </div>
       </section>
       <Footer />

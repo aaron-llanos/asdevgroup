@@ -108,6 +108,7 @@
 
     .grid-item {
       margin-right: 2rem;
+      position: relative;
     }
 
     .content {
@@ -126,6 +127,7 @@
 
       .text {
         font-size: 18px;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -150,12 +152,23 @@
     max-width: 300px;
     margin-top: 5rem;
 
+    .overlay {
+      z-index: 1;
+      height: 99%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(229,229,229,0) 100%, rgba(0,0,0,0) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     img {
       position: relative;
       width: 100%;
     }
 
     .info {
+      z-index: 2;
       position: absolute;
       bottom: 5%;
       color: white;
@@ -203,5 +216,28 @@
     .news {
       height: 380px;
     }
+
+    .grid-container {
+      display: inherit;
+      margin-top: 3rem;
+    }
+  }
+
+  .container {
+    p {
+      font-size: 22px !important;
+      color: #a5a2a2;
+      margin-top: 1rem;
+    }
+
+    h3 {
+      margin-top: 1rem !important;
+      font-style: inherit !important;
+      font-size: 24px !important;
+    }
+  }
+
+  footer {
+    margin-top: 3rem !important;
   }
 }

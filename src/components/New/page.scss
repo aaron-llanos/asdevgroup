@@ -1,13 +1,4 @@
 .new {
-
-  nav img {
-    filter: invert(100%);
-  }
-
-  .nav-container {
-    color: black;
-  }
-
   .title-container {
     max-width: 940px;
     margin: 0 auto;
@@ -105,5 +96,26 @@
 
   footer {
     margin-top: 5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .new {
+    .container.text {
+      padding: 0 3rem;
+    }
+
+    .text p {
+      color: black;
+    }
+
+    .title-container {
+      padding-top: 8rem;
+    }
+
+    .grid-container {
+      display: inherit;
+      margin-top: 3rem;
+    }
   }
 }
