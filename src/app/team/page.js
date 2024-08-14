@@ -35,22 +35,23 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Alan"
-              src="/team/Alan.jpg"
+              src="/team/Alan-Benenson.jpg"
               width="350"
               height="350"
             />
             <div className="flashlight" ref={ref01}>
               <div className="description">
-                <h3>Alan Benenson</h3>
-                <p>PRINCIPAL</p>
+              <h3>Alan Benenson</h3>
+              <p>PRINCIPAL</p>
               </div>
             </div>
           </div>
+          
 
           <div className="team-photos__item">
             <Image
               alt="Alberto"
-              src="/team/Alberto.jpg"
+              src="/team/Alberto-Dichi.jpg"
               width="350"
               height="350"
             />
@@ -65,7 +66,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Samy"
-              src="/team/Samy.jpg"
+              src="/team/Samy-Cohen.jpg"
               width="350"
               height="350"
             />
@@ -80,7 +81,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Alan"
-              src="/team/Helen.jpg"
+              src="/team/Helen-L-Cruz.jpg"
               width="350"
               height="350"
             />
@@ -95,7 +96,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Nico"
-              src="/team/Nico.jpg"
+              src="/team/Chami.jpg"
               width="350"
               height="350"
             />
@@ -110,7 +111,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Nika"
-              src="/team/Nika.jpg"
+              src="/team/Nika-Zyryanova.jpg"
               width="350"
               height="350"
             />
@@ -125,7 +126,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Aaron"
-              src="/team/Aaron.jpg"
+              src="/team/Aaron-Benenson.jpg"
               width="350"
               height="350"
             />
@@ -140,7 +141,7 @@ export default function Team() {
           <div className="team-photos__item">
             <Image
               alt="Stephanie"
-              src="/team/Stephanie.jpg"
+              src="/team/Stephanie-Roque.jpg"
               width="350"
               height="350"
             />
