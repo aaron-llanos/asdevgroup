@@ -31,68 +31,75 @@ export default function Team() {
         </div>
 
         <div className="team-photos">
-
-          <div className="team-photos__item">
-            <Image
-              alt="Alan"
-              src="/team/Alan-Benenson.jpg"
-              width="350"
-              height="350"
-            />
-            <div className="flashlight" ref={ref01}>
-              <div className="description">
-              <h3>Alan Benenson</h3>
-              <p>PRINCIPAL</p>
-              </div>
-            </div>
-          </div>
+  <div className="image-container">
+    <div className="team-photos__item">
+      <Image
+        alt="Alan"
+        src="/team/Alan-Benenson.jpg"
+        width="350"
+        height="350"
+      />
+      <div className="flashlight" ref={ref01}></div>
+    </div>
+    <div className="team-photos__item contenedor">
+      <h3>Alan Benenson</h3>
+      <p>PRINCIPAL</p>
+    </div>
+  </div>
           
 
-          <div className="team-photos__item">
-            <Image
-              alt="Alberto"
-              src="/team/Alberto-Dichi.jpg"
-              width="350"
-              height="350"
-            />
-            <div className="flashlight" ref={ref02}>
-              <div className="description">
-                <h3>Alberto Dichi</h3>
-                <p>PRINCIPAL</p>
-              </div>
-            </div>
-          </div>
+  <div className="image-container">
+    <div className="team-photos__item">
+      <Image
+        alt="Alberto"
+        src="/team/Alberto-Dichi.jpg"
+        width="350"
+        height="350"
+      />
+      <div className="flashlight" ref={ref02}></div>
+    </div>
+    <div className="team-photos__item contenedor">
+      <h3>Alberto Dichi</h3>
+      <p>PRINCIPAL</p>
+    </div>
+  </div>
 
-          <div className="team-photos__item">
-            <Image
-              alt="Samy"
-              src="/team/Samy-Cohen.jpg"
-              width="350"
-              height="350"
-            />
-            <div className="flashlight" ref={ref03}>
-              <div className="description">
-                <h3>Samy Cohen</h3>
-                <p>PRINCIPAL</p>
-              </div>
-            </div>
-          </div>
+          
 
+  <div className="image-container">
+    <div className="team-photos__item">
+      <Image
+        alt="Samy"
+        src="/team/Samy-Cohen.jpg"
+        width="350"
+        height="350"
+      />
+      <div className="flashlight" ref={ref03}></div>
+    </div>
+    <div className="team-photos__item contenedor">
+      <h3>Samy Cohen</h3>
+      <p>PRINCIPAL</p>
+    </div>
+  </div>
+
+      <div className="image-container">
           <div className="team-photos__item">
             <Image
-              alt="Alan"
+              alt="helen"
               src="/team/Helen-L-Cruz.jpg"
               width="350"
               height="350"
             />
-            <div className="flashlight" ref={ref04}>
-              <div className="description">
+            <div className="flashlight" ref={ref04}></div>
+            </div>
+            <div className="team-photos__item contenedor">
                 <h3>Helen L. Cruz</h3>
                 <p>CHIEF FINANCIAL OFFICER</p>
               </div>
             </div>
-          </div>
+       
 
+            <div className="image-container">
           <div className="team-photos__item">
             <Image
               alt="Nico"
@@ -100,14 +107,15 @@ export default function Team() {
               width="350"
               height="350"
             />
-            <div className="flashlight" ref={ref05}>
-              <div className="description">
+            <div className="flashlight" ref={ref05}></div>
+            </div>
+              <div className="team-photos__item contenedor">
                 <h3>Nico Chami</h3>
                 <p>DIRECTOR OF ACQUISITIONS</p>
               </div>
             </div>
-          </div>
-
+          
+            <div className="image-container">
           <div className="team-photos__item">
             <Image
               alt="Nika"
@@ -115,14 +123,16 @@ export default function Team() {
               width="350"
               height="350"
             />
-            <div className="flashlight" ref={ref06}>
-              <div className="description">
+            <div className="flashlight" ref={ref06}></div>
+            </div>
+              <div className="team-photos__item contenedor">
                 <h3>Nika Zyryanova</h3>
                 <p>DIRECTOR OF LAND ENTITLEMENT</p>
               </div>
-            </div>
+            
           </div>
 
+          <div className="image-container">
           <div className="team-photos__item">
             <Image
               alt="Aaron"
@@ -130,14 +140,16 @@ export default function Team() {
               width="350"
               height="350"
             />
-            <div className="flashlight" ref={ref07}>
-              <div className="description">
+            <div className="flashlight" ref={ref07}></div>
+            </div>
+              <div className="team-photos__item contenedor">
                 <h3>Aaron Benenson</h3>
                 <p>SENIOR ACQUISITION ANALYS</p>
               </div>
             </div>
-          </div>
-
+           
+        
+            <div className="image-container">
           <div className="team-photos__item">
             <Image
               alt="Stephanie"
@@ -145,13 +157,14 @@ export default function Team() {
               width="350"
               height="350"
             />
-            <div className="flashlight" ref={ref08}>
-              <div className="description">
+            <div className="flashlight" ref={ref08}></div>
+            </div>
+              <div className="team-photos__item contenedor">
                 <h3>Stephanie Roque</h3>
                 <p>EXECUTIVE ASSISTANT</p>
               </div>
-            </div>
           </div>
+          
 
           {/* <div className="team-photos__item">
             <Image

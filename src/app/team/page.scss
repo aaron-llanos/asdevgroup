@@ -1,13 +1,16 @@
 .team {
   background-color: white;
 
+
   .team {
-    color: white;
+    color: black;
     padding: 4rem 6rem 1rem;
+   
 
     &-content {
       max-width: 1000px;
       margin: 6rem auto 0rem;
+    
 
       h1 {
       color: black;
@@ -30,34 +33,80 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      text-align: center;
+     
+      
+
+     h3{
+      color: black;
+            font-size: 24px;
+     }
+
+     p {
+      color: black;
+      font-size: 18px;
+      letter-spacing: 2px;
+      padding-bottom: 3.5rem;
+    }
+      
 
       &__item {
         margin-top: 1.5rem;
         position: relative;
+        
 
-        .description {
+        .description{
           position: absolute;
           bottom: 20px;
           left: 20px;
           pointer-events: none;
 
           h3 {
+            color: black;
             font-size: 24px;
           }
 
           p {
+            color: black;
             font-size: 18px;
             letter-spacing: 2px;
           }
         }
 
+        .image-container {
+          
+          h3{
+            font-size: 24px;
+          } 
+        }
+
+
+        .contenedor {
+          text-align: center; // No es necesario `!important` a menos que haya conflictos
+          margin-top: 20px;
+         
+  
+          h3 {
+            color: black;
+            font-size: 54px;
+          }
+  
+          p {
+            color: black;
+            font-size: 18px;
+            letter-spacing: 2px;
+          }
+        }
+
+        
         .flashlight {
           height: 100%;
           width: 100%;
           position: absolute;
           top: 0px;
           left: 0px;
-          background: radial-gradient(circle at -100px -100px, transparent 0%, #0000005b 150px);
+          background: radial-gradient(circle at -100px -100px, transparent 0%, #0000002e 150px);
+         
         }
       }
     }
@@ -84,6 +133,7 @@
   }
 
   .container-principal {
+    
     background-color: black !important;
   }
 }
@@ -91,11 +141,16 @@
 @media (max-width: 900px) {
   .team {
     .team {
-      padding: 4rem 4rem 1rem;
+      padding: 4rem 1rem 1rem;
       margin-bottom: -1px;
 
       &-content h1 {
         font-size: 30px;
+        padding: 1rem;
+      }
+
+      &-content h2{
+        padding: 1rem;
       }
 
       &-photos {
