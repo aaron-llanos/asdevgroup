@@ -1,25 +1,22 @@
 .team {
   background-color: white;
 
-
   .team {
     color: black;
     padding: 4rem 6rem 1rem;
-   
 
     &-content {
       max-width: 1000px;
       margin: 6rem auto 0rem;
-    
 
       h1 {
-      color: black;
+        color: black;
         font-weight: 500;
         font-size: 42px;
       }
 
       h2 {
-      color: black;
+        color: black;
         font-weight: 300;
         font-size: 20px;
         letter-spacing: 4px;
@@ -32,109 +29,56 @@
       margin: 4rem auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      text-align: center;
-     
-      
+      justify-content: flex-start; /* Alinea las imágenes a la izquierda */
+      gap: 20px; /* Espacio entre las imágenes */
+      text-align: left;
 
-     h3{
-      color: black;
-            font-size: 24px;
-     }
+      .image-container {
+        flex: 0 0 calc(25% - 20px); /* 4 columnas con espacio */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea todo el contenido (imagen y texto) a la izquierda */
+      }
 
-     p {
-      color: black;
-      font-size: 18px;
-      letter-spacing: 2px;
-      padding-bottom: 3.5rem;
-    }
-      
+      .team-photos__item {
+        width: 230px; /* Hace que el contenedor del texto tenga el mismo ancho que la imagen */
+        text-align: left; /* Alinea el texto a la izquierda */
+      }
+
+      h3 {
+        color: black;
+        font-size: 24px;
+        margin-top: 10px; /* Espacio entre la imagen y el nombre */
+      }
+
+      p {
+        color: black;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-top: 5px; /* Espacio entre el nombre y el título */
+        padding-bottom: 3.5rem;
+      }
 
       &__item {
         margin-top: 1.5rem;
         position: relative;
-        
-
-        .description{
-          position: absolute;
-          bottom: 20px;
-          left: 20px;
-          pointer-events: none;
-
-          h3 {
-            color: black;
-            font-size: 24px;
-          }
-
-          p {
-            color: black;
-            font-size: 18px;
-            letter-spacing: 2px;
-          }
-        }
-
-        .image-container {
-          
-          h3{
-            font-size: 24px;
-          } 
-        }
-
 
         .contenedor {
-          text-align: center; // No es necesario `!important` a menos que haya conflictos
-          margin-top: 20px;
-         
-  
-          h3 {
-            color: black;
-            font-size: 54px;
-          }
-  
-          p {
-            color: black;
-            font-size: 18px;
-            letter-spacing: 2px;
-          }
+          width: 230px; /* Asegura que el contenedor del texto coincida con el ancho de la imagen */
+          text-align: left; /* Alinea el texto a la izquierda */
+          margin-top: 10px; /* Espacio entre la imagen y el texto */
         }
 
-        
         .flashlight {
           height: 100%;
-          width: 100%;
+          width: 230px;
           position: absolute;
           top: 0px;
           left: 0px;
           background: radial-gradient(circle at -100px -100px, transparent 0%, #0000002e 150px);
-         
         }
       }
     }
-  }
-
-  .light {
-    font-size: 32px;
-    font-weight: 300;
-    margin-top: 3rem;
-    border-bottom: solid 1px white;
-    padding-bottom: 6rem;
-  }
-
-  .strong {
-    margin: 3rem;
-    font-size: 24px;
-    font-weight: 300;
-    margin-bottom: 9rem;
-    font-family: 'Archia';
-  }
-
-  footer {
-    padding-top: 3rem !important;
-  }
-
-  .container-principal {
-    
-    background-color: black !important;
   }
 }
 
@@ -142,19 +86,23 @@
   .team {
     .team {
       padding: 4rem 1rem 1rem;
-      margin-bottom: -1px;
 
       &-content h1 {
         font-size: 30px;
         padding: 1rem;
       }
 
-      &-content h2{
+      &-content h2 {
         padding: 1rem;
       }
 
       &-photos {
         margin: 2rem auto;
+        justify-content: center; /* Centra las imágenes en dispositivos más pequeños */
+      }
+
+      .image-container {
+        flex: 0 0 calc(50% - 20px); /* 2 columnas en pantallas pequeñas */
       }
     }
   }
