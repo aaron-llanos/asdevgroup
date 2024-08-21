@@ -104,8 +104,23 @@
       }
     }
 
+
+    .boton_live{
+      margin-top: 0;
+      border-radius: 31.5px;
+      background: #D9D9D9;
+    }
+
+
+    .live{
+     
+     margin-top: 1rem;
+      
+    }
+
     .character {
       margin-top: 4rem;
+      text-align: center;
 
       h5 {
         font-size: 18px;
@@ -212,7 +227,7 @@
     display: flex;
     justify-content: center;
     width: 270px !important;
-    margin: 5rem auto 7rem !important;
+    margin: 2rem auto 7rem !important;
   }
 
   button:hover {

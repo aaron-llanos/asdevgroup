@@ -1,7 +1,8 @@
 export const properties = [
   {
-    id: 1,
+    id: 1,                   
     name: 'Apartments at Palm Bay',
+    video_url: "https://www.ipcamlive.com/solar3",
     location: 'Palm Bay FL',
     image: '1-Apartmets-at-Palm-Bay.jpg',
     imageMobile: '1-Apartmets-at-Palm-Bay.jpg',
@@ -27,6 +28,7 @@ export const properties = [
   {
     id: 2,
     name: 'Magnolia Spring Hill',
+    video_url: "",
     location: 'Spring Hill FL',
     image: '2-Crela-Spring-Hill.jpg',
     imageMobile: '2-Crela-Spring-Hill.jpg',
@@ -52,6 +54,7 @@ export const properties = [
   {
     id: 3,
     name: 'Magnolia at Lake Hamilton',
+    video_url: "",
     location: 'Winter Haven FL',
     image: '3-Cottages-at-Lake-Hamilton.jpg',
     imageMobile: '3-Cottages-at-Lake-Hamilton.jpg',
@@ -74,6 +77,7 @@ export const properties = [
   {
     id: 4,
     name: 'Magnolia at Powell',
+    video_url: "",
     location: 'Wildwood FL',
     image: '4-Magnolia-at-Powell.jpg',
     imageMobile: '4-Magnolia-at-Powell.jpg',
@@ -100,6 +104,7 @@ export const properties = [
   {
     id: 5,
     name: 'Storage at Powell a Life Storage Facility',
+    video_url: "",
     location: 'Wildwood FL',
     image: '5-Storage-at-Powell.jpg',
     imageMobile: '5-Storage-at-Powell.jpg',
@@ -124,6 +129,7 @@ export const properties = [
   {
     id: 6,
     name: 'Solamar Wildwood',
+    video_url: "",
     location: 'Wildwood FL',
     image: '6-Solamar-Wildwood.jpg',
     imageMobile: '6-Solamar-Wildwood.jpg',
@@ -149,6 +155,7 @@ export const properties = [
   {
     id: 7,
     name: 'Solamar Kissimmee (Old vineland Road)',
+    video_url: "",
     location: 'Kissimmee FL',
     image: '7-Solamar-Kissimmee.jpg',
     imageMobile: '7-Solamar-Kissimmee.jpg',
@@ -173,6 +180,7 @@ export const properties = [
   {
     id: 8,
     name: 'Tru by Hilton Ft. Lauderdale Airport',
+    video_url: "",
     location: 'Dania Beach FL',
     image: 'bg-Tru-by-Hilton.jpg',
     progress: 'Completed',
@@ -199,6 +207,7 @@ export const properties = [
   {
     id: 9,
     name: 'Melbourne Orlando International Airport Hotel',
+    video_url: "",
     location: 'Orlando FL',
     slug: 'melbourne-orlando-international',
     image: 'bg-Melbourne-Orlando.jpg',
@@ -227,6 +236,7 @@ export const properties = [
   {
     id: 10,
     name: 'Hyatt Place',
+    video_url: "",
     location: 'Melbourne FL',
     slug: 'hyatt-place',
     image: 'bg-Hyatt-Place.jpg',
@@ -253,6 +263,7 @@ export const properties = [
   {
     id: 11,
     name: 'Home2 Suites by Hilton',
+    video_url: "",
     location: 'Melbourne FL',
     slug: 'home2-suites-by-hilton',
     image: 'bg-Home2-Suites-by-Hilton.jpg',
@@ -280,6 +291,7 @@ export const properties = [
   {
     id: 12,
     name: 'Element by Marriot International',
+    video_url: "",
     location: 'Orlando FL',
     slug: 'element-by-marriot-international',
     image: 'bg-Element-by-Marriot-International.jpg',
@@ -305,6 +317,7 @@ export const properties = [
   {
     id: 13,
     name: 'Aloft Orlando by Marriot International',
+    video_url: "",
     location: 'Orlando FL',
     slug: 'aloft-orlando',
     image: 'bg-Aloft-Orlando.jpg',
@@ -333,6 +346,7 @@ export const propertiesMX = [
   {
     id: 'mx-1',
     name: 'Garden Condesa',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'bg-Garden-Condesa.jpg',
     progress: 'Completed',
@@ -359,6 +373,7 @@ export const propertiesMX = [
   {
     id: 'mx-2',
     name: 'MONTE CAMERÚN 50',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'bg-Monte-Camerun-50.jpg',
     progress: 'Completed',
@@ -380,6 +395,7 @@ export const propertiesMX = [
   {
     id: 'mx-3',
     name: 'Garden Polanco',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'bg-Garden-Polanco.jpg',
     progress: 'Completed',
@@ -404,6 +420,7 @@ export const propertiesMX = [
   {
     id: 'mx-4',
     name: 'Concepción Beistegui',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Concepcion-Beistegui.jpg',
     progress: 'Completed',
@@ -428,6 +445,7 @@ export const propertiesMX = [
   {
     id: 'mx-5',
     name: 'Musset 222',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Musset-222.jpg',
     progress: 'Completed',
@@ -450,6 +468,7 @@ export const propertiesMX = [
   {
     id: 'mx-6',
     name: 'Tres Picos 97',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tres-Picos-97.jpg',
     progress: 'Completed',
@@ -472,6 +491,7 @@ export const propertiesMX = [
   {
     id: 'mx-7',
     name: 'Solón 337',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Solon-337.jpg',
     progress: 'Completed',
@@ -491,6 +511,7 @@ export const propertiesMX = [
   {
     id: 'mx-8',
     name: 'Elysée 369',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Elysee-369.jpg',
     progress: 'Completed',
@@ -520,6 +541,7 @@ export const propertiesMX = [
   {
     id: 'mx-9',
     name: 'E.A. Poe 335',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'E.A.-Poe-335.jpg',
     progress: 'Completed',
@@ -539,6 +561,7 @@ export const propertiesMX = [
   {
     id: 'mx-10',
     name: 'Guanajuato 238',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Guanajuato-238.jpg',
     progress: 'Completed',
@@ -564,6 +587,7 @@ export const propertiesMX = [
   {
     id: 'mx-11',
     name: 'San Antonio 95',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'San-Antonio-95.jpg',
     progress: 'Completed',
@@ -590,6 +614,7 @@ export const propertiesMX = [
   {
     id: 'mx-12',
     name: 'Cholula 17',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Cholula-17.jpg',
     progress: 'Completed',
@@ -616,6 +641,7 @@ export const propertiesMX = [
   {
     id: 'mx-13',
     name: 'Aristóteles 68',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Aristoteles-68.jpg',
     progress: 'Completed',
@@ -637,6 +663,7 @@ export const propertiesMX = [
   {
     id: 'mx-14',
     name: 'Anatole France 331',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Anatole-France-331.jpg',
     progress: 'Completed',
@@ -656,6 +683,7 @@ export const propertiesMX = [
   {
     id: 'mx-15',
     name: 'Suderman 222',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Suderman-222.jpg',
     progress: 'Completed',
@@ -677,6 +705,7 @@ export const propertiesMX = [
   {
     id: 'mx-16',
     name: 'Tennyson 121',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tennyson-121.jpg',
     progress: 'Completed',
@@ -696,6 +725,7 @@ export const propertiesMX = [
   {
     id: 'mx-17',
     name: 'Tehuantepec 98',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tehuantepec-98.jpg',
     progress: 'Completed',
@@ -715,6 +745,7 @@ export const propertiesMX = [
   {
     id: 'mx-18',
     name: 'Goldsmith 119',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Goldsmith-119.jpg',
     progress: 'Completed',
@@ -734,6 +765,7 @@ export const propertiesMX = [
   {
     id: 'mx-19',
     name: 'E.A. Poe 64',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'E.A.-Poe-64.jpg',
     progress: 'Completed',
@@ -753,6 +785,7 @@ export const propertiesMX = [
   {
     id: 'mx-20',
     name: 'Dr. Barragán 751',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Dr.-Barragan-751.jpg',
     progress: 'Completed',
@@ -772,6 +805,7 @@ export const propertiesMX = [
   {
     id: 'mx-21',
     name: 'E.A. Poe 239',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'E.A.-Poe-239.jpg',
     progress: 'Completed',
@@ -791,6 +825,7 @@ export const propertiesMX = [
   {
     id: 'mx-22',
     name: 'Tres Picos 89',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tres-Picos-89.jpg',
     progress: 'Completed',
@@ -811,6 +846,7 @@ export const propertiesMX = [
   {
     id: 'mx-23',
     name: 'Musset 228',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Musset-228.jpg',
     progress: 'Completed',
@@ -830,6 +866,7 @@ export const propertiesMX = [
   {
     id: 'mx-24',
     name: 'La Fontaine 221',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'La-Fontaine-221.jpg',
     progress: 'Completed',
@@ -849,6 +886,7 @@ export const propertiesMX = [
   {
     id: 'mx-25',
     name: 'San Antonio 88',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'San-Antonio-88.jpg',
     progress: 'Completed',
@@ -870,6 +908,7 @@ export const propertiesMX = [
   {
     id: 'mx-26',
     name: 'Galileo 52',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Galileo-52.jpg',
     progress: 'Completed',
@@ -893,6 +932,7 @@ export const propertiesMX = [
   {
     id: 'mx-27',
     name: 'Plinio 340',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Plinio-340.jpg',
     progress: 'Completed',
@@ -913,6 +953,7 @@ export const propertiesMX = [
   {
     id: 'mx-28',
     name: 'Sierra Guadarrama 49',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Sierra-Guadarrama-49.jpg',
     progress: 'Completed',
@@ -936,6 +977,7 @@ export const propertiesMX = [
   {
     id: 'mx-29',
     name: 'Tennyson 223',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tennyson-223.jpg',
     progress: 'Completed',
@@ -958,6 +1000,7 @@ export const propertiesMX = [
   {
     id: 'mx-30',
     name: 'Sudermann 416',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Sudermann-416.jpg',
     progress: 'Completed',
@@ -981,6 +1024,7 @@ export const propertiesMX = [
   {
     id: 'mx-31',
     name: 'Acapulco 46',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Acapulco-46.jpg',
     progress: 'Completed',
@@ -1003,6 +1047,7 @@ export const propertiesMX = [
   {
     id: 'mx-32',
     name: 'Sudermann 418',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Sudermann-418.jpg',
     progress: 'Completed',
@@ -1024,6 +1069,7 @@ export const propertiesMX = [
   {
     id: 'mx-33',
     name: 'Hegel 419',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Hegel-419.jpg',
     progress: 'Completed',
@@ -1045,6 +1091,7 @@ export const propertiesMX = [
   {
     id: 'mx-34',
     name: 'Tres Picos 59',
+    video_url: "",
     location: 'Mexico City MX',
     image: 'Tres-Picos-59.jpg',
     progress: 'Completed',

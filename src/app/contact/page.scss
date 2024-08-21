@@ -56,7 +56,7 @@
 
   .container {
     max-width: 800px;
-    margin: 4rem auto 0;
+    margin: 2.5rem auto 0;
     color: white;
 
     h2 {
@@ -124,11 +124,15 @@
 
   footer .container {
     max-width: 100%;
+    
+  
   }
 
+ 
+
   footer {
-    border-top: solid 1px white;
-    margin-top: 7rem;
+    border-top: 1px solid;
+    padding-top: 0rem !important;
   }
 
   .contact-info {

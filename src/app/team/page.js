@@ -20,7 +20,7 @@ export default function Team() {
   const { ref: ref06 } = useFlashlight();
   const { ref: ref07 } = useFlashlight();
   const { ref: ref08 } = useFlashlight();
-  // const { ref: ref09 } = useFlashlight();
+   const { ref: ref09 } = useFlashlight();
 
   return (
     <Menu css="team">
@@ -181,7 +181,7 @@ export default function Team() {
       height={230}
               className="team-image"
             />
-            <div className="flashlight" ref={ref08}></div>
+            <div className="flashlight" ref={ref09}></div>
             </div>
               <div className="team-photos__item contenedor">
                 <h3>Alvaro Grazziani</h3>

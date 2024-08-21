@@ -93,7 +93,7 @@ export default function Menu({ children, onMenu, css }) {
           </li>
 
           <li><h2><Link href="/investors">Investors login</Link></h2></li>
-          <li><h2><Link href="/team">Team</Link></h2></li>
+          {/* <li><h2><Link href="/team">Team</Link></h2></li> */}
           {/* <li><h2><Link href="/news">News</Link></h2></li> */}
           <li><h2><Link href="/contact">Contact</Link></h2>
           </li>
