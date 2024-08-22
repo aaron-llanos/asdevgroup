@@ -20,7 +20,8 @@ export default function Team() {
   const { ref: ref06 } = useFlashlight();
   const { ref: ref07 } = useFlashlight();
   const { ref: ref08 } = useFlashlight();
-   const { ref: ref09 } = useFlashlight();
+  const { ref: ref09 } = useFlashlight();
+  //  const { ref: ref10 } = useFlashlight();
 
   return (
     <Menu css="team">
@@ -36,8 +37,8 @@ export default function Team() {
       <Image
         alt="Alan"
         src="/team/Alan-Benenson.jpg"
-        width="230"
-        height="230"
+        width="210"
+        height="210"
       />
       <div className="flashlight" ref={ref01}></div>
     </div>
@@ -53,8 +54,8 @@ export default function Team() {
       <Image
         alt="Alberto"
         src="/team/Alberto-Dichi.jpg"
-        width="230"
-        height="230"
+        width="210"
+        height="210"
       />
       <div className="flashlight" ref={ref02}></div>
     </div>
@@ -71,8 +72,8 @@ export default function Team() {
       <Image
         alt="Samy"
         src="/team/Samy-Cohen.jpg"
-        width="230"
-        height="230"
+        width="210"
+        height="210"
       />
       <div className="flashlight" ref={ref03}></div>
     </div>
@@ -88,8 +89,8 @@ export default function Team() {
             <Image
               alt="helen"
               src="/team/Helen-L-Cruz.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-              height={230}
+               width="210"
+               height="210"
               className="team-image"
             />
             <div className="flashlight" ref={ref04}></div>
@@ -106,8 +107,8 @@ export default function Team() {
             <Image
               alt="Nico"
               src="/team/Chami.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+               width="210"
+               height="210"
               className="team-image"
             />
             <div className="flashlight" ref={ref05}></div>
@@ -123,8 +124,8 @@ export default function Team() {
             <Image
               alt="Nika"
               src="/team/Nika-Zyryanova.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+              width={210}  // Proporciona un ancho predeterminado requerido
+      height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref06}></div>
@@ -141,8 +142,8 @@ export default function Team() {
             <Image
               alt="Aaron"
               src="/team/Aaron-Benenson.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+              width={210}  // Proporciona un ancho predeterminado requerido
+      height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref07}></div>
@@ -159,8 +160,8 @@ export default function Team() {
             <Image
               alt="Stephanie"
               src="/team/Stephanie-Roque.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+              width={210}  // Proporciona un ancho predeterminado requerido
+      height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref08}></div>
@@ -175,19 +176,21 @@ export default function Team() {
           <div className="image-container">
           <div className="team-photos__item">
             <Image
-              alt="Stephanie"
-              src="/team/Alvaro-Grazziani.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+              alt="Shopia Serur"
+              src="/team/Sophia-Serur.jpg"
+              width={210}  // Proporciona un ancho predeterminado requerido
+              height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref09}></div>
             </div>
               <div className="team-photos__item contenedor">
-                <h3>Alvaro Grazziani</h3>
-                <p>POSITION</p>
+                <h3>Sophia Serur</h3>
+                <p>MARKETING DIRECTOR</p>
               </div>
           </div>
+
+         
 
          
 
@@ -195,8 +198,8 @@ export default function Team() {
             <Image
               alt="Sophia"
               src="/team/Sophia.jpg"
-              width={230}  // Proporciona un ancho predeterminado requerido
-      height={230}
+              width={210}  // Proporciona un ancho predeterminado requerido
+      height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref09}>

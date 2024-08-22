@@ -95,15 +95,16 @@ export default function Inside({ params, isMX }) {
         {video_url && (
   <div className="character">
     <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5>
+    <Link href={video_url} target="_blank">
     <Image
-      width={55}
+      width={250}
       height={50}
       alt="property"
-      src="/inside/1-apartments-at-palm-bay/live_camera1.png"
+      src="/Camera-02.png"
       className="live"
     />
-    <Link href={video_url}>
-      <Button text="Go to Live Camera" />
+  
+      {/* <Button text="Go to Live Camera" /> */}
     </Link>
   </div>
 )}
