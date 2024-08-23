@@ -143,7 +143,7 @@ export default function Team() {
               alt="Aaron"
               src="/team/Aaron-Benenson.jpg"
               width={210}  // Proporciona un ancho predeterminado requerido
-      height={210}
+              height={210}
               className="team-image"
             />
             <div className="flashlight" ref={ref07}></div>

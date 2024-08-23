@@ -2,7 +2,7 @@ export const properties = [
   {
     id: 1,                   
     name: 'Apartments at Palm Bay',
-    video_url: "https://www.ipcamlive.com/solar3",
+    video_url: "",
     location: 'Palm Bay FL',
     image: '1-Apartmets-at-Palm-Bay.jpg',
     imageMobile: '1-Apartmets-at-Palm-Bay.jpg',
@@ -54,7 +54,7 @@ export const properties = [
   {
     id: 3,
     name: 'Magnolia at Lake Hamilton',
-    video_url: "",
+    video_url: "https://www.ipcamlive.com/solar3",
     location: 'Winter Haven FL',
     image: '3-Cottages-at-Lake-Hamilton.jpg',
     imageMobile: '3-Cottages-at-Lake-Hamilton.jpg',
