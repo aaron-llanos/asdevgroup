@@ -136,6 +136,13 @@ body {
   object-fit: cover;
 }
 
+.btn-slider,
+.inside .gallery-grid img,
+.inside-slider .swiper-slide img,
+.swiper-selector .swiper-slide img {
+  cursor: pointer;
+}
+
 @media (max-width: 1200px) {
   .swiper-full__container {
     margin-top: 60%;
