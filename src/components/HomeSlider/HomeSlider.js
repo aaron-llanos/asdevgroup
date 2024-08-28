@@ -81,10 +81,13 @@ export default function HomeSlider() {
         className={`home-slider__info ${dynamicClass(inView01, `animate__animated ${animation}`)}`}
         style={{ opacity: `${inView01 ? '1' : '0'}` }}
       >
+        <a href={`/inside/us/${property.slug}`}>
         <h3>{property.location}</h3>
         <h2>{property.name}</h2>
         <h3 className="progress">{property.progress}</h3>
+        
         <button>{property.type}</button>
+        </a>
       </div>
 
       <div className="home-slider__buttons"

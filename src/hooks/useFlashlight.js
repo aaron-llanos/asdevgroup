@@ -9,7 +9,7 @@ export default function useFlashlight() {
     ref.current.addEventListener('mousemove', (e) => {
       const x = e.offsetX
       const y = e.offsetY
-      ref.current.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 0%, #0000008f 150px)`
+      ref.current.style.background = `radial-gradient(circle at ${x}px ${y}px, transparent 0%, #0000004f 150px)`
     })
   }, []);
 
