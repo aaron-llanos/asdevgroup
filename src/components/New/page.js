@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
-import MobileSlider from '../MobileSlider/MobileSlider';
+import MultipleSlider from '../MultipleSlider/MultipleSlider';
 
 import useWidth from '@/hooks/useWidth';
 
@@ -44,7 +44,7 @@ export default function New({ params }) {
 
       <div className="grid-container">
       {isMobile ? (
-        <MobileSlider {...galleryProps} />
+        <MultipleSlider {...galleryProps} />
       ) : (
         <>
           {gallery.map((img, key) => (

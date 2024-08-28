@@ -1,0 +1,43 @@
+$color-text-dialog: black;
+$desktop-right-text-alignment:left;
+$title-color:white;
+$text-color:white;
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  &__dialog {
+    padding: 10px;
+    height: 450px;
+    margin: 0 auto;
+    color: $color-text-dialog;
+
+    &--button-close {
+      float: right;
+      font-size: 34px;
+      cursor: pointer;
+      color: white;
+      position: absolute;
+      right: 33px;
+      z-index: 1;
+    }
+
+    &--children {
+      padding-top: 20px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.modal-open {
+  display: block;
+}

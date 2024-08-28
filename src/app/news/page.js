@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
 import Menu from '@/components/Menu/Menu';
-import MobileSlider from '@/components/MobileSlider/MobileSlider';
+import MultipleSlider from '@/components/MultipleSlider/MultipleSlider';
 
 import useWidth from '@/hooks/useWidth';
 
@@ -52,7 +52,7 @@ export default function News() {
 
         <div className="grid-container">
           {isMobile ? (
-            <MobileSlider newsConfig={limitNews} folder="news" />
+            <MultipleSlider newsConfig={limitNews} folder="news" />
           ) : (
             <>
               {restNews.map((newItem, key) => (

@@ -4,8 +4,6 @@
 import './page.scss'
 import 'animate.css';
 
-import Image from "next/image";
-
 import Link from 'next/link'
 
 import { useInView } from "react-intersection-observer";
@@ -14,15 +12,12 @@ import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Button from '@/components/Button/Button';
 import Underline from '@/components/Underline/Underline';
-import MobileSlider from '../MobileSlider/MobileSlider';
+import MultipleSlider from '../MultipleSlider/MultipleSlider';
 
 import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
 import { dynamicClass } from '@/helpers/dynamic-class';
-import useWidth from '@/hooks/useWidth';
 
 export default function Inside({ params, isMX }) {
-  const { isMobile } = useWidth()
-
   const properties = isMX ? propertiesMX : propertiesUS;
 
   const filterProperty = properties.find(({ slug }) => slug === params.slug);
@@ -45,7 +40,7 @@ export default function Inside({ params, isMX }) {
     id: id,
     slug: slug,
     folder: 'inside',
-    gallery: gallery
+    gallery: gallery,
   }
 
   // Texts animations
@@ -108,25 +103,7 @@ export default function Inside({ params, isMX }) {
         </ul>
       </section>
 
-      {isMobile ? (
-        <MobileSlider {...galleryProps} />
-      ) : (
-        <section className="gallery">
-          <h4><strong>Project</strong> Gallery</h4>
-          <div className="gallery-grid">
-            {gallery.map((img, key) => (
-              <Image
-                key={key}
-                width={550}
-                height={300}
-                alt="property"
-                src={`/inside/${id}-${slug}/${img}`}
-              />
-            ))}
-          </div>
-        </section>
-      )}
-
+      <MultipleSlider {...galleryProps} />
 
       <Link href={isMX ? '/portfolio/mx' : '/portfolio/us'}>
         <Underline text="RETURN TO PROJECTS" />
@@ -140,3 +117,5 @@ export default function Inside({ params, isMX }) {
     </Menu>
   );
 }
+
+
