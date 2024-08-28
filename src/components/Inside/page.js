@@ -5,6 +5,7 @@ import './page.scss'
 import 'animate.css';
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { useInView } from "react-intersection-observer";
 
@@ -86,24 +87,24 @@ export default function Inside({ params, isMX }) {
           </div> */}
         </div>
 
-        
-        {video_url && (
-  <div className="character">
-    <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5>
-    <Link href={video_url} target="_blank">
-    <Image
-      width={250}
-      height={50}
-      alt="property"
-      src="/Camera-02.png"
-      className="live"
-    />
-  
-      {/* <Button text="Go to Live Camera" /> */}
-    </Link>
-  </div>
-)}
-          {/* <p><strong>March 2024</strong></p> */}
+      {video_url && (
+        <div className="character">
+          <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5>
+          <Link href={video_url} target="_blank">
+          <Image
+            width={250}
+            height={50}
+            alt="property"
+            src="/Camera-02.png"
+            className="live"
+          />
+            {/* <Button text="Go to Live Camera" /> */}
+          </Link>
+        </div>
+      )}
+
+      {/* <p><strong>March 2024</strong></p> */}
+
       </section>
       <section className="about">
         <h4
