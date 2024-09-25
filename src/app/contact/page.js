@@ -41,11 +41,11 @@ export default function Contact() {
 
           <form>
             <div className="row">
-              <input placeholder="First Name" className="input" />
-              <input placeholder="Last Name" className="input" />
+              <input placeholder="First Name" className="input" name="name" id="name"/>
+              <input placeholder="Last Name" className="input" name="lastname" id="lastname" />
             </div>
-            <input placeholder="Email" className="input" />
-            <input placeholder="Subject" className="input" />
+            <input placeholder="Email" className="input" name="email" id="email" />
+            <input placeholder="Subject" className="input" name="subject" id="subject" />
 
             <Button text="Submit" />
           </form>

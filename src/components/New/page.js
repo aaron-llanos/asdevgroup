@@ -42,7 +42,7 @@ export default function New({ params }) {
         </div>
       </section>
 
-      <div className="grid-container">
+      {/* <div className="grid-container">
       {isMobile ? (
         <MultipleSlider {...galleryProps} />
       ) : (
@@ -55,7 +55,21 @@ export default function New({ params }) {
         </>
       )}
 
-      </div>
+      </div> */}
+
+<div className="grid-container">
+  {isMobile ? (
+    <MultipleSlider {...galleryProps} />
+  ) : (
+    <>
+      {gallery.slice(0, 1).map((img, key) => ( // Aquí cambiamos el mapeo para seleccionar solo el primer elemento
+        <div className="grid-item" key={key}>
+          <img src={`/news/${id}-${slug}/${img}`} alt="new" />
+        </div>
+      ))}
+    </>
+  )}
+</div>
 
       {/* <section className="container text">
         {description}
@@ -68,9 +82,14 @@ export default function New({ params }) {
 
       {slugNextNew() && (
         <Link href={`/new/${slugNextNew()}`}>
-          <Underline text="SIGUIENTE NOTICIA" />
+          <Underline text="NEXT NEW" />
         </Link>
       )}
+
+      <Link href={'/news'}><Underline text="RETURN TO NEWS" />
+      </Link>
+
+
 
       <Footer />
     </Menu>

@@ -1,0 +1,243 @@
+.news-principal {
+  .news {
+    // height: 80vh;
+    // background-image: url('/news-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .title {
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      &-slider__info {
+        margin-top: 15%;
+        margin-left: 10%;
+      }
+    }
+  }
+
+  .title {
+    padding: 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+
+    &-slider {
+      &__info {
+        color: white;
+        max-width: 800px;
+        margin: 0 auto 18rem;
+        width: 100%;
+
+        h2 {
+          font-weight: 600;
+          font-size: 88px;
+          margin: 10px 0;
+        }
+
+        h3 {
+          font-weight: 100;
+          font-size: 28px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  .container {
+    max-width: 940px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+      text-align: center;
+      letter-spacing: 26px;
+    }
+
+    h3 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 15px;
+      font-style: italic;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    .card {
+      background-color: #d9d9d9;
+      color: black;
+      font-weight: 500;
+      width: 150px;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+
+      p {
+        font-weight: 600;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6rem;
+      }
+    }
+  }
+
+  footer .container {
+    max-width: 100%;
+  }
+
+  footer {
+    border-top: solid 1px white;
+    margin-top: 7rem;
+  }
+
+  .principal {
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+
+    .grid-item {
+      margin-right: 2rem;
+      position: relative;
+    }
+
+    .content {
+      margin-top: 5%;
+      .date {
+        color: #a5a2a2;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-style: inherit;
+        font-size: 24px;
+        max-width: 380px;
+        margin: 0.5rem 0;
+      }
+
+      .text {
+        font-size: 18px;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .underline-container {
+    margin-top: 1rem !important;
+  }
+
+  .underline-container .text {
+    margin-top: 0 !important;
+  }
+
+  .grid-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .grid-item {
+    width: 100%;
+    position: relative;
+    margin-bottom: 26px;
+    max-width: 300px;
+    margin-top: 5rem;
+
+    .overlay {
+      z-index: 1;
+      height: 99%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(229,229,229,0) 100%, rgba(0,0,0,0) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+    }
+
+    .info {
+      z-index: 2;
+      position: absolute;
+      bottom: 5%;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+
+      h3 {
+        font-weight: 300;
+        font-size: 20px;
+        margin: 0;
+        font-style: inherit;
+        max-width: 240px;
+      }
+
+      .date {
+        font-weight: 100;
+        font-size: 16px;
+        color: #a5a2a2;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .news-principal {
+    .title {
+      padding: 4rem;
+
+      &-slider__info {
+        margin-top: 15%;
+        margin-left: 0% !important;
+
+        h2 {
+          font-size: 58px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .news {
+      height: 380px;
+    }
+
+    .grid-container {
+      display: inherit;
+      margin-top: 3rem;
+    }
+  }
+
+  .container {
+    p {
+      font-size: 22px !important;
+      color: #a5a2a2;
+      margin-top: 1rem;
+    }
+
+    h3 {
+      margin-top: 1rem !important;
+      font-style: inherit !important;
+      font-size: 24px !important;
+    }
+  }
+
+  footer {
+    margin-top: 3rem !important;
+  }
+}
