@@ -16,7 +16,7 @@ import { news } from '@/helpers/news';
 
 export default function News() {
   const { isMobile } = useWidth();
-  const limitNews = news.slice(0, 5);
+  const limitNews = news.slice(0, 10);
 
   return (
     <Menu css="news-principal">
@@ -31,7 +31,7 @@ export default function News() {
                 <p className="date">{item.date}</p>
                 <h3>{item.name}</h3>
                 <Link href={`/new/${item.slug}`}>
-                  <Underline text="LEER MÁS" />
+                  <Underline text="READ MORE" />
                 </Link>
               </div>
             </div>
