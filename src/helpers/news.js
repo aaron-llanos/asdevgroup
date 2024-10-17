@@ -91,6 +91,22 @@ export const news = [
       
     ],
   },
+
+  {
+    id: 7,
+    name: 'Agador Spartacus Lands $32M Loan for Tampa-Area BTR Community.',
+    date: 'September 30, 2024',
+    slug: 'agador-spartacus',
+    url: 'https://www.multihousingnews.com/agador-spartacus-lands-32m-loan-for-tampa-area-btr-community/',
+    description: [
+      'Agador Spartacus Development has secured a $32 million construction loan for Magnolia at Spring Hill, a 162-unit built-to-rent project in Spring Hill, Fla. A partnership of North River Partners and Amzak Capital Partners provided the non-recourse funding. JLL represented the borrower and, last year, arranged the equity.',
+    ],
+    gallery: [
+      '30-SEPT.jpg',
+      '30-SEPT.jpg',
+      
+    ],
+  },
   
   
 ]

@@ -8,7 +8,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
-      justify-items: center; // Asegura que los ítems se centren
+      justify-items: center; 
+      
+      
+  
+      // Asegura que los ítems se centren
     }
 
     .news-title { // Estilos para el título
@@ -53,7 +57,17 @@
       }
     }
   }
+
 }
+
+footer {
+  padding: 0;
+  width: 100% !important; // Usar el ancho total de la ventana
+  position: relative; // Asegura que el footer se posicione correctamente
+  left: 0px; // Ajustar la posición
+  right: 0px;
+ 
+  }
 
 
 
