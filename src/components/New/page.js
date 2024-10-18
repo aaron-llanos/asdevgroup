@@ -17,7 +17,7 @@ export default function New({ item, allNews }) {
     return <p>No se encontró la noticia.</p>; // Manejo de error si no se pasa el item
   }
 
-  const { id, slug, URL, Name, Date, Description, gallery } = item;
+  const { id, slug, URL, Name, Date: newsDate, Description, gallery } = item; 
 
   const galleryProps = {
     id: id,
@@ -26,32 +26,47 @@ export default function New({ item, allNews }) {
     gallery: gallery,
   };
 
-  // Encuentra el siguiente artículo basado en el id actual
   const slugNextNew = () => {
-    if (!allNews) return undefined; // Asegúrate de que allNews esté definido
-
+    if (!allNews) return undefined;
     const nextId = id + 1;
     const findNew = allNews.find(({ id }) => id === nextId);
-    return findNew?.slug || undefined; // Devuelve el slug si existe, o undefined
+    return findNew?.slug || undefined;
   };
 
-  const nextSlug = slugNextNew(); // Guarda el slug del siguiente artículo
+  const nextSlug = slugNextNew();
 
-  // Reemplaza los saltos de línea con <br />
-  const formattedDescription = Description.replace(/\n/g, '<br />');
+  const formattedDate = new Date(newsDate).toLocaleDateString('es-ES', {
+    day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      timeZone: 'UTC', // Asegúrate de especificar la zona horaria
+  });
+  // Verifica si Description es un array, string, o maneja otro tipo de dato
+  let formattedDescription;
+  if (Array.isArray(Description)) {
+    formattedDescription = Description.map(item => 
+      item.children.map(child => child.text).join('')
+    ).join('<br />');
+  } else if (typeof Description === 'string') {
+    formattedDescription = Description.replace(/\n/g, '<br />');
+  } else {
+    formattedDescription = "No description available."; // Manejo de casos donde Description no sea un array ni string
+  }
+
+
 
   return (
     <Menu css="new">
       <section className="title-container">
         <div className="information">
-          <h2>{Date}</h2>
+          <h2>{formattedDate}</h2> {/* Muestra la fecha formateada */}
           <h1><b>{Name}</b></h1>
         </div>
       </section>
 
       <div className="grid-container">
         <div className="grid-item" key={item.id}>
-          <img src={`${API_URL}${item.gallery[1].url}`} alt={`${API_URL}${item.gallery[1].url}`} />
+          <img src={`${API_URL}${item.gallery[0].url}`} alt={`${API_URL}${item.gallery[0].url}`} />
         </div>
       </div>
 
@@ -70,7 +85,7 @@ export default function New({ item, allNews }) {
         </a>
       </div>
 
-      {nextSlug && ( // Solo muestra el enlace si nextSlug existe
+      {nextSlug && (
         <Link href={`/new/${nextSlug}`}>
           <Underline text="NEXT ARTICLE" />
         </Link>

@@ -1,29 +1,36 @@
 import { API_URL } from "@/app/config";
 import New from "@/components/New/page";
 
+// new/[slug]/page.js
 export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
-  const res = await fetch(`${API_URL}/api/news?populate[gallery][fields][0]=url`);
-  
-  // Extraemos los datos
+  const res = await fetch(`${API_URL}/api/news?fields[0]=slug`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
   const { data } = await res.json();
 
-
-  // Devuelve un array de objetos que contienen los slugs de cada noticia
+  // Mapeamos para obtener solo los slugs
   return data.map((item) => ({
     slug: item.slug,
   }));
 }
-
-// Aquí estamos obteniendo los datos de la API en lugar de los datos estáticos
+// Obtener datos de la API para la noticia específica
 export default async function Home({ params }) {
   const res = await fetch(`${API_URL}/api/news?filters[slug][$eq]=${params.slug}&populate=*`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch news data');
+  }
+
   const { data } = await res.json();
-  
-  // Comprueba si se encontraron datos
+
+  // Manejo de error si no se encuentra la noticia
   if (!data || data.length === 0) {
-    return <p>This page doesn't exists.</p>; // Manejo de error si no se encuentra la noticia
+    return <p>No se encontró la noticia.</p>;
   }
 
   return (
