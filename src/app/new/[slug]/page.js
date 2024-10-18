@@ -6,11 +6,11 @@ export const dynamic = 'force-static';
 export async function generateStaticParams() {
   const res = await fetch(`${API_URL}/api/news?populate[gallery][fields][0]=url`);
   
-  // Asegúrate de que los datos se extraigan correctamente
+  // Extraemos los datos
   const { data } = await res.json();
-  
-  console.log(data); // Para verificar la estructura de los datos
 
+
+  // Devuelve un array de objetos que contienen los slugs de cada noticia
   return data.map((item) => ({
     slug: item.slug,
   }));
@@ -23,7 +23,7 @@ export default async function Home({ params }) {
   
   // Comprueba si se encontraron datos
   if (!data || data.length === 0) {
-    return <p>No se encontró la noticia.</p>; // Manejo de error si no se encuentra la noticia
+    return <p>This page doesn't exists.</p>; // Manejo de error si no se encuentra la noticia
   }
 
   return (
