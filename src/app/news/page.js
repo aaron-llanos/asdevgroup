@@ -27,6 +27,8 @@ export default function News() {
     const fetchNews = async () => {
       try {
         const newsData = await getNews();
+        // Ordenar noticias por fecha de la más actual a la más antigua
+        newsData.sort((a, b) => new Date(b.Date) - new Date(a.Date));
         setNoticias(newsData); 
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -73,7 +75,7 @@ export default function News() {
           )}
         </div>
       </section>
-      <Footer className="footer" />
+      {/* <Footer /> */}
     </Menu>
   );
 }
