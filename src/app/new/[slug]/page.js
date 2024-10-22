@@ -4,25 +4,41 @@ import New from "@/components/New/page";
 // new/[slug]/page.js
 export const dynamic = 'force-static';
 
-export async function generateStaticParams() {
-  const res = await fetch(`${API_URL}/api/news?fields[0]=slug&limit=100`); 
+// Función para obtener todos los slugs con paginación
+async function getAllSlugs() {
+  let allSlugs = [];
+  let page = 1;
+  let totalPages = 1;
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  // Hacemos solicitudes paginadas hasta obtener todas las páginas
+  while (page <= totalPages) {
+    const res = await fetch(`${API_URL}/api/news?fields[0]=slug&pagination[page]=${page}&pagination[pageSize]=100`);
+    
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const { data, meta } = await res.json();
+    
+    // Guardamos los slugs de la página actual
+    allSlugs = allSlugs.concat(data.map((item) => ({
+      slug: item.slug,
+    })));
+    
+    // Actualizamos el número total de páginas
+    totalPages = meta.pagination.pageCount;
+    page++;
   }
 
-  const { data } = await res.json();
-
-  
-const datos = data.map((item) => ({
-  slug: item.slug,
-}));
-
-  console.log(datos);
-  
-  // Mapeamos para obtener solo los slugs
-  return datos;
+  return allSlugs;
 }
+
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs(); // Llamamos a la función que obtiene todos los slugs
+  console.log(slugs);
+  return slugs; // Retornamos todos los slugs
+}
+
 // Obtener datos de la API para la noticia específica
 export default async function Home({ params }) {
   try {
