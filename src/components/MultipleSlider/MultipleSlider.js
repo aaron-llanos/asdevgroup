@@ -5,10 +5,10 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import './multiple-slider.scss'
+import './multiple-slider.scss';
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -21,17 +21,16 @@ import useWidth from '@/hooks/useWidth';
 import useModal from '@/hooks/useModal';
 
 export default function MultipleSlider({ slug, folder, gallery, id, newsConfig }) {
-  const [isOpenModal, openModal, closeModal] = useModal(false)
-  const { isMobile } = useWidth()
+  const [isOpenModal, openModal, closeModal] = useModal(false);
+  const { isMobile } = useWidth();
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const swiperRef = useRef();
+  const swiperFullRef = useRef();
 
   useEffect(() => {
     localStorage.getItem('theme') || 'light';
   }, []);
-
-  const swiperRef = useRef();
-  const swiperFullRef = useRef();
 
   return (
     <>
@@ -44,7 +43,7 @@ export default function MultipleSlider({ slug, folder, gallery, id, newsConfig }
                 width={550}
                 height={300}
                 alt="property"
-                src={`/inside/${id}-${slug}/${img}`}
+                src={img} // Usar la URL completa de la imagen
                 onClick={openModal}
               />
             ))}
@@ -86,12 +85,12 @@ export default function MultipleSlider({ slug, folder, gallery, id, newsConfig }
                           width={550}
                           height={300}
                           alt="property"
-                          src={`/${folder}/${id}-${slug}/${img}`}
+                          src={img} // Usar la URL completa de la imagen
                           onClick={openModal}
                         />
                       </SwiperSlide>
                     ))}
-                </>
+                  </>
                 )}
               </Swiper>
 
@@ -133,7 +132,7 @@ export default function MultipleSlider({ slug, folder, gallery, id, newsConfig }
               <SwiperSlide key={key}>
                 <img
                   alt="property"
-                  src={`/${folder}/${id}-${slug}/${img}`}
+                  src={img} // Usar la URL completa de la imagen
                 />
               </SwiperSlide>
             ))}
@@ -170,7 +169,7 @@ export default function MultipleSlider({ slug, folder, gallery, id, newsConfig }
             <SwiperSlide key={key}>
               <img
                 alt="property"
-                src={`/${folder}/${id}-${slug}/${img}`}
+                src={img} // Usar la URL completa de la imagen
               />
             </SwiperSlide>
           ))}
