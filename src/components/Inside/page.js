@@ -45,6 +45,7 @@ export default function Inside({ params, isMX }) {
     Progress: progress,
     Description: description,
     Unit: unit,
+    Quantity: size,
     Type: type,
     Details: details,
   } = property;
@@ -89,7 +90,7 @@ export default function Inside({ params, isMX }) {
           </div>
           <div className="character">
             <h5>PROJECT SIZE</h5>
-            <p><strong>{`${params.size} ${unit}`}</strong></p>
+            <p><strong>{`${size} ${unit}`}</strong></p>
           </div>
         </div>
 
