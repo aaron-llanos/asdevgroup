@@ -1,95 +1,84 @@
 'use client';
 
-import './page.scss'
-
-import Link from 'next/link'
-
+import './page.scss';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
 import Button from '@/components/Button/Button';
-
-import { useSearchParams } from 'next/navigation'
-import { properties as propertiesUS, propertiesMX } from '@/helpers/properties';
+import { useSearchParams } from 'next/navigation';
 import { dynamicClass } from '@/helpers/dynamic-class';
+import { API_URL } from '@/app/config';
 
 export default function Portfolio({ isMX }) {
-  const searchParams = useSearchParams()
-  const filterParam = searchParams.get('filter')
-  const properties = isMX ? propertiesMX : propertiesUS;
+  const searchParams = useSearchParams();
+  const filterParam = searchParams.get('filter');
 
-  const initialQueryParam = (filterParam) => {
-    const cases = {
-      multifamily: 'Multifamily',
-      hospitality: 'Hospitality',
-      'self-storage': 'Self-Storage',
-    };
-
-    return cases[filterParam];
-  };
-
-  const [currentType, setCurrentType] = useState(filterParam ? initialQueryParam(filterParam) : 'all');
+  const [properties, setProperties] = useState([]);
+  const [currentType, setCurrentType] = useState('all');
   const [currentProgress, setCurrentProgress] = useState('all');
-  const [currentProperty, setCurrentProperty] = useState(properties[0]);
-  const [flash, setflash] = useState(false);
+  const [currentProperty, setCurrentProperty] = useState(null);
+  const [flash, setFlash] = useState(false);
   const [zoom, setZoom] = useState(false);
 
-  const filterProperties = () => {
-    let concatProperties = []
+  const fetchProperties = async () => {
+    try {
+      const countryFilter = isMX ? 'MX' : 'US'; // Filtrar según el país
+      const res = await fetch(`${API_URL}/api/propiedades?populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url&filters[Country]=${countryFilter}`);
+      const data = await res.json();
+      const fetchedProperties = data.data; // Ajusta la estructura según el formato de respuesta de la API
+      setProperties(fetchedProperties);
+      setCurrentProperty(fetchedProperties[0]); // Configurar la primera propiedad como la seleccionada por defecto
+    } catch (error) {
+      console.error('Error fetching properties:', error);
+    }
+  };
 
-    if (currentType === 'all') {
-      concatProperties.push(...properties)
-    } else {
-      const filterType =
-        properties.filter(property => property.type === currentType)
-      concatProperties.push(...filterType)
+  useEffect(() => {
+    fetchProperties();
+  }, [isMX]); // Dependencia de isMX para que se vuelva a cargar cuando cambie
+
+  const filterProperties = () => {
+    let filteredProperties = properties;
+
+    if (currentType !== 'all') {
+      filteredProperties = filteredProperties.filter(property => property.Type === currentType);
     }
 
     if (currentProgress !== 'all') {
-      const filterProgress = concatProperties.filter(property =>
-        property.status === currentProgress)
-      concatProperties = filterProgress
+      filteredProperties = filteredProperties.filter(property => property.State === currentProgress);
     }
 
-    return concatProperties
-  }
-
-  useEffect(() => {
-    filterProperties()
-  }, [currentType, currentProgress]);
+    return filteredProperties;
+  };
 
   const hoverProperty = (property) => {
-    setCurrentProperty(property)
-    setZoom(true)
-    if (property.id !== currentProperty.id) {
-      setflash(true)
+    setCurrentProperty(property);
+    setZoom(true);
+    if (property.id !== currentProperty?.id) {
+      setFlash(true);
     }
-  }
+  };
 
   const deleteFlash = () => {
     if (flash) {
-      setflash(false)
+      setFlash(false);
     }
-  }
+  };
 
   return (
     <section
       className={`portfoliocomp ${dynamicClass(zoom, 'zoom')}`}
-      // className={`portfoliocomp zoom`}
-      style={{ backgroundImage: `url(/inside/${currentProperty.id}-${currentProperty.slug}/${currentProperty.image})`}}
+      style={{
+        backgroundImage: currentProperty
+          ? `url(${API_URL}/${currentProperty.TitlePageSliderDesktop?.url})`
+          : 'none'
+      }}
     >
       {flash && (<div className="flash"></div>)}
-
-      {/* {isMX ? (
-        <h1>Located in Mexico’s most luxurious and prestigious areas</h1>
-      ) : (
-        <h1>Our developments are built in the most attractive areas in Florida</h1>
-      )} */}
 
       {!isMX && (
         <div className="filter">
           <p>FILTER:</p>
           <div className="filter-row">
-            <p>FILTER:</p>
             <Button
               text="All"
               css={dynamicClass(currentType === 'all', 'bg-red')}
@@ -132,7 +121,6 @@ export default function Portfolio({ isMX }) {
         </div>
       )}
 
-
       <div className="grid">
         {filterProperties().map((property, key) => (
           <Link
@@ -143,13 +131,12 @@ export default function Portfolio({ isMX }) {
             }
           >
             <div
-              key={key}
               onMouseLeave={deleteFlash}
               onMouseEnter={() => hoverProperty(property)}
-              className={`card ${dynamicClass(property.id === currentProperty.id, 'bg-card')}`}
+              className={`card ${dynamicClass(property.id === currentProperty?.id, 'bg-card')}`}
             >
-              <p className="title">{property.name}</p>
-              <p className="city">{property.location}</p>
+              <p className="title">{property.Name}</p>
+              <p className="city">{property.Location}</p>
             </div>
           </Link>
         ))}

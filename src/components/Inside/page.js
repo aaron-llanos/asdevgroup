@@ -17,27 +17,38 @@ import { useEffect, useState } from 'react';
 export default function Inside({ params, isMX }) {
   const [property, setProperty] = useState(null);
 
+  // Hooks para la visibilidad
   const { ref: ref01, inView: inView01 } = useInView();
   const { ref: ref03, inView: inView03 } = useInView();
 
+  // Efecto para obtener la propiedad
   useEffect(() => {
     const fetchProperty = async () => {
-      const response = await fetch(`${API_URL}/api/propiedades?filters[slug][$eq]=${params.slug}&populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url`);
-      const data = await response.json();
-      console.log(data);  // Verifica la estructura de la respuesta
-      setProperty(data.data[0]); // Suponiendo que solo hay una propiedad por slug
+      try {
+        const res = await fetch(`${API_URL}/api/propiedades?filters[slug]=${params.slug}&populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url`);
+        const data = await res.json();
+
+        if (data.data.length > 0) {
+          setProperty(data.data[0]); // Configurar la propiedad
+        } else {
+          console.error('No property found');
+        }
+      } catch (error) {
+        console.error('Error fetching property:', error);
+      }
     };
 
     fetchProperty();
   }, [params.slug]);
 
+  // Manejo de error si no hay datos
   if (!property) {
-    return <p>Loading...</p>; // Manejo de estado de carga
+    return <div>Loading property data...</div>; // Mensaje de carga
   }
 
   const {
-    TitlePageSliderDesktop,
-    Gallery,
+    TitlePageSliderDesktop = {},
+    Gallery = [],
     id,
     Name: name,
     video_url,
@@ -50,18 +61,15 @@ export default function Inside({ params, isMX }) {
     Details: details,
   } = property;
 
-  // Construcción correcta de las URLs de las imágenes
-  const galleryUrls = Gallery ? Gallery.map(img => `${API_URL}${img.url}`) : [];
-
-  console.log(galleryUrls);
-  
+  // Construcción de URLs de las imágenes
+  const galleryUrls = Gallery.map(img => `${API_URL}${img.url}`);
   const backgroundImageUrl = TitlePageSliderDesktop ? `${API_URL}${TitlePageSliderDesktop.url}` : '';
 
   const galleryProps = {
     id: id,
     slug: params.slug,
     folder: 'inside',
-    gallery: galleryUrls, // Asegúrate de pasar las URLs de la galería
+    gallery: galleryUrls,
   };
 
   return (
@@ -121,7 +129,7 @@ export default function Inside({ params, isMX }) {
       <Link href={isMX ? '/portfolio/mx' : '/portfolio/us'}>
         <Underline text="RETURN TO PROJECTS" />
       </Link>
-
+      
       <Link href="/contact">
         <Button text="Request more information" />
       </Link>
