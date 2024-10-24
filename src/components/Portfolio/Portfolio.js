@@ -1,5 +1,6 @@
 'use client';
 
+//components/Portfolio/Portfolio.js
 import './page.scss';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';

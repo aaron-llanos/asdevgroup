@@ -12,36 +12,25 @@ import Underline from '@/components/Underline/Underline';
 import MultipleSlider from '../MultipleSlider/MultipleSlider';
 import { dynamicClass } from '@/helpers/dynamic-class';
 import { API_URL } from '@/app/config';
-import { useEffect, useState } from 'react';
+import useSWR from 'swr';
 
-export default function Inside({ params, isMX }) {
-  const [property, setProperty] = useState(null);
+const fetcher = (url) => fetch(url).then(res => res.json());
+
+export default function Inside({ item, isMX }) {
+  const { data: property, error } = useSWR(
+    item ? `${API_URL}/api/propiedades?filters[slug][$eq]=${item.slug}&populate=*` : null,
+    fetcher
+  );
 
   // Hooks para la visibilidad
   const { ref: ref01, inView: inView01 } = useInView();
   const { ref: ref03, inView: inView03 } = useInView();
 
-  // Efecto para obtener la propiedad
-  useEffect(() => {
-    const fetchProperty = async () => {
-      try {
-        const res = await fetch(`${API_URL}/api/propiedades?filters[slug]=${params.slug}&populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url`);
-        const data = await res.json();
-
-        if (data.data.length > 0) {
-          setProperty(data.data[0]); // Configurar la propiedad
-        } else {
-          console.error('No property found');
-        }
-      } catch (error) {
-        console.error('Error fetching property:', error);
-      }
-    };
-
-    fetchProperty();
-  }, [params.slug]);
-
   // Manejo de error si no hay datos
+  if (error) {
+    return <div>Error fetching property: {error.message}</div>;
+  }
+
   if (!property) {
     return <div>Loading property data...</div>; // Mensaje de carga
   }
@@ -59,7 +48,7 @@ export default function Inside({ params, isMX }) {
     Quantity: size,
     Type: type,
     Details: details,
-  } = property;
+  } = property.data[0]; // Suponiendo que `data` es un array
 
   // Construcción de URLs de las imágenes
   const galleryUrls = Gallery.map(img => `${API_URL}${img.url}`);
@@ -67,7 +56,7 @@ export default function Inside({ params, isMX }) {
 
   const galleryProps = {
     id: id,
-    slug: params.slug,
+    slug: item.slug, // Asegúrate de que este slug esté correcto
     folder: 'inside',
     gallery: galleryUrls,
   };
