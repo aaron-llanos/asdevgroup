@@ -1,6 +1,5 @@
 'use client';
 
-//components/Portfolio/Portfolio.js
 import './page.scss';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -23,30 +22,29 @@ export default function Portfolio({ isMX }) {
 
   const fetchProperties = async () => {
     try {
-      const countryFilter = isMX ? 'MX' : 'US'; // Filtrar según el país
+      const countryFilter = isMX ? 'MX' : 'US';
       const res = await fetch(`${API_URL}/api/propiedades?populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url&filters[Country]=${countryFilter}&sort=createdAt:desc`);
       const data = await res.json();
-      const fetchedProperties = data.data; // Ajusta la estructura según el formato de respuesta de la API
+      const fetchedProperties = data.data;
       setProperties(fetchedProperties);
-      setCurrentProperty(fetchedProperties[0]); // Configurar la primera propiedad como la seleccionada por defecto
-      
+      setCurrentProperty(fetchedProperties[0]);
     } catch (error) {
       console.error('Error fetching properties:', error);
-      
     }
   };
 
   useEffect(() => {
-   const fetchData = async () => {
-      setLoading(true)
+    const fetchData = async () => {
+      setLoading(true);
       await new Promise(resolve => setTimeout(resolve, 900));
-      setLoading(false)
+      setLoading(false);
     };
     fetchData();
-    fetchProperties();
-    
-  }, [isMX]); // Dependencia de isMX para que se vuelva a cargar cuando cambie
+  }, []); // Fetch loading state on initial render
 
+  useEffect(() => {
+    fetchProperties();
+  }, [isMX]); // Fetch properties when isMX changes
 
   if (loading) {
     return (
@@ -61,7 +59,6 @@ export default function Portfolio({ isMX }) {
           <div className="skeleton skeleton-filter-button pulse"></div>
           <div className="skeleton skeleton-filter-button pulse"></div>
           <div className="skeleton skeleton-filter-button pulse"></div>
-          
         </div>
 
         <div className="grid-loading">
@@ -72,6 +69,7 @@ export default function Portfolio({ isMX }) {
       </section>
     );
   }
+
   const filterProperties = () => {
     let filteredProperties = properties;
 
