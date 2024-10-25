@@ -46,6 +46,17 @@ export default function Portfolio({ isMX }) {
     fetchProperties();
   }, [isMX]); // Fetch properties when isMX changes
 
+useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true)
+      await new Promise(resolve => setTimeout(resolve, 900));
+      setLoading(false)
+    };
+  
+    fetchData();
+
+  }, []);
+
   if (loading) {
     return (
       <section className="portfoliocomp-loading">

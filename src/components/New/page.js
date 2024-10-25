@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Menu from '@/components/Menu/Menu';
 import Footer from '@/components/Footer/Footer';
 import Underline from '@/components/Underline/Underline';
-import MultipleSlider from '../MultipleSlider/MultipleSlider';
 import Image from 'next/image';
 import useWidth from '@/hooks/useWidth';
 import { API_URL } from '@/app/config';
@@ -15,8 +14,36 @@ export default function New({ item, allNews }) {
   const { isMobile } = useWidth();
   const [loading, setLoading] = useState(true);
 
+   // Hook useEffect para manejar el estado de carga
+   useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      await new Promise(resolve => setTimeout(resolve, 900));
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  // Condicional de carga
+  if (loading) {
+    return (
+      <div className="loading-container"> 
+        <div className="skeleton skeleton-date pulse"></div>
+        <div className="skeleton skeleton-title pulse"></div>
+        <div className="skeleton skeleton-image pulse"></div>
+        <div className="skeleton skeleton-text pulse"></div>
+      </div>
+    );
+  }
+
+  // Manejo de error si no se pasa el item
   if (!item) {
-    return <p>No se encontró la noticia.</p>; // Manejo de error si no se pasa el item
+    return (
+      <Menu css="new">
+        <p>No se encontró la noticia.</p>
+      </Menu>
+    ); // Asegúrate de devolver el Menu incluso en el caso de error
   }
 
   const { id, slug, URL, Name, Date: newsDate, Description, gallery } = item; 
@@ -39,11 +66,12 @@ export default function New({ item, allNews }) {
 
   const formattedDate = new Date(newsDate).toLocaleDateString('es-ES', {
     day: '2-digit',
-      month: '2-digit',
-      year: 'numeric',
-      timeZone: 'UTC', // Asegúrate de especificar la zona horaria
+    month: '2-digit',
+    year: 'numeric',
+    timeZone: 'UTC',
   });
-  // Verifica si Description es un array, string, o maneja otro tipo de dato
+
+  // Formateo de la descripción
   let formattedDescription;
   if (Array.isArray(Description)) {
     formattedDescription = Description.map(item => 
@@ -52,41 +80,16 @@ export default function New({ item, allNews }) {
   } else if (typeof Description === 'string') {
     formattedDescription = Description.replace(/\n/g, '<br />');
   } else {
-    formattedDescription = "No description available."; // Manejo de casos donde Description no sea un array ni string
+    formattedDescription = "No description available.";
   }
 
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      await new Promise(resolve => setTimeout(resolve, 900));
-      setLoading(false)
-    };
-  
-    fetchData();
-
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="loading-container"> 
-      <div className="skeleton skeleton-date pulse"></div>
-      <div className="skeleton skeleton-title pulse"></div>
-      <div className="skeleton skeleton-image pulse"></div>
-      <div className="skeleton skeleton-text pulse"></div>
-      {/* <div className="skeleton skeleton-text pulse"></div> */}
-    </div>
-    );
-  }
-  
-  
-
+ 
 
   return (
     <Menu css="new">
       <section className="title-container">
         <div className="information">
-          <h2>{formattedDate}</h2> {/* Muestra la fecha formateada */}
+          <h2>{formattedDate}</h2>
           <h1><b>{Name}</b></h1>
         </div>
       </section>
