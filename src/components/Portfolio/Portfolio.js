@@ -12,6 +12,7 @@ import { API_URL } from '@/app/config';
 export default function Portfolio({ isMX }) {
   const searchParams = useSearchParams();
   const filterParam = searchParams.get('filter');
+  const [loading, setLoading] = useState(true);
 
   const [properties, setProperties] = useState([]);
   const [currentType, setCurrentType] = useState('all');
@@ -28,15 +29,49 @@ export default function Portfolio({ isMX }) {
       const fetchedProperties = data.data; // Ajusta la estructura según el formato de respuesta de la API
       setProperties(fetchedProperties);
       setCurrentProperty(fetchedProperties[0]); // Configurar la primera propiedad como la seleccionada por defecto
+      
     } catch (error) {
       console.error('Error fetching properties:', error);
+      
     }
   };
 
   useEffect(() => {
+   const fetchData = async () => {
+      setLoading(true)
+      await new Promise(resolve => setTimeout(resolve, 900));
+      setLoading(false)
+    };
+    fetchData();
     fetchProperties();
+    
   }, [isMX]); // Dependencia de isMX para que se vuelva a cargar cuando cambie
 
+
+  if (loading) {
+    return (
+      <section className="portfoliocomp-loading">
+        <div className="filter-loading">
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          <div className="skeleton skeleton-filter-button pulse"></div>
+        </div>
+        <div className="filter-loading">
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          <div className="skeleton skeleton-filter-button pulse"></div>
+          
+        </div>
+
+        <div className="grid-loading">
+          {[...Array(8)].map((_, index) => (
+            <div key={index} className="skeleton skeleton-card pulse"></div>
+          ))}
+        </div>
+      </section>
+    );
+  }
   const filterProperties = () => {
     let filteredProperties = properties;
 

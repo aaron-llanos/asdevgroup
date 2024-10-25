@@ -123,3 +123,71 @@
     }
   }
 }
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centrado vertical
+  align-items: center;
+  
+  height: 100vh; // Ocupa toda la altura de la pantalla
+  padding: 4rem 6rem; // Alineado con tu diseño original
+  background-color: #e0e0e0; // Color de fondo del skeleton
+  overflow: hidden; // Asegúrate de que no haya desbordamientos
+}
+
+.skeleton {
+  background: #d1d1d1; // Color del skeleton
+  border-radius: 4px; // Bordes redondeados
+  margin: 10px 0; // Espaciado
+  animation: shimmer 1.5s infinite linear; // Efecto de brillo
+}
+
+.skeleton-date {
+  height: 54px; // Altura del título
+  width: 10%; // Ancho del título
+  margin-top: 1%; // Alineado con el margen superior del título en tu diseño
+}
+
+
+.skeleton-title {
+  height: 54px; // Altura del título
+  width: 65%; // Ancho del título
+  margin-top: 1%; // Alineado con el margen superior del título en tu diseño
+}
+
+.skeleton-text {
+  height: 20px; // Altura del texto
+  width: 65%; // Ancho del texto
+}
+
+.skeleton-image {
+  height: 70%; // Altura de la imagen
+  width: 50%; // Ancho de la imagen
+  margin: 10px 0; // Espaciado
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: #e0e0e0; // Color inicial
+    opacity: 0.7; // Opacidad inicial
+  }
+  50% {
+    background-color: #d1d1d1; // Color al 50% del pulso
+    opacity: 1; // Opacidad al 50% del pulso
+  }
+}
+

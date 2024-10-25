@@ -128,9 +128,20 @@
 
 @media (max-width: 900px) {
   .portfolio {
+
+    .flash {
+          
+      animation: none;
+      z-index: 0;
+    }
+
+      .zoom {
+        animation: none;
+      }
     .portfoliocomp {
       padding: 0;
       background-size: cover;
+      z-index: 9;
 
       .filter {
         padding: 1rem;
@@ -141,6 +152,8 @@
           display: block;
           text-align: center;
         }
+
+        
       }
 
       .filter-row {
@@ -175,5 +188,103 @@
         }
       }
     }
+  }
+}
+
+.skeleton {
+  background: #d1d1d1; // Color del skeleton
+  border-radius: 4px; // Bordes redondeados
+  margin: 10px 0; // Espaciado
+  animation: shimmer 1.5s infinite linear; // Efecto de brillo
+}
+
+.portfoliocomp-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centrado vertical
+  align-items: center;
+  height: 100%; 
+  padding-top: 10rem;
+  background-color: #e0e0e0;
+  width: 100%;
+
+  .filter-loading {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+
+    .skeleton-filter-button {
+      background: #d1d1d1;
+      height: 30px;
+      width: 120px;
+      border-radius: 4px;
+      margin: 0 5px;
+      animation: shimmer 1.5s infinite linear;
+    }
+  }
+
+  .grid-loading {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Configura tres columnas
+    gap: 0.5rem; // Reduce el espacio entre columnas
+    width: 100%;
+    max-width: 900px; // Ajusta el ancho máximo según tus necesidades
+    margin: 0 auto; // Centra la cuadrícula en la pantalla
+    padding: 0 1rem;
+
+    
+
+    .skeleton-card {
+      background: #d1d1d1;
+      height: 250px;
+      width: 250px;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    @media (max-width: 768px) { // Para dispositivos móviles
+      grid-template-columns: repeat(2, 1fr);
+      .skeleton-card {
+      height: 180px;
+      width: 180px;
+      }
+       // Dos columnas en pantallas pequeñas
+    }
+
+    @media (max-width: 400px) { // Para dispositivos móviles
+      grid-template-columns: repeat(1);
+      .skeleton-card {
+
+  
+      height: 150px;
+      width: 150px;
+      }
+       // Dos columnas en pantallas pequeñas
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-color: #e0e0e0; // Color inicial
+    opacity: 0.7; // Opacidad inicial
+  }
+  50% {
+    background-color: #d1d1d1; // Color al 50% del pulso
+    opacity: 1; // Opacidad al 50% del pulso
   }
 }

@@ -503,11 +503,11 @@
 
 @keyframes pulse {
   0%, 100% {
-    background-color: #af1212; // Color inicial
+    background-color: #e0e0e0; // Color inicial
     opacity: 0.7; // Opacidad inicial
   }
   50% {
-    background-color: #900808; // Color al 50% del pulso
+    background-color: #d1d1d1; // Color al 50% del pulso
     opacity: 1; // Opacidad al 50% del pulso
   }
 }

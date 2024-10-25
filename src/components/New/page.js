@@ -9,9 +9,11 @@ import MultipleSlider from '../MultipleSlider/MultipleSlider';
 import Image from 'next/image';
 import useWidth from '@/hooks/useWidth';
 import { API_URL } from '@/app/config';
+import { useEffect, useState } from 'react';
 
 export default function New({ item, allNews }) {
   const { isMobile } = useWidth();
+  const [loading, setLoading] = useState(true);
 
   if (!item) {
     return <p>No se encontró la noticia.</p>; // Manejo de error si no se pasa el item
@@ -53,6 +55,31 @@ export default function New({ item, allNews }) {
     formattedDescription = "No description available."; // Manejo de casos donde Description no sea un array ni string
   }
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true)
+      await new Promise(resolve => setTimeout(resolve, 900));
+      setLoading(false)
+    };
+  
+    fetchData();
+
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-container"> 
+      <div className="skeleton skeleton-date pulse"></div>
+      <div className="skeleton skeleton-title pulse"></div>
+      <div className="skeleton skeleton-image pulse"></div>
+      <div className="skeleton skeleton-text pulse"></div>
+      {/* <div className="skeleton skeleton-text pulse"></div> */}
+    </div>
+    );
+  }
+  
+  
 
 
   return (
