@@ -23,7 +23,7 @@ export default function Portfolio({ isMX }) {
   const fetchProperties = async () => {
     try {
       const countryFilter = isMX ? 'MX' : 'US'; // Filtrar según el país
-      const res = await fetch(`${API_URL}/api/propiedades?populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url&filters[Country]=${countryFilter}`);
+      const res = await fetch(`${API_URL}/api/propiedades?populate[Gallery][fields][0]=url&populate[imageMobileSlider][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url&filters[Country]=${countryFilter}&sort=createdAt:desc`);
       const data = await res.json();
       const fetchedProperties = data.data; // Ajusta la estructura según el formato de respuesta de la API
       setProperties(fetchedProperties);
@@ -45,7 +45,7 @@ export default function Portfolio({ isMX }) {
     }
 
     if (currentProgress !== 'all') {
-      filteredProperties = filteredProperties.filter(property => property.State === currentProgress);
+      filteredProperties = filteredProperties.filter(property => property.Stage === currentProgress);
     }
 
     return filteredProperties;

@@ -12,29 +12,15 @@ import Underline from '@/components/Underline/Underline';
 import MultipleSlider from '../MultipleSlider/MultipleSlider';
 import { dynamicClass } from '@/helpers/dynamic-class';
 import { API_URL } from '@/app/config';
-import useSWR from 'swr';
-
-const fetcher = (url) => fetch(url).then(res => res.json());
+import { useEffect, useState } from 'react';
 
 export default function Inside({ item, isMX }) {
-  const { data: property, error } = useSWR(
-    item ? `${API_URL}/api/propiedades?filters[slug][$eq]=${item.slug}&populate=*` : null,
-    fetcher
-  );
+  const [loading, setLoading] = useState(true); // Estado de carga
 
-  // Hooks para la visibilidad
-  const { ref: ref01, inView: inView01 } = useInView();
-  const { ref: ref03, inView: inView03 } = useInView();
+  
+  
 
-  // Manejo de error si no hay datos
-  if (error) {
-    return <div>Error fetching property: {error.message}</div>;
-  }
-
-  if (!property) {
-    return <div>Loading property data...</div>; // Mensaje de carga
-  }
-
+  // Desestructuración de los datos de la propiedad
   const {
     TitlePageSliderDesktop = {},
     Gallery = [],
@@ -47,19 +33,73 @@ export default function Inside({ item, isMX }) {
     Unit: unit,
     Quantity: size,
     Type: type,
-    Details: details,
-  } = property.data[0]; // Suponiendo que `data` es un array
+    Amenities: amenities,
+  } = item;
+
+
+  
 
   // Construcción de URLs de las imágenes
   const galleryUrls = Gallery.map(img => `${API_URL}${img.url}`);
   const backgroundImageUrl = TitlePageSliderDesktop ? `${API_URL}${TitlePageSliderDesktop.url}` : '';
 
+  // Props para el componente de slider de múltiples imágenes
   const galleryProps = {
     id: id,
-    slug: item.slug, // Asegúrate de que este slug esté correcto
+    slug: item.slug,
     folder: 'inside',
     gallery: galleryUrls,
   };
+
+  // Hooks para la visibilidad
+  const { ref: ref01, inView: inView01 } = useInView();
+  const { ref: ref03, inView: inView03 } = useInView();
+
+  useEffect(() => {
+    // Simulando la carga de datos
+    const fetchData = async () => {
+      setLoading(true);
+      // Aquí se realizaría la carga de tus datos
+      // Simulando un retraso de carga
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Simula carga de 2 segundos
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []); // Se ejecuta solo una vez al montar el componente
+
+  // Renderiza el skeleton loading si está cargando
+  if (loading) {
+    return (
+      <div className="loading-container">
+      <div className="skeleton skeleton-title pulse"></div>
+      <div className="skeleton skeleton-text pulse"></div>
+      <div className="skeleton skeleton-image pulse"></div>
+      <div className="skeleton skeleton-text pulse"></div>
+    </div>
+    );
+  }
+  
+
+  // Función para renderizar las amenidades
+  const renderAmenities = (amenities) => {
+    if (Array.isArray(amenities)) {
+      return amenities.flatMap(item => 
+        item.children.map(child => <li key={child.text}>{child.text}</li>)
+      );
+    } else if (typeof amenities === 'string') {
+      return amenities.split('\n').map((line, index) => (
+        <li key={index}>{line}</li>
+      ));
+    } else {
+      return <li key="no-description">No description available.</li>;
+    }
+  };
+
+
+  
+
+  
 
   return (
     <Menu css="inside">
@@ -94,8 +134,8 @@ export default function Inside({ item, isMX }) {
         {video_url && (
           <div className="character">
             <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5>
-            <Link href={video_url} target="_blank">
-              <Image width={250} height={50} alt="property" src="/Camera-02.png" className="live" />
+            <Link href={video_url} target="_blank" aria-label="Follow live process">
+              <Image width={250} height={50} alt="Live camera link" src="/Camera-02.png" className="live" />
             </Link>
           </div>
         )}
@@ -105,11 +145,16 @@ export default function Inside({ item, isMX }) {
         <h4 className={dynamicClass(inView03, 'animate__animated animate__fadeInLeft')} style={{ opacity: `${inView03 ? '1' : '0'}` }} ref={ref03}>
           <strong>About</strong> Project
         </h4>
-        <p>{description}</p>
 
-        <p style={{ marginTop: '1rem' }}>Amenities include:</p>
+        {description ? (
+          <p>{description}</p>
+        ) : (
+          <p>No description available.</p>
+        )}
+
+        <p style={{ marginTop: '3.4rem' }}>Amenities include:</p>
         <ul>
-          {details}
+          {renderAmenities(amenities)}
         </ul>
       </section>
 
@@ -118,7 +163,7 @@ export default function Inside({ item, isMX }) {
       <Link href={isMX ? '/portfolio/mx' : '/portfolio/us'}>
         <Underline text="RETURN TO PROJECTS" />
       </Link>
-      
+
       <Link href="/contact">
         <Button text="Request more information" />
       </Link>
