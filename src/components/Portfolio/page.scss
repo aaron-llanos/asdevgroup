@@ -176,6 +176,8 @@
 
     .grid {
       margin: 8rem auto 0;
+      scroll-behavior: initial;
+      overflow-x: scroll;
 
       .card {
         width: 160px;
