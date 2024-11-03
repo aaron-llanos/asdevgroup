@@ -511,4 +511,24 @@
     background-color: #d1d1d1; // Color al 50% del pulso
     opacity: 1; // Opacidad al 50% del pulso
   }
+
+  
 }
+
+/* Ajuste a dos imágenes en pantallas de 1200px */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; // Espaciado entre las imágenes
+    padding: 0 2rem; // Ajusta el padding si es necesario
+
+    img {
+      width: 100%;
+      height: auto; // Mantener proporciones
+    }
+  }
+}
+
+/* Modo móvil para pantallas de hasta 800px */
+
