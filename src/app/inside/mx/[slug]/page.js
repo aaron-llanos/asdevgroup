@@ -1,108 +1,42 @@
-import { API_URL } from "@/app/config";
-import Inside from "@/components/Inside/page";
+// src/app/inside/us/[slug]/page.js
 
-export const dynamic = 'force-static';
+import { API_URL } from '@/app/config';
+import Inside from '@/components/Inside/page';
 
-// Función para obtener todos los slugs con los campos necesarios
-async function getAllSlugs() {
-  let allSlugs = [];
-  let page = 1;
-  let totalPages = 1;
+//export const dynamic = 'force-static'; // Si quieres generar contenido estático, puedes usar 'force-static' aquí
 
-  // Hacemos solicitudes paginadas hasta obtener todas las páginas
-  while (page <= totalPages) {
-    const res = await fetch(`${API_URL}/api/propiedades?fields[0]=slug&filters[Country]=MX&pagination[page]=${page}&pagination[pageSize]=100`, {
-      cache: 'no-store',
-    });
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const { data, meta } = await res.json();
-
-    // Guardamos los slugs de la página actual
-    allSlugs = allSlugs.concat(data.map((item) => ({
-      slug: item.slug,
-    })));
-
-    // Actualizamos el número total de páginas
-    totalPages = meta.pagination.pageCount;
-    page++;
-  }
-
-  return allSlugs;
-}
-
-export async function generateStaticParams() {
-  const slugs = await getAllSlugs();
-  return slugs;
-}
-
-// Obtener los datos completos de la propiedad específica
-export default async function Page({ params }) {
+// Función asíncrona para obtener los datos de la propiedad
+async function getPropertyData(slug) {
   try {
-    const res = await fetch(`${API_URL}/api/propiedades?filters[slug][$eq]=${params.slug}&filters[Country]=MX&populate[Gallery][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url`, {
+    const res = await fetch(`${API_URL}/api/propiedades?filters[slug][$eq]=${slug}&filters[Country]=MX&populate[Gallery][fields][0]=url&populate[TitlePageSliderDesktop][fields][0]=url`, {
       cache: 'no-store',
     });
     
     if (!res.ok) {
-      const errorDetails = await res.text(); // Obtenemos el cuerpo del error en texto
-      throw new Error(`Failed to fetch property data: ${res.status} ${errorDetails}`);
+      throw new Error('Error al obtener la propiedad');
     }
 
-    // Leer el cuerpo de la respuesta solo una vez
-    const responseData = await res.json();
-    console.log("Respuesta de la API:", responseData); // Muestra la respuesta completa en consola
-
-    const { data } = responseData; // Extraer la propiedad `data`
-
-    // Verifica si hay datos
-    if (!data || data.length === 0) {
-      return <div>No se encontró la propiedad.</div>;
-    }
-
-    // Accede a la propiedad específica
-    const property = data[0];
-
-    // Extrae los campos necesarios
-    const {
-      TitlePageSliderDesktop,
-      Gallery,
-      Name,
-      video_url,
-      Location,
-      Progress,
-      Description,
-      Unit,
-      Stage,
-      Quantity,
-      Type,
-      Amenities,
-    } = property;
-
-    // Devuelve el componente Inside con todos los campos
-    return (
-      <Inside
-        item={{
-          TitlePageSliderDesktop,
-          Gallery,
-          Name,
-          video_url,
-          Location,
-          Progress,
-          Description,
-          Unit,
-          Stage,
-          Quantity,
-          Type,
-          Amenities,
-        }}
-        isMX={true}
-      />
-    );
+    const data = await res.json();
+    return data.data[0]; // Suponiendo que siempre hay al menos un dato
   } catch (error) {
     console.error('Error fetching property:', error);
-    return <div>Error fetching property: {error.message}</div>;
+    return null; // Si hay error, devolvemos null
   }
+}
+
+export default async function Page({ params }) {
+  const { slug } = params; // Accedemos al slug de la URL
+
+  // Obtenemos los datos de la propiedad
+  const property = await getPropertyData(slug);
+
+  // Si no se encuentra la propiedad, podemos retornar un mensaje de error
+  if (!property) {
+    return <div>No se encontró la propiedad.</div>;
+  }
+
+  // Renderizamos el componente Inside con los datos de la propiedad
+  return (
+    <Inside item={property} isMX={true} />
+  );
 }

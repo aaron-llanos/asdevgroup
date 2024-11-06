@@ -12,13 +12,17 @@ import Underline from '@/components/Underline/Underline';
 import MultipleSlider from '../MultipleSlider/MultipleSlider';
 import { dynamicClass } from '@/helpers/dynamic-class';
 import { API_URL } from '@/app/config';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function Inside({ item, isMX }) {
+export default function Inside({ item, isMX, error }) {
   const [loading, setLoading] = useState(true); // Estado de carga
+  const { ref: ref01, inView: inView01 } = useInView();
+  const { ref: ref03, inView: inView03 } = useInView();
 
-  
-  
+  // Si hay un error, se muestra el mensaje de error
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   // Desestructuración de los datos de la propiedad
   const {
@@ -34,10 +38,8 @@ export default function Inside({ item, isMX }) {
     Quantity: size,
     Type: type,
     Amenities: amenities,
+    slug,
   } = item;
-
-
-  
 
   // Construcción de URLs de las imágenes
   const galleryUrls = Gallery.map(img => `${API_URL}${img.url}`);
@@ -46,45 +48,26 @@ export default function Inside({ item, isMX }) {
   // Props para el componente de slider de múltiples imágenes
   const galleryProps = {
     id: id,
-    slug: item.slug,
+    slug: slug,
     folder: 'inside',
     gallery: galleryUrls,
   };
 
-  // Hooks para la visibilidad
-  const { ref: ref01, inView: inView01 } = useInView();
-  const { ref: ref03, inView: inView03 } = useInView();
-
+  // Simulación de un retraso de carga (puedes eliminar esto si no quieres el retraso)
   useEffect(() => {
-    // Simulando la carga de datos
     const fetchData = async () => {
       setLoading(true);
-      // Aquí se realizaría la carga de tus datos
-      // Simulando un retraso de carga
-      await new Promise(resolve => setTimeout(resolve, 1500)); // Simula carga de 2 segundos
-      setLoading(false);
+      // Simula un retraso de 2 segundos (o puedes eliminar esta parte si no lo necesitas)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setLoading(false);  // Cambia el estado a false una vez "cargado"
     };
-
     fetchData();
-  }, []); // Se ejecuta solo una vez al montar el componente
-
-  // Renderiza el skeleton loading si está cargando
-  if (loading) {
-    return (
-      <div className="loading-container">
-      <div className="skeleton skeleton-title pulse"></div>
-      <div className="skeleton skeleton-text pulse"></div>
-      <div className="skeleton skeleton-image pulse"></div>
-      <div className="skeleton skeleton-text pulse"></div>
-    </div>
-    );
-  }
-  
+  }, []); // Solo se ejecuta una vez al montar el componente
 
   // Función para renderizar las amenidades
   const renderAmenities = (amenities) => {
     if (Array.isArray(amenities)) {
-      return amenities.flatMap(item => 
+      return amenities.map(item =>
         item.children.map(child => <li key={child.text}>{child.text}</li>)
       );
     } else if (typeof amenities === 'string') {
@@ -96,10 +79,17 @@ export default function Inside({ item, isMX }) {
     }
   };
 
-
-  
-
-  
+  // Renderiza el skeleton loading si está cargando
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="skeleton skeleton-title pulse"></div>
+        <div className="skeleton skeleton-text pulse"></div>
+        <div className="skeleton skeleton-image pulse"></div>
+        <div className="skeleton skeleton-text pulse"></div>
+      </div>
+    );
+  }
 
   return (
     <Menu css="inside">
