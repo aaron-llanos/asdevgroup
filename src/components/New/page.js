@@ -94,11 +94,16 @@ export default function New({ item, allNews }) {
         </div>
       </section>
 
-      <div className="grid-container">
-        <div className="grid-item" key={item.id}>
-          <img src={`${API_URL}${item.gallery[0].url}`} alt={`${API_URL}${item.gallery[0].url}`} />
-        </div>
-      </div>
+     <div className="grid-container">
+  <div className="grid-item" key={item.id}>
+    {/* Verifica si gallery existe y tiene al menos un elemento */}
+    {item.gallery && item.gallery.length > 0 ? (
+      <img src={`${API_URL}${item.gallery[0].url}`} alt={`${API_URL}${item.gallery[0].url}`} />
+    ) : (
+      <p>No image available</p> // Mostrar un mensaje si no hay imágenes
+    )}
+  </div>
+</div>
 
       <section className="container text">
         <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />

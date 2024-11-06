@@ -99,7 +99,17 @@ export default function Inside({ item, isMX }) {
 
   
 
-  
+  // Formateo de la descripción
+  let formatteddescription;
+  if (Array.isArray(description)) {
+    formatteddescription = description.map(item => 
+      item.children.map(child => child.text).join('')
+    ).join('<br />');
+  } else if (typeof description === 'string') {
+    formatteddescription = description.replace(/\n/g, '<br />');
+  } else {
+    formatteddescription = "No description available.";
+  }
 
   return (
     <Menu css="inside">
@@ -147,7 +157,7 @@ export default function Inside({ item, isMX }) {
         </h4>
 
         {description ? (
-          <p>{description}</p>
+         <p dangerouslySetInnerHTML={{ __html: formatteddescription }} />
         ) : (
           <p>No description available.</p>
         )}
