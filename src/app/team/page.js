@@ -190,36 +190,32 @@ export default function Team() {
               </div>
           </div>
 
-         
 
-         
-
-          {/* <div className="team-photos__item">
+          <div className="image-container">
+          <div className="team-photos__item">
             <Image
-              alt="Sophia"
-              src="/team/Sophia.jpg"
+              alt="David Kahane"
+              src="/team/David-Kahane.jpg"
               width={210}  // Proporciona un ancho predeterminado requerido
-      height={210}
+              height={210}
               className="team-image"
             />
-            <div className="flashlight" ref={ref09}>
-              <div className="description">
-                <h3>Sophia Serur</h3>
-                <p>MARKETING DIRECTOR</p>
-              </div>
+            <div className="flashlight" ref={ref09}></div>
             </div>
-          </div> */}
+              <div className="team-photos__item contenedor">
+                <h3>David Kahane</h3>
+                <p>FINANCIAL ANALYST</p>
+              </div>
+          </div>
+
+         
+
+         
+
+         
         </div>
 
-        {/* <TeamSlider /> */}
-
-        {/* <div className="team-content">
-          <div className="strong">
-            <p>Agador Spartacus Development is a regional, professionally-run, privately-owned company that has been doing business in the U.S. and Mexico.</p>
-            <br />
-            <p>Since its beginnings, Agador Spartacus has distinguished itself through innovation and excellence in property investment.</p>
-          </div>
-        </div> */}
+       
       </section>
       <Footer />
     </Menu>
