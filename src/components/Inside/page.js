@@ -143,10 +143,12 @@ export default function Inside({ item, isMX }) {
 
         {video_url && (
           <div className="character">
-            <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5>
-            <Link href={video_url} target="_blank" aria-label="Follow live process">
+            {/* <h5>YOU CAN FOLLOW THE LIVE PROCESS IN THE LINK BELOW:</h5> */}
+            
+            <h2>LEASING NOW</h2>
+            {/* <Link href={video_url} target="_blank" aria-label="Follow live process">
               <Image width={250} height={50} alt="Live camera link" src="/Camera-02.png" className="live" />
-            </Link>
+            </Link> */}
           </div>
         )}
       </section>

@@ -91,7 +91,7 @@ export default function Home() {
 
           <section className="home-welcome">
             <div className="home-welcome__container">
-              <div className="step-one">
+              <div className="step-one">x
                 <div
                   style={{ opacity: `${inView01 ? '1' : '0'}`, textAlign: 'center' }}
                   className={`${inView01 && 'animate__animated animate__fadeInLeft'}`}
